@@ -1,0 +1,31 @@
+Link to the problem: https://www.hackerrank.com/challenges/apple-and-orange/problem
+
+Result Class Code:
+
+class Result
+{
+    public static void countApplesAndOranges(int s, int t, int a, int b, List<int> apples, List<int> oranges)
+    {
+      int apple_count = 0, orange_count=0;
+      foreach(int i in apples)
+      {
+        int apple_sum = a+i;
+        if(apple_sum>=s && apple_sum<=t)
+        {
+            apple_count++;
+        }
+      }
+       foreach(int i in oranges)
+      {
+        int orange_sum = b+i;
+        if(orange_sum>=s && orange_sum<=t)
+        {
+            orange_count++;
+        }
+      }
+     
+      Console.WriteLine(apple_count);
+      Console.WriteLine(orange_count);
+    }
+
+}

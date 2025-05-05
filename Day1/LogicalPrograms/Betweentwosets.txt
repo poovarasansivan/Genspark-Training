@@ -1,0 +1,19 @@
+Link to the problem: https://www.hackerrank.com/challenges/between-two-sets/problem
+
+Result Class Code:
+
+class Result
+{
+    public static int getTotalX(List<int> a, List<int> b)
+    {
+      var lastA = a.Last();
+      var lastB = b.Last();
+      var count = 0;
+      for(var i = lastA; i <= lastB; i++){
+          var af = a.All(e => i % e == 0);
+          var bf = b.All(e => e % i == 0);
+         if(af && bf) count++;
+       }
+         return count;
+    }
+}

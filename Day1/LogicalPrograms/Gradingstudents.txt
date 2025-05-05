@@ -1,0 +1,32 @@
+Link to the problem:
+
+Result Class Code:
+
+class Result
+{
+    public static List<int> gradingStudents(List<int> grades)
+    {
+      List<int> result = new List<int>();
+      foreach(int i in grades)
+      {
+        if(i>=38)
+        {
+            int mul = (int)i/5;
+            int diff = ((mul+1)*5)-i;
+            if(diff<3)
+            {
+                int s = (mul+1)*5;
+                result.Add(s);
+            }
+            else
+            {
+                result.Add(i);
+            }
+        }
+        else{
+            result.Add(i);
+        }
+      }
+      return result;
+    }
+}

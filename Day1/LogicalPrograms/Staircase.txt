@@ -1,0 +1,23 @@
+Link to the submissions: https://www.hackerrank.com/challenges/staircase/problem
+
+Code:
+
+Class Result
+{
+    public static void staircase(int n)
+    {
+        int i,j;
+        for(i=0;i<n;i++)
+        {
+            for(j=i;j<n-1;j++)
+            {
+               Console.Write(" ");
+            } 
+            for(j=0;j<=i;j++){
+                Console.Write("#");
+            }
+            Console.WriteLine("");
+        }
+    }
+
+}

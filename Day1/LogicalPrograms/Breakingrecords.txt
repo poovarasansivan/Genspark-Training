@@ -1,0 +1,30 @@
+Link to the problem: https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+
+Result Class Code:
+
+class Result
+{
+    public static List<int> breakingRecords(List<int> scores)
+    {
+        List<int> result = new List<int>();
+        int mincount = 0, maxcount = 0;
+        int max = scores[0];
+        int min = scores[0];
+        for(int i=0;i<scores.Count;i++)
+        {
+            if(scores[i]>max)
+            {
+                max=scores[i];
+                maxcount++;
+            }
+            if(scores[i]<min)
+            {
+                min = scores[i];
+                mincount++;
+            }
+        }
+        result.Add(maxcount);
+        result.Add(mincount);
+        return result;
+    }
+}

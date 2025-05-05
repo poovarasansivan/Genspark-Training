@@ -1,0 +1,28 @@
+Link to the problem: https://www.hackerrank.com/challenges/kangaroo/problem
+
+Result Class Code:
+
+class Result
+{
+     public static string kangaroo(int x1, int v1, int x2, int v2)
+    {
+        int k1 = x1;
+        int k2 = x2;
+        int jump = 0;
+        
+        while(jump<10000)
+        {
+            if(k1==k2)
+            return "YES";
+            
+            if((k1>k2 && v1>=v2) || (k2>k1 && v2>=v1))
+            return "NO";
+            
+            k1 +=v1;
+            k2 +=v2;
+            jump++;
+        }
+        return "NO";
+    }
+
+}

@@ -1,0 +1,21 @@
+Link to the problem submission: https://www.hackerrank.com/challenges/birthday-cake-candles/problem
+
+Result Class Code:
+
+class Result
+{
+    public static int birthdayCakeCandles(List<int> candles)
+    {
+       int tallest_candle = candles.Max();
+       int count = 0;
+       
+       foreach(int candle in candles)
+       {
+         if(candle==tallest_candle)
+         {
+            count++;
+         }
+       }
+       return count;
+    }
+}

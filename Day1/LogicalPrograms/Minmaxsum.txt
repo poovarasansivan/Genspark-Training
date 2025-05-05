@@ -1,0 +1,18 @@
+Link to the problem submission: https://www.hackerrank.com/challenges/mini-max-sum/problem
+
+Result Class Code:
+
+class Result
+{
+    public static void miniMaxSum(List<int> arr)
+    {
+        long totalsum = arr.Sum(x=>(long)x);
+        long minval = arr.Min();
+        long maxval = arr.Max();
+        
+        long maxsum = totalsum - maxval;
+        long minsum = totalsum - minval;
+        
+        Console.WriteLine($"{maxsum} {minsum}");
+    }
+}

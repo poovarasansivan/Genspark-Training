@@ -1,0 +1,32 @@
+Link to the submissions: https://www.hackerrank.com/challenges/plus-minus/problem
+
+Result Function:
+
+class Result
+{
+
+    public static void plusMinus(List<int> arr)
+    {
+      int pos=0, neg = 0, zero=0;
+      int length=arr.Count();
+      foreach(int item in arr){
+        if(item<0)
+        {
+            neg++;
+        }
+        else if(item>0){
+            pos++;
+        }
+        else{
+            zero++;
+        }
+      }
+      double pos_ratio = (double)pos/length;
+      double neg_ratio = (double)neg/length;
+      double zero_ratio = (double)zero/length;
+      Console.WriteLine($"{pos_ratio:F6}");
+      Console.WriteLine($"{neg_ratio:F6}");
+      Console.WriteLine($"{zero_ratio:F6}");
+    }
+
+}

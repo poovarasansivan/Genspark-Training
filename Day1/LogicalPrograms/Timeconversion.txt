@@ -1,0 +1,14 @@
+Link to the problem submission: https://www.hackerrank.com/challenges/time-conversion/problem
+
+Result Class Code:
+
+class Result
+{
+    public static string timeConversion(string s)
+    {
+       DateTime time = DateTime.ParseExact(s,"hh:mm:sstt",null);
+       string military_time = time.ToString("HH:mm:ss");
+       return military_time;  
+    }
+
+}
