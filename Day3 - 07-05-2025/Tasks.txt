@@ -1,0 +1,12 @@
+Morning Sessions: Working with Joins and learned the below concepts.
+1. Working With Joins
+2. Stored Procedures: How to create and execute the Procedures.
+3. How use JSONQUERY and how to handle Bulk json data with Procedures.
+
+Afternoon Sessions: 
+
+Assignment Solving the PostgreSQL Exercise in the following website: https://pgexercises.com/questions/basic/
+
+
+Note:
+SQL file contains the Querys worked in Morning and Evening Solved Exercises.
