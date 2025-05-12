@@ -50,7 +50,7 @@ begin;
 
 -- Step 1: Update product stock
 update products 
-set stocks = stocks - 1 
+set stock = stock - 1 
 where product_id = 1;
 
 -- Step 2: Insert into orders
@@ -71,3 +71,9 @@ values ('customer@example.com', 'Order Confirmation', TRUE);
 
 -- Commit whole transaction
 commit;
+
+select * from products;
+select * from shipping_details;
+select * from orders;
+select * from email_logs;
+
