@@ -1,0 +1,29 @@
+Steps Followed 
+  
+Step 1: Creating a Replicator using the below command
+
+psql -U postgres -p 5432 -d postgres -c "CREATE ROLE replicator WITH REPLICATION LOGIN PASSWORD '12345';"
+
+Step 2: pg_basebackup -D c:\sec -Fp -Xs -P -R -h 127.0.0.1 -U replicator -p 5432
+
+Step 3: pg_ctl -D "C:\sec" -o "-p 5433" -l "C:\sec\logfile" start
+
+Step 4: psql -U postgres -p 5432 -d postgres
+
+Step 5: psql -U postgres -p 5433 -d postgres (new standby terminal)
+
+Step 6: Created a table of rental_log to store rental data.
+
+Step 7: Stored Procedure that inserts new log with parameters.
+
+Step 8: Execute the procedure to see the log entry on rental_log
+
+CALL sp_add_rental_log(1, 100, 4.99);
+
+Step 9: Created a table that stores a log when ever a new data or update made on rental_log;
+
+Step 10: Created a function and added a trigger to the rental_log table.
+
+Step 11: Any data insert on the rental_log table then a log is added to rental_log_update_audit by trigger.
+
+Step 12: To view the replication of the primary server and standby server call the procedure on primary terminal and see the log on standby terminal.
