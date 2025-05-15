@@ -72,6 +72,25 @@ call sp_compare_encrypted(
 Task: Write a procedure sp_mask_text that:
 */
 
+create or replace procedure sp_mask_text_proc(p_text TEXT)
+language plpgsql
+as $$
+declare
+    text_len INT := length(p_text);
+	masked_text text;
+begin
+	if text_len <= 4 then
+	masked_text := p_text;
+	elseif text_len >4 then
+    masked_text := left(p_text, 2) || repeat('*', text_len - 4) || right(p_text, 2);
+	end if;
+	raise notice 'Masked Text: %', masked_text;
+end;
+$$;
+
+call sp_mask_text_proc('poovarasan');
+
+
 create or replace function sp_mask_text(p_text text)
 returns text
 language plpgsql
@@ -126,7 +145,8 @@ begin
 end;
 $$;
 
-call pro_insert_customer('Poovarasan','poovarasan@gmail.com');
+call pro_insert_customer('Praveen','praveen@gmail.com');
+call pro_insert_customer('Jp','jp@gmail.com');
 
 select * from shop_customer;
 
@@ -162,3 +182,5 @@ end;
 $$;
 
 call sp_read_customer_masked();
+
+select * from shop_customer;
