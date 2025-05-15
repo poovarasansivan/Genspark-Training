@@ -1,0 +1,58 @@
+Database Accessibility
+
+- In PostgreSQL, accessibility is controlled by granting or revoking privileges (like SELECT, INSERT, CONNECT) on databases, schemas, and tables to specific users or roles.
+
+- The following two methods allows us to provide access to any user for the database and table.
+
+1. Grant 2. Revoke
+
+Grant - It helps us to provide access for user to database connection, tables and what operation to be allowed to perform like SELECT, INSERT, UPDATE etc.
+
+Revoke - It helps to revoke the access provided to the specific users. 
+
+
+Here's some command used to provide access and revoke access of database using Grant And Revoke.
+
+1.Create user
+
+CREATE USER readonly WITH PASSWORD 'p12345';
+
+2. Providing access for database connection and schema access.
+
+GRANT CONNECT ON DATABASE dvdrental TO readonly;
+GRANT USAGE ON SCHEMA public TO readonly;
+
+3. Providing access to particular table with what operation to be performed.
+
+GRANT SELECT ON public.customer TO readonly;
+
+4. To provide access to specific column
+
+GRANT SELECT (customer_name, customer_email) ON public.shop_customer TO readonly;
+
+5. Grant access to execute function or stored procedure.
+
+GRANT EXECUTE ON FUNCTION sp_read_customer_masked() TO readonly;
+
+6. Revoke the access on a table.
+
+REVOKE SELECT ON public.customer FROM readonly;
+
+7. we can also revoke multiple privileges,
+
+REVOKE INSERT, UPDATE, DELETE ON public.customer FROM readonly;
+
+8. Revoke access to the schema
+
+REVOKE USAGE ON SCHEMA public FROM readonly;
+
+9. Revoke database connection
+
+REVOKE CONNECT ON DATABASE dvdrental FROM readonly;
+
+10. Revoke the execution access for function and stored procedures.
+
+REVOKE EXECUTE ON FUNCTION sp_read_customer_masked() FROM readonly;
+
+
+
