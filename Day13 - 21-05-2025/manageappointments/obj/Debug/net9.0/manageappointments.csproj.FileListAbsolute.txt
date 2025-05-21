@@ -1,0 +1,15 @@
+C:\Training\Day13 - 21-05-2025\manageappointments\bin\Debug\net9.0\manageappointments.exe
+C:\Training\Day13 - 21-05-2025\manageappointments\bin\Debug\net9.0\manageappointments.deps.json
+C:\Training\Day13 - 21-05-2025\manageappointments\bin\Debug\net9.0\manageappointments.runtimeconfig.json
+C:\Training\Day13 - 21-05-2025\manageappointments\bin\Debug\net9.0\manageappointments.dll
+C:\Training\Day13 - 21-05-2025\manageappointments\bin\Debug\net9.0\manageappointments.pdb
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\manageappointments.GeneratedMSBuildEditorConfig.editorconfig
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\manageappointments.AssemblyInfoInputs.cache
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\manageappointments.AssemblyInfo.cs
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\manageappointments.csproj.CoreCompileInputs.cache
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\manageappointments.sourcelink.json
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\manageappointments.dll
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\refint\manageappointments.dll
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\manageappointments.pdb
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\manageappointments.genruntimeconfig.cache
+C:\Training\Day13 - 21-05-2025\manageappointments\obj\Debug\net9.0\ref\manageappointments.dll
