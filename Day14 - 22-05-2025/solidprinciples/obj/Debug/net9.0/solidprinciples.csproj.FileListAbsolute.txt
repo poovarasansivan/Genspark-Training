@@ -1,0 +1,15 @@
+C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.AssemblyInfoInputs.cache
+C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.AssemblyInfo.cs
+C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.csproj.CoreCompileInputs.cache
+C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.sourcelink.json
+C:\Training\solidprinciples\bin\Debug\net9.0\solidprinciples.exe
+C:\Training\solidprinciples\bin\Debug\net9.0\solidprinciples.deps.json
+C:\Training\solidprinciples\bin\Debug\net9.0\solidprinciples.runtimeconfig.json
+C:\Training\solidprinciples\bin\Debug\net9.0\solidprinciples.dll
+C:\Training\solidprinciples\bin\Debug\net9.0\solidprinciples.pdb
+C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.dll
+C:\Training\solidprinciples\obj\Debug\net9.0\refint\solidprinciples.dll
+C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.pdb
+C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.genruntimeconfig.cache
+C:\Training\solidprinciples\obj\Debug\net9.0\ref\solidprinciples.dll
