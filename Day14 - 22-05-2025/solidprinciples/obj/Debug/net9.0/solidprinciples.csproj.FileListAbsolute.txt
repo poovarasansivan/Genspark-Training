@@ -13,3 +13,18 @@ C:\Training\solidprinciples\obj\Debug\net9.0\refint\solidprinciples.dll
 C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.pdb
 C:\Training\solidprinciples\obj\Debug\net9.0\solidprinciples.genruntimeconfig.cache
 C:\Training\solidprinciples\obj\Debug\net9.0\ref\solidprinciples.dll
+C:\Training\Day14 - 22-05-2025\solidprinciples\bin\Debug\net9.0\solidprinciples.exe
+C:\Training\Day14 - 22-05-2025\solidprinciples\bin\Debug\net9.0\solidprinciples.deps.json
+C:\Training\Day14 - 22-05-2025\solidprinciples\bin\Debug\net9.0\solidprinciples.runtimeconfig.json
+C:\Training\Day14 - 22-05-2025\solidprinciples\bin\Debug\net9.0\solidprinciples.dll
+C:\Training\Day14 - 22-05-2025\solidprinciples\bin\Debug\net9.0\solidprinciples.pdb
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\solidprinciples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\solidprinciples.AssemblyInfoInputs.cache
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\solidprinciples.AssemblyInfo.cs
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\solidprinciples.csproj.CoreCompileInputs.cache
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\solidprinciples.sourcelink.json
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\solidprinciples.dll
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\refint\solidprinciples.dll
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\solidprinciples.pdb
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\solidprinciples.genruntimeconfig.cache
+C:\Training\Day14 - 22-05-2025\solidprinciples\obj\Debug\net9.0\ref\solidprinciples.dll

@@ -1,0 +1,14 @@
+C:\Csharp\patterns\bin\Debug\net9.0\patterns.exe
+C:\Csharp\patterns\bin\Debug\net9.0\patterns.deps.json
+C:\Csharp\patterns\bin\Debug\net9.0\patterns.runtimeconfig.json
+C:\Csharp\patterns\bin\Debug\net9.0\patterns.dll
+C:\Csharp\patterns\bin\Debug\net9.0\patterns.pdb
+C:\Csharp\patterns\obj\Debug\net9.0\patterns.GeneratedMSBuildEditorConfig.editorconfig
+C:\Csharp\patterns\obj\Debug\net9.0\patterns.AssemblyInfoInputs.cache
+C:\Csharp\patterns\obj\Debug\net9.0\patterns.AssemblyInfo.cs
+C:\Csharp\patterns\obj\Debug\net9.0\patterns.csproj.CoreCompileInputs.cache
+C:\Csharp\patterns\obj\Debug\net9.0\patterns.dll
+C:\Csharp\patterns\obj\Debug\net9.0\refint\patterns.dll
+C:\Csharp\patterns\obj\Debug\net9.0\patterns.pdb
+C:\Csharp\patterns\obj\Debug\net9.0\patterns.genruntimeconfig.cache
+C:\Csharp\patterns\obj\Debug\net9.0\ref\patterns.dll

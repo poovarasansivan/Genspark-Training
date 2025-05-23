@@ -1,0 +1,21 @@
+Factory Method:
+
+The Factory Method pattern defines an interface for creating an object but lets subclasses decide 
+which class to instantiate. It allows a class to defer instantiation to subclasses.
+
+The client code calls a method (the factory method) to create objects instead of using 
+a constructor directly.
+
+Subclasses override this method to create specific types of objects.
+
+Abstract Factory Pattern:
+
+The Abstract Factory pattern provides an interface for creating families of related or 
+dependent objects without specifying their concrete classes.
+
+The client uses the abstract factory to create related objects (products).
+
+
+Singleton Pattern:
+
+The Singleton pattern ensures a class has only one instance and provides a global point of access to it.

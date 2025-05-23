@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Training\\solidprinciples\\solidprinciples.csproj": {}
+    "C:\\Training\\Day14 - 22-05-2025\\solidprinciples\\solidprinciples.csproj": {}
   },
   "projects": {
-    "C:\\Training\\solidprinciples\\solidprinciples.csproj": {
+    "C:\\Training\\Day14 - 22-05-2025\\solidprinciples\\solidprinciples.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Training\\solidprinciples\\solidprinciples.csproj",
+        "projectUniqueName": "C:\\Training\\Day14 - 22-05-2025\\solidprinciples\\solidprinciples.csproj",
         "projectName": "solidprinciples",
-        "projectPath": "C:\\Training\\solidprinciples\\solidprinciples.csproj",
+        "projectPath": "C:\\Training\\Day14 - 22-05-2025\\solidprinciples\\solidprinciples.csproj",
         "packagesPath": "C:\\Users\\poovarasans\\.nuget\\packages\\",
-        "outputPath": "C:\\Training\\solidprinciples\\obj\\",
+        "outputPath": "C:\\Training\\Day14 - 22-05-2025\\solidprinciples\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

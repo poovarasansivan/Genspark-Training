@@ -1,0 +1,15 @@
+C:\Training\proxypattern\bin\Debug\net9.0\proxypattern.exe
+C:\Training\proxypattern\bin\Debug\net9.0\proxypattern.deps.json
+C:\Training\proxypattern\bin\Debug\net9.0\proxypattern.runtimeconfig.json
+C:\Training\proxypattern\bin\Debug\net9.0\proxypattern.dll
+C:\Training\proxypattern\bin\Debug\net9.0\proxypattern.pdb
+C:\Training\proxypattern\obj\Debug\net9.0\proxypattern.GeneratedMSBuildEditorConfig.editorconfig
+C:\Training\proxypattern\obj\Debug\net9.0\proxypattern.AssemblyInfoInputs.cache
+C:\Training\proxypattern\obj\Debug\net9.0\proxypattern.AssemblyInfo.cs
+C:\Training\proxypattern\obj\Debug\net9.0\proxypattern.csproj.CoreCompileInputs.cache
+C:\Training\proxypattern\obj\Debug\net9.0\proxypattern.sourcelink.json
+C:\Training\proxypattern\obj\Debug\net9.0\proxypattern.dll
+C:\Training\proxypattern\obj\Debug\net9.0\refint\proxypattern.dll
+C:\Training\proxypattern\obj\Debug\net9.0\proxypattern.pdb
+C:\Training\proxypattern\obj\Debug\net9.0\proxypattern.genruntimeconfig.cache
+C:\Training\proxypattern\obj\Debug\net9.0\ref\proxypattern.dll
