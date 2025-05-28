@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SocialApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de78407054bac582a8414d37f4b42752c667ec22")]
 [assembly: System.Reflection.AssemblyProductAttribute("SocialApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SocialApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

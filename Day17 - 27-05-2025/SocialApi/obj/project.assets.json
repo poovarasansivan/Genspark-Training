@@ -3366,11 +3366,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/poovarasans/Projects/demo/SocialApi/SocialApi.csproj",
+      "projectUniqueName": "/Users/poovarasans/Desktop/Genspark/Genspark-Training/Day17 - 27-05-2025/SocialApi/SocialApi.csproj",
       "projectName": "SocialApi",
-      "projectPath": "/Users/poovarasans/Projects/demo/SocialApi/SocialApi.csproj",
+      "projectPath": "/Users/poovarasans/Desktop/Genspark/Genspark-Training/Day17 - 27-05-2025/SocialApi/SocialApi.csproj",
       "packagesPath": "/Users/poovarasans/.nuget/packages/",
-      "outputPath": "/Users/poovarasans/Projects/demo/SocialApi/obj/",
+      "outputPath": "/Users/poovarasans/Desktop/Genspark/Genspark-Training/Day17 - 27-05-2025/SocialApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/poovarasans/.nuget/NuGet/NuGet.Config"
