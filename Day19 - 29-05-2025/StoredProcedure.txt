@@ -1,0 +1,19 @@
+CREATE OR REPLACE FUNCTION get_account_summary(account_number INTEGER)
+RETURNS TABLE (
+    account_no INTEGER,
+    account_type TEXT,
+    balance DOUBLE PRECISION
+)
+AS $$
+BEGIN
+    RETURN QUERY
+    SELECT 
+        "AccountNumber", 
+        "Accounttype", 
+        "Balance"
+    FROM "Accounts"
+    WHERE "AccountNumber" = account_number;
+END;
+$$ LANGUAGE plpgsql;
+
+Select * from get_account_summary(101)
