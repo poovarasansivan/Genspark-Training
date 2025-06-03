@@ -5,6 +5,7 @@ using FirstAPI.Models.DTOs.DoctorSpecialities;
 using FirstAPI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace FirstAPI.Controllers
 {
@@ -72,7 +73,11 @@ namespace FirstAPI.Controllers
         {
             try
             {
-                var updatedAppointment = await _appointmentService.UpdateAppointmentStatus(appointmentNumber, statusDto.Status);
+                var doctorEmail = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(doctorEmail))
+                    return Unauthorized("Doctor identity not found.");
+
+                var updatedAppointment = await _appointmentService.UpdateAppointmentStatus(appointmentNumber, statusDto.Status, doctorEmail);
                 return Ok(updatedAppointment);
             }
             catch (Exception e)
@@ -80,6 +85,7 @@ namespace FirstAPI.Controllers
                 return NotFound(e.Message);
             }
         }
+
 
 
     }

@@ -11,6 +11,6 @@ namespace FirstAPI.Interfaces
         public Task<ICollection<Appointment>> GetAppointmentsByPatient(int patientId);
 
         public Task<ICollection<Appointment>> GetAppointmentsByDoctor(int doctorId);
-        public Task<Appointment> UpdateAppointmentStatus(int appointmentNumber, string newStatus);
+        Task<Appointment> UpdateAppointmentStatus(int appointmentNumber, string status, string doctorEmail);
     }
 }

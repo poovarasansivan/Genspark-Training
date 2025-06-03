@@ -87,15 +87,20 @@ namespace FirstAPI.Services
             }
         }
 
-        public async Task<Appointment> UpdateAppointmentStatus(int appointmentNumber, string newStatus)
+        public async Task<Appointment> UpdateAppointmentStatus(int appointmentNumber, string status, string doctorEmail)
         {
             var appointment = await _appointmentRepository.Get(appointmentNumber);
             if (appointment == null)
                 throw new Exception("Appointment not found");
 
-            appointment.Status = newStatus;
+            var doctor = await _doctorRepository.Get(appointment.DoctorId);
+            if (doctor == null || !doctor.Email.Equals(doctorEmail, StringComparison.OrdinalIgnoreCase))
+                throw new Exception("Unauthorized: This appointment does not belong to the logged-in doctor.");
+
+            appointment.Status = status;
             return await _appointmentRepository.Update(appointmentNumber, appointment);
         }
+
 
     }
 }
