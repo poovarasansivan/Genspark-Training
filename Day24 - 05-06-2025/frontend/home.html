@@ -1,0 +1,65 @@
+
+<html>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #msgs p{
+            margin: 5px 0;
+        }
+        #msgs {
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        #msgs {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        #msgs p {
+            background-color: #e9ecef;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        #msgs p:nth-child(odd) {
+            background-color: #dfe2e6;
+        }
+        #msgs p:nth-child(even) {
+            background-color: #f1f3f5;
+        }
+    </style>
+  <body>
+       <div id="msgs">
+
+       </div>
+      <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
+        <script>
+            const connection = new signalR.HubConnectionBuilder()
+                                .withUrl("http://localhost:5001/notificationHub",{
+                                    withCredentials:true
+                                })
+                                .withAutomaticReconnect()
+                                .build();
+            connection.on("ReceiveMessage",(user,message)=>{
+                console.log(`${user} - says - ${message}`)
+                const placeHolder = document.getElementById("msgs");
+                const content = document.createElement("p")
+                content.innerHTML = `<b>${user}</b> uploaded a new document : <br>${message}`
+                placeHolder.append(content);
+            });
+
+            connection.start().then(()=>{
+                connection.invoke("NotificationHub","Poovarasan","uploaded a new document");
+            })
+            .catch(err=>{
+                console.log("sinalR connection Failed")
+            })
+        </script>
+  </body>
+</html>
+
+
+
+
