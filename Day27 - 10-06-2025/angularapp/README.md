@@ -15,7 +15,7 @@
 
 # Bindings
 
-- Check the `First.ts` file for the full funcitonality
+Check the `First.ts` file for the full funcitonality
 
 1. Property Binding :
    `<input type="text" #uname [value]="name"/>`
