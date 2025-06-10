@@ -1,0 +1,28 @@
+<h1>Available Products</h1>
+
+<div class="cart-icon">
+  <i class="bi bi-bag"></i>
+  <span>{{ count }}</span>
+</div>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of products">
+    <img [src]="product.image" alt="product-image" />
+    <h3>{{ product.name }}</h3>
+    <p class="description">{{ product.description }}</p>
+    <p class="price">{{ product.price | currency: 'USD':'symbol' }}</p>
+
+    <div class="button-group">
+      <button class="btn btn-primary" (click)="addToCart(product)">
+        Add To Cart
+      </button>
+      <button
+        class="btn btn-danger"
+        (click)="removeFromCart(product)"
+        [disabled]="product.quantity === 0"
+      >
+        Remove From Cart
+      </button>
+    </div>
+  </div>
+</div>

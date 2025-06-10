@@ -1,0 +1,16 @@
+
+<h1>Hi I am from First Compnent</h1>
+<!-- interpolation -->
+<h2>My name is {{name}}</h2>
+
+<hr/>
+<!-- Property Binding -->
+<input type="text" #uname [value]="name"/>
+<!-- Two-way Binding : use full for dynamic update-->
+<input type="text" [(ngModel)]="name"/>
+
+<i [class]="className" (click)="onLike()"></i>
+<!-- Event Binding -->
+<button (click)="onButtonClick(uname.value)">ClickMe</button>
+
+<hr/>
