@@ -8,10 +8,10 @@
 
 # Component Structure
 
-`file.css` - In this file we will wrote our css styles.
-`file.html` - In this file we will write the actual ui design html elements.
-`file.ts` - Actual event handling functions and other scrpting goes here.
-`file.spec.ts` - User for testing the components.
+- `file.css` - In this file we will wrote our css styles.
+- `file.html` - In this file we will write the actual ui design html elements.
+- `file.ts` - Actual event handling functions and other scrpting goes here.
+- `file.spec.ts` - User for testing the components.
 
 # Bindings
 
