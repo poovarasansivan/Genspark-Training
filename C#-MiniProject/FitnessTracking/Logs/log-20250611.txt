@@ -1,0 +1,284 @@
+
+2025-06-11 15:40:07.454 +05:30 [INF] Application started
+2025-06-11 15:40:38.098 +05:30 [FTL] User not found
+2025-06-11 15:41:27.939 +05:30 [INF] Fetching all users
+2025-06-11 15:41:27.952 +05:30 [INF] All users fetched su2025-06-11 15:41:27.952 +05:30 [INF] All users fetched successfully
+2025-06-11 15:43:04.839 +05:30 [INF] Application started
+2025-06-11 15:43:15.753 +05:30 [INF] Fetching all user pl2025-06-11 15:43:15.753 +05:30 [INF] Fetching all user plans
+2025-06-11 15:45:03.294 +05:30 [INF] Application started
+2025-06-11 15:45:17.639 +05:30 [INF] Fetching all workout2025-06-11 15:45:17.639 +05:30 [INF] Fetching all workout logs.
+2025-06-11 15:46:38.851 +05:30 [INF] Application started
+2025-06-11 15:46:47.388 +05:30 [INF] Fetching filtered wo2025-06-11 15:46:47.388 +05:30 [INF] Fetching filtered workout plans with filter: {"PageNumber":1,"PageSize":10,"SearchTerm":null,"SortBy":null,"SortDirection":"asc","$type":"WorkOutPlanFilterDto"}
+2025-06-11 15:48:01.621 +05:30 [INF] Application started
+2025-06-11 15:48:01.621 +05:30 [INF] Application started
+2025-06-11 15:52:40.045 +05:30 [INF] Application started
+2025-06-11 15:52:40.045 +05:30 [INF] Application started
+2025-06-11 15:53:32.429 +05:30 [INF] Application started
+2025-06-11 15:53:53.594 +05:30 [INF] Login attempt for em2025-06-11 15:53:53.594 +02025-06-11 15:53:55.487 +05:30 [INF] Login successful for2025-06-11 15:53:55.487 +05:30 [INF] Login successful for email: poovarasan@gmail.com
+2025-06-11 16:01:01.672 +05:30 [INF] Application started
+2025-06-11 16:01:01.672 +05:30 [INF] Application started
+2025-06-11 16:04:50.655 +05:30 [INF] Application started
+2025-06-11 16:06:07.592 +05:30 [INF] Login attempt for em2025-06-11 16:06:07.592 +02025-06-11 16:06:09.245 +05:30 [INF] Login successful for2025-06-11 16:06:09.245 +05:32025-06-11 16:06:47.199 +05:30 [INF] Attempting to valida2025-06-11 16:06:42025-06-11 16:06:47.291 +05:30 [INF] Refresh token valida2025-06-11 16:06:47.291 +05:30 [INF] Refresh token vali2025-06-11 16:08:45.279 +05:30 [INF] Login attempt for em2025-06-11 16:08:45.279 +02025-06-11 16:08:45.617 +05:30 [ERR] Invalid Login Passwo2022025-06-11 16:08:45.618 +05:30 [WRN] Login failed for ema2025-06-11 16:08:45.618 +05:30 [WRN] Login failed for email: poovarasan@gmail.com
+FitnessTracking.Misc.CustomeExceptionHandler: Invalid Login Password
+   at FitnessTracking.Services.AuthenticationService.Login(UserLoginRequestDto user) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/AuthenticationService.cs:line 44
+   at FitnessTracking.Controllers.AuthenticationController.Login(UserLoginRequestDto loginRequestDto) in /Users/poovarasans/Desktop/Genspark/Task/Fitness2025-06-11 16:10:21.086 +05:30 [INF] Login attempt for em2025-06-11 16:10:21.086 +052025-06-11 16:10:21.087 +05:30 [FTL] User not found
+2025-06-11 16:10:21.088 +05:30 [WRN] Login failed for ema2025-06-11 16:10:21.088 +05:30 [WRN] Login failed for email: poovarasans@gmail.com
+FitnessTracking.Misc.CustomeExceptionHandler: User not found
+   at FitnessTracking.Services.AuthenticationService.Login(UserLoginRequestDto user) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/AuthenticationService.cs:line 33
+   at FitnessTracking.Controllers.AuthenticationController.Login(UserLoginRequestDto loginRequestDto) in /Users/poovarasans/Desktop/Genspark/Task/Fitness2025-06-11 16:11:45.451 +05:30 [INF] Attempting to valida2025-06-11 16:11:42025-06-11 16:11:45.454 +05:30 [ERR] Exception during ref2025-06-11 16:11:45.454 +05:30 [ERR] Exception during refresh token validation.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'dDrBws4LTTOuLzziu3csfMWcFoWqAAxQuQ7it7WpEHE'.'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'System.IdentityModel.Tokens.Jwt.JwtSecurityToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignatureAndIssuerSecurityKey(String token, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at FitnessTracking.Controllers.AuthenticationController.Refresh(RefreshTokenRequestDto refreshRequest) in /Users/poovarasans/Desktop/Genspark/Task/Fitness2025-06-11 16:14:59.677 +05:30 [INF] Login attempt for em2025-06-11 16:14:59.677 +02025-06-11 16:14:59.883 +05:30 [INF] Login successful for2025-06-11 16:14:59.883 +05:32025-06-11 16:15:22.430 +05:30 [INF] Login attempt for em2025-06-11 16:15:22.4302025-06-11 16:15:22.606 +05:30 [INF] Login successful for2025-06-11 16:15:22.606 +02025-06-11 16:15:46.262 +05:30 [INF] Fetching all users
+2025-06-11 16:15:46.275 +05:30 [INF] All users fetched su2025-06-11 2025-06-11 16:18:03.582 +05:30 [INF] Fetching user with I2025-06-11 16:18:03.582 +05:30 [INF] Fetch2025-06-11 16:18:03.707 +05:30 [INF] User fetched success2025-06-11 16:18:03.707 +05:30 [INF] User fetched suc2025-06-11 16:20:25.790 +05:30 [INF] Fetching user with I2025-06-11 16:20:25.790 +05:30 [INF] Fetch2025-06-11 16:20:25.817 +05:30 [WRN] User not found with 2025-06-11 16:20:25.817 +05:30 [WRN] User n2025-06-11 16:23:08.924 +05:30 [INF] Updating user with I2025-06-11 16:23:08.924 +05:30 [INF] Updat2025-06-11 16:23:09.196 +05:30 [INF] User updated success2025-06-11 16:23:09.196 +05:30 [INF] User updated suc2025-06-11 16:26:07.182 +05:30 [INF] Updating user with I2025-06-11 16:26:07.182 +05:30 [INF] Updat2025-06-11 16:27:30.184 +05:30 [INF] Updating password fo2025-06-11 16:27:30.184 +05:30 [INF] Updating pass2025-06-11 16:27:30.353 +05:30 [INF] Password updated suc2025-06-11 16:27:30.353 +05:30 [INF] Password updated successf2025-06-11 16:30:17.569 +05:30 [INF] Updating password fo2025-06-11 16:30:17.569 +05:30 [INF] Updating pass2025-06-11 16:33:51.802 +05:30 [INF] Updating user status2025-06-11 16:33:51.802 +05:30 [INF] Updating us2025-06-11 16:33:51.818 +05:30 [INF] User status updated 2025-06-11 16:33:51.818 +05:30 [INF] User status updated suc2025-06-11 16:36:55.503 +05:30 [INF] Updating user status2025-06-11 16:36:55.503 +05:30 [INF] Updating us2025-06-11 16:39:07.790 +05:30 [INF] Fetching paginated u2025-06-11 16:39:07.790 +05:32025-06-11 16:39:07.869 +05:30 [INF] Paginated users fetc2025-06-11 16:39:2025-06-11 16:41:42.867 +05:30 [INF] Fetching paginated u2025-06-11 16:41:42.867 +05:32025-06-11 16:41:42.897 +05:30 [INF] Paginated users fetc2025-06-11 16:41:2025-06-11 16:43:48.536 +05:30 [INF] Fetching paginated u2025-06-11 16:43:48.536 +05:32025-06-11 16:43:48.548 +05:30 [INF] Paginated users fetc2025-06-11 16:43:2025-06-11 16:48:10.495 +05:30 [INF] Adding new workout p2025-06-11 16:48:10.495 +05:30 [INF]2025-06-11 16:55:50.244 +05:30 [INF] Fetching all workout2025-06-2025-06-11 16:57:44.822 +05:30 [INF] Fetching workout pla2025-06-11 16:57:44.822 +05:30 [INF] Fetching work2025-06-11 17:00:16.918 +05:30 [INF] Fetching filtered wo2025-06-11 17:00:16.918 +05:30 [INF] Fetching filtered workout plans with filter: {"PageNumber":1,"PageSize":10,"SearchTerm":"30 Days","SortBy":"nam2025-06-11 17:02:54.090 +05:30 [INF] Updating workout pla2025-06-11 17:02:54.090 +05:30 [INF] Updating work2025-06-11 17:08:10.998 +05:30 [INF] Adding new user plan2025-06-11 17:08:10.998 +05:30 [INF] Adding new user 2025-06-11 17:10:17.057 +05:30 [INF] Adding new user plan2025-06-11 17:10:17.057 +05:30 [INF] Adding new user 2025-06-11 17:10:17.077 +05:30 [ERR] Failed executing DbC2025-06-11 17:10:17.077 +05:30 [ERR] Failed executing DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserWorkOutPlans" ("Id", "CreatedAt", "IsCompleted", "UpdatedAt", "UserId",2025-06-11 17:10:17.091 +05:30 [ERR] An exception occurre2025-06-11 17:10:17.091 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'FitnessTracking.Contexts.FitnessContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "UserWorkOutPlans" violates foreign key constraint "fk_plan"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "UserWorkOutPlans" violates foreign key constraint "fk_plan"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: UserWorkOutPlans
+    ConstraintName: fk_plan
+    File: ri_triggers.c
+    Line: 2610
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "UserWorkOutPlans" violates foreign key constraint "fk_plan"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "UserWorkOutPlans" violates foreign key constraint "fk_plan"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: UserWorkOutPlans
+    ConstraintName: fk_plan
+    File: ri_triggers.c
+    Line: 2610
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptA2025-06-11 17:10:17.098 +05:30 [ERR] Unhandled Exception
+2025-06-11 17:10:17.098 +05:30 [ERR] Unhandled Exception
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "UserWorkOutPlans" violates foreign key constraint "fk_plan"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "UserWorkOutPlans" violates foreign key constraint "fk_plan"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: UserWorkOutPlans
+    ConstraintName: fk_plan
+    File: ri_triggers.c
+    Line: 2610
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at FitnessTracking.Controllers.UserPlanController.AddUserPlan(UserPlanAddRequestDto userPlanDto) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Controllers/UserPlanController.cs:line 73
+   at lambda_method409(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at FitnessTracking.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in /Users/poovarasans/Desktop/Genspark/Task/Fi2025-06-11 17:10:26.350 +05:30 [INF] Adding new user plan2025-06-11 17:10:26.350 +05:30 [INF] Adding new user 2025-06-11 17:10:37.941 +05:30 [INF] Fetching all user pl20252025-06-11 17:14:28.188 +05:30 [INF] Fetching user plans 2025-06-11 17:14:28.188 +05:30 [INF] Fetching user p2025-06-11 17:18:36.785 +05:30 [INF] Fetching user plans 2025-06-11 17:18:36.785 +05:30 [INF] Fetching user p2025-06-11 17:18:36.798 +05:30 [WRN] No user plans found 2025-06-11 17:18:36.798 +05:30 [WRN] No user plans f2025-06-11 17:21:31.498 +05:30 [INF] Fetching paginated u2025-06-11 17:21:31.498 +05:30 [INF] Fetching paginated user plans with filters: {"PageNumber":1,"PageSize":10,"WorkOutPlanId":"01975a7b-9454-7f6c-947d-59a7f7c9f4c6","IsCompleted":"On Going","SortBy":"name","2025-06-11 17:21:54.972 +05:30 [INF] Fetching paginated u2025-06-11 17:21:54.972 +05:30 [INF] Fetching paginated user plans with filters: {"PageNumber":1,"PageSize":10,"WorkOutPlanId":"01975a7a-b4a1-7d22-925f-bf13aa445ca6","IsCompleted":"Not Completed","SortBy":"name","2025-06-11 17:24:53.181 +05:30 [INF] Updating user plan w2025-06-11 17:24:53.181 +05:30 [INF] Updating u2025-06-11 17:27:06.073 +05:30 [INF] Updating user plan w2025-06-11 17:27:06.073 +05:30 [INF] Updating u2025-06-11 17:28:28.837 +05:30 [INF] Deleting user plan w2025-06-11 17:28:28.837 +05:30 [INF] Deleting u2025-06-11 17:45:55.270 +05:30 [INF] Adding new workout l2025-06-11 17:45:55.270 +05:30 [INF] Adding new workout2025-06-11 17:47:26.252 +05:30 [INF] Adding new workout l2025-06-11 17:47:26.252 +05:30 [INF] Adding new workout2025-06-11 17:47:26.254 +05:30 [ERR] Failed executing DbC2025-06-11 17:47:26.254 +05:30 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?' (DbType = Object), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Workouts" ("Id", "CaloriesBurned", "CreatedAt", "Date", "Duration", "Notes", "Type", "UpdatedAt", "UserId", "WorkOutPlanId")
+VA2025-06-11 17:47:26.265 +05:30 [ERR] An exception occurre2025-06-11 17:47:26.265 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'FitnessTracking.Contexts.FitnessContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "Workouts" violates foreign key constraint "FK_Workouts_Users_UserId"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "Workouts" violates foreign key constraint "FK_Workouts_Users_UserId"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Workouts
+    ConstraintName: FK_Workouts_Users_UserId
+    File: ri_triggers.c
+    Line: 2610
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "Workouts" violates foreign key constraint "FK_Workouts_Users_UserId"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "Workouts" violates foreign key constraint "FK_Workouts_Users_UserId"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Workouts
+    ConstraintName: FK_Workouts_Users_UserId
+    File: ri_triggers.c
+    Line: 2610
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptA2025-06-11 17:47:26.273 +05:30 [ERR] Unhandled Exception
+2025-06-11 17:47:26.273 +05:30 [ERR] Unhandled Exception
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "Workouts" violates foreign key constraint "FK_Workouts_Users_UserId"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "Workouts" violates foreign key constraint "FK_Workouts_Users_UserId"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Workouts
+    ConstraintName: FK_Workouts_Users_UserId
+    File: ri_triggers.c
+    Line: 2610
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at FitnessTracking.Repositories.Repository`1.AddAsync(T entity) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Repositories/Repository.cs:line 28
+   at FitnessTracking.Services.WorkOutLogService.AddWorkOutLogAsync(WorkOutLogAddRequestDto workOutLogDto) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/WorkOutLogService.cs:line 38
+   at FitnessTracking.Controllers.WorkOutLogController.AddWorkOutLog(WorkOutLogAddRequestDto workOutLogDto) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Controllers/WorkOutLogController.cs:line 71
+   at lambda_method545(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at FitnessTracking.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in /Users/poovarasans/Desktop/Genspark/Task/Fi2025-06-11 17:50:00.164 +05:30 [INF] Fetching all workout2025-062025-06-11 17:52:21.816 +05:30 [INF] Fetching workout log2025-06-11 17:52:21.816 +05:30 [INF] Fetching wor2025-06-11 17:52:37.066 +05:30 [INF] Fetching workout log2025-06-11 17:52:37.066 +05:30 [INF] Fetching wor2025-06-11 17:53:43.131 +05:30 [INF] Fetching workout log2025-06-11 17:53:43.131 +05:30 [INF] Fetching wor2025-06-11 17:55:34.658 +05:30 [INF] Fetching workout log2025-06-11 17:55:34.658 +05:30 [INF] Fetching workout 2025-06-11 18:02:24.045 +05:30 [INF] Fetching paginated w2025-06-11 18:02:24.045 +05:30 [INF] Fetching paginated workout logs with filter: {"PageNumber":1,"PageSize":10,"UserId":"01975a77-4db6-7a99-b773-1578d904d824","WorkOutPlanId":"01975a7a-b4a1-7d22-925f-bf13aa445ca6","SortBy":"nam2025-06-11 18:03:44.996 +05:30 [INF] Deleting workout log2025-06-11 18:03:44.996 +05:30 [INF] Deleting wor2025-06-11 18:11:45.521 +05:30 [INF] AddProgress: Adding 2025-06-11 18:11:45.521 +05:30 [INF] AddProgress: Adding pr2025-06-11 18:11:45.564 +05:30 [INF] AddProgress: Progres2025-06-11 18:11:45.564 +05:30 [INF] AddProgress: Progress added succes2025-06-11 18:13:12.335 +05:30 [INF] GetAllProgressAsync:2025-06-11 18:13:12.335 +05:30 [2025-06-11 18:13:12.424 +05:30 [INF] GetAllProgressAsync:2025-06-11 18:13:12.424 +05:30 [INF] GetAllP2025-06-11 18:15:30.602 +05:30 [INF] GetProgressByUserIdA2025-06-11 18:15:30.602 +05:30 [INF] GetProgressByUserIdAndWorkOutPlanIdAsync: Fetching progress for UserId "01975a77-baf3-7394-82d2-4cefaa3cf3a3" 2025-06-11 18:15:30.654 +05:30 [INF] GetProgressByUserIdA2025-06-11 18:15:30.654 +05:30 [INF] GetProgressByUse2025-06-11 18:17:12.259 +05:30 [INF] GetProgressByIdAsync2025-06-11 18:17:12.259 +05:30 [INF] GetProgressByIdAsync: Fetching2025-06-11 18:17:31.172 +05:30 [INF] GetProgressByIdAsync2025-06-11 18:17:31.172 +05:30 [INF] GetProgressByIdAsync: Fetching2025-06-11 18:17:31.176 +05:30 [INF] GetProgressByIdAsync2025-06-11 18:17:31.176 +05:30 [INF] GetProgressByIdAsync: Successfully fetched2025-06-11 18:18:26.096 +05:30 [INF] GetProgressByIdAsync2025-06-11 18:18:26.096 +05:30 [INF] GetProgressByIdAsync: Fetching2025-06-11 18:18:26.104 +05:30 [INF] GetProgressByIdAsync2025-06-11 18:18:26.104 +05:30 [INF] GetProgressByIdAsync: Successfully fetched2025-06-11 18:19:49.012 +05:30 [INF] GetProgressByIdAsync2025-06-11 18:19:49.012 +05:30 [INF] GetProgressByIdAsync: Fetching2025-06-11 18:22:46.972 +05:30 [INF] GetFilteredProgressA2025-06-11 18:22:46.972 +05:30 [INF] GetFiltered2025-06-11 18:22:47.021 +05:30 [INF] GetFilteredProgressA2025-06-11 18:22:47.021 +05:30 [INF] GetFilter2025-06-11 18:23:00.776 +05:30 [INF] GetFilteredProgressA2025-06-11 18:23:00.776 +05:30 [INF] GetFiltered2025-06-11 18:23:00.796 +05:30 [INF] GetFilteredProgressA2025-06-11 18:23:00.796 +05:30 [INF] GetFilter2025-06-11 18:23:10.236 +05:30 [INF] GetFilteredProgressA2025-06-11 18:23:10.236 +05:30 [INF] GetFiltered2025-06-11 18:23:10.284 +05:30 [INF] GetFilteredProgressA2025-06-11 18:23:10.284 +05:30 [INF] GetFilter2025-06-11 18:26:21.975 +05:30 [INF] AddProgressImage: Su2025-06-11 18:26:21.975 +05:30 [INF] AddProgressImage: Successfully uploa2025-06-11 18:27:54.889 +05:30 [INF] DownloadImage: Fetch2025-06-11 18:27:54.889 +05:30 [INF] DownloadImage: Fetch2025-06-11 18:27:54.925 +05:30 [INF] DownloadImage: Succe2025-06-11 18:27:54.925 +05:30 [INF] DownloadImage: Successfully retrie2025-06-11 18:29:23.930 +05:30 [INF] DownloadImage: Fetch2025-06-11 18:29:23.930 +05:30 [INF] DownloadImage: Fetch2025-06-11 18:29:23.932 +05:30 [WRN] DownloadImage: Image2025-06-11 18:29:23.932 +05:30 [WRN] DownloadImage: Image not found with ID "5b0022c8-d33e-4488-b3e6-b64575b3643c"
