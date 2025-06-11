@@ -1,0 +1,11 @@
+<div class="recipe-container" style="width: 18px;">
+  <div class="recipe-card" >
+    <img [src]="recipe?.image" alt="recipe image" class="recipe-image" />
+    <div class="recipe-details">
+      <h3>{{ recipe?.name }}</h3>
+      <h4>{{ recipe?.cuisine }}</h4>
+      <p>{{ recipe?.ingredients}}</p>
+      <p class="cook-time">Cooking Time: {{ recipe?.cookTimeMinutes }} mins</p>
+    </div>
+  </div>
+</div>
