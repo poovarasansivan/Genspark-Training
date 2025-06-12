@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Get Users Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #output {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        width: 250px;
+        transition: transform 0.2s;
+      }
+
+      .card:hover {
+        transform: scale(1.03);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 12px;
+      }
+
+      .card h3 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        color: #007bff;
+      }
+
+      .card p {
+        margin: 4px 0;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User Fetch Demo</h1>
+
+    <div class="buttons">
+      <button onclick="getUsersCallbackVersion()">Load with Callback</button>
+      <button onclick="getUsersPromiseVersion()">Load with Promise</button>
+      <button onclick="getUsersAsyncAwaitVersion()">
+        Load with Async/Await
+      </button>
+    </div>
+
+    <div id="output"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
