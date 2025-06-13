@@ -1,0 +1,20 @@
+<div *ngIf="weather && !weather.error" class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto mt-20 text-center">
+  <h2 class="text-2xl font-bold mb-2">{{ weather.location.name }}</h2>
+
+  <img
+    [src]="'https:' + weather.current.condition.icon"
+    [alt]="weather.current.condition.text"
+    class="mx-auto"
+  />
+
+  <p class="text-xl">
+    {{ weather.current.temp_c }}°C - {{ weather.current.condition.text }}
+  </p>
+
+  <p>Humidity: {{ weather.current.humidity }}%</p>
+  <p>Wind: {{ weather.current.wind_kph }} kph</p>
+</div>
+
+<div *ngIf="weather?.error" class="text-red-600 text-center mt-4">
+  {{ weather.error }}
+</div>

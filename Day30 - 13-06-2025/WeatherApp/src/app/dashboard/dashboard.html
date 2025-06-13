@@ -1,0 +1,5 @@
+
+<div *ngIf="weather$ | async as weather">
+  <app-card *ngIf="!weather.error" [weather]="weather"></app-card>
+  <p *ngIf="weather.error" class="text-red-500">{{ weather.error }}</p>
+</div>

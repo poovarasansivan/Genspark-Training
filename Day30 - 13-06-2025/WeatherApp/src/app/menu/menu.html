@@ -1,0 +1,24 @@
+<nav class="bg-white border-b border-gray-200 px-12 py-6 flex justify-between items-center shadow-md">
+  <div class="text-xl font-bold text-blue-600">Weather Application</div>
+
+  <div class="hidden md:flex space-x-8">
+    <a routerLink="/" class="text-gray-700 text-lg hover:text-blue-600">Home</a>
+    <a routerLink="/about" class="text-gray-700 text-lg hover:text-blue-600">About</a>
+    <a routerLink="/get-weather" class="text-gray-700 text-lg hover:text-blue-600">Get Weather</a>
+  </div>
+
+ <div class="md:hidden">
+  <button (click)="toggleMenu()" class="text-3xl text-gray-700 focus:outline-none">
+    <span *ngIf="!menuOpen">&#9776;</span> 
+    <span *ngIf="menuOpen">&#10006;</span> 
+  </button>
+</div>
+
+</nav>
+
+<div *ngIf="menuOpen" class="md:hidden px-4 py-2 space-y-2 bg-white border-b border-gray-200">
+  <a routerLink="/" class="block text-gray-700 text-lg hover:text-blue-600">Home</a>
+  <a routerLink="/about" class="block text-gray-700 text-lg hover:text-blue-600">About</a>
+  <a routerLink="/services" class="block text-gray-700 text-lg hover:text-blue-600">Services</a>
+  <a routerLink="/contact" class="block text-gray-700 text-lg hover:text-blue-600">Contact</a>
+</div>

@@ -1,0 +1,31 @@
+<div class="flex justify-center items-center mt-20">
+  <div class="flex w-1/2 bg-white rounded-xl shadow-md p-6">
+    <input
+      type="text"
+      [(ngModel)]="city"
+      placeholder="Enter city"
+      class="flex-1 px-6 py-4 rounded-l-xl outline-none bg-gray-100"
+    />
+    <button
+      (click)="searchCity()"
+      class="bg-blue-500 text-white px-6 py-2 rounded-r-xl hover:bg-blue-600 transition"
+    >
+      Search
+    </button>
+  </div>
+</div>
+
+<div class="p-4">
+  <h4 class="text-lg font-semibold mb-2 justify- text-center items-center">
+    Search History
+  </h4>
+  <div class="flex flex-wrap gap-2 justify-center items-center">
+    <button
+      *ngFor="let item of history"
+      (click)="selectFromHistory(item)"
+      class="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded"
+    >
+      {{ item }}
+    </button>
+  </div>
+</div>
