@@ -1,0 +1,104 @@
+<!-- Loading State -->
+<div *ngIf="loading" class="text-center text-violet-500 py-6 text-lg">
+  <svg
+    class="animate-spin h-6 w-6 mx-auto mb-2 text-violet-500"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      class="opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      stroke-width="4"
+    ></circle>
+    <path
+      class="opacity-75"
+      fill="currentColor"
+      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+    ></path>
+  </svg>
+  Loading product details...
+</div>
+
+<div *ngIf="error" class="text-center text-red-500 py-4 text-md">
+  {{ error }}
+</div>
+
+<div
+  *ngIf="product && !loading"
+  class="max-w-6xl mx-auto bg-white shadow rounded-xl p-6 mt-6"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <img
+        [src]="product.thumbnail"
+        class="w-full h-auto rounded-lg border object-cover"
+        alt="product image"
+      />
+      <div class="flex gap-2 mt-4 overflow-x-auto">
+        <img
+          *ngFor="let img of product.images"
+          [src]="img"
+          class="w-20 h-20 object-cover border rounded cursor-pointer hover:scale-105 transition-transform"
+        />
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <h1 class="text-2xl font-semibold text-gray-800">{{ product.title }}</h1>
+
+      <div class="flex items-center gap-2">
+        <span class="text-lg text-green-600 font-semibold"
+          >${{ product.price }}</span
+        >
+        <span class="text-sm text-gray-500 line-through"
+          >${{ (product.price / (1 - product.discountPercentage /
+          100)).toFixed(2) }}</span
+        >
+        <span class="text-sm text-red-600 font-medium"
+          >({{ product.discountPercentage }}% OFF)</span
+        >
+      </div>
+
+      <div class="text-sm text-gray-600">
+        Rating: {{ product.rating }} | Stock: {{ product.stock }}
+      </div>
+
+      <div class="bg-gray-100 p-4 rounded-lg text-sm text-gray-700">
+        {{ product.description }}
+      </div>
+
+      <div class="mt-4">
+        <span class="font-medium text-gray-700">Tags:</span>
+        <div class="flex flex-wrap gap-2 mt-1">
+          <span
+            *ngFor="let tag of product.tags"
+            class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm"
+            >#{{ tag }}</span
+          >
+        </div>
+      </div>
+      <div *ngIf="product.reviews?.length > 0" class="mt-10">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">
+          Customer Reviews
+        </h2>
+        <div class="space-y-4">
+          <div
+            *ngFor="let review of product.reviews"
+            class="border p-4 rounded"
+          >
+            <div class="flex justify-between items-center mb-1">
+              <p class="font-medium text-gray-800">{{ review.reviewerName }}</p>
+              <span class="text-yellow-500">★ {{ review.rating }}</span>
+            </div>
+            <p class="text-sm text-gray-600 italic">"{{ review.comment }}"</p>
+            <p class="text-xs text-gray-400 mt-1">{{ review.reviewerEmail }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
