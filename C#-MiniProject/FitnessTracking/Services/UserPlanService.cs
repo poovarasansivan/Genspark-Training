@@ -173,7 +173,7 @@ namespace FitnessTracking.Services
                     case "iscompleted":
                         query = isAscending ? query.OrderBy(up => up.IsCompleted) : query.OrderByDescending(up => up.IsCompleted);
                         break;
-                    case "username":
+                    case "name":
                         query = isAscending ? query.OrderBy(up => up.User.Name) : query.OrderByDescending(up => up.User.Name);
                         break;
                     case "workoutplanname":

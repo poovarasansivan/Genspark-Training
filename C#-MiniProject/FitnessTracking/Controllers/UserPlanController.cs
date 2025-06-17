@@ -22,7 +22,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult<IEnumerable<UserPlanResponseDto>>> GetAllUserPlansAsync()
         {
             _logger.LogInformation("Fetching all user plans");
@@ -38,7 +38,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<UserPlanResponseDto?>> GetUserPlanByIdAsync(Guid id)
         {
             if (id == Guid.Empty)
@@ -60,7 +60,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult> AddUserPlan([FromBody] UserPlanAddRequestDto userPlanDto)
         {
             if (!ModelState.IsValid)
@@ -75,7 +75,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult> DeleteUserPlan(Guid id)
         {
             if (id == Guid.Empty)
@@ -90,7 +90,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult> UpdateUserPlan(Guid id, [FromBody] UserPlanUpdateDto updateUserPlanDto)
         {
             if (id == Guid.Empty || updateUserPlanDto == null)
@@ -105,7 +105,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("user/{userId}")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<IEnumerable<UserPlanResponseDto>>> GetUserPlansByUserIdAsync(Guid userId)
         {
             if (userId == Guid.Empty)
@@ -127,7 +127,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("paginated")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<PaginatedResult<UserPlanResponseDto>>> GetPaginatedUserPlansAsync([FromQuery] UserWorkOutPlanFilterDto filterDto)
         {
             if (filterDto == null)

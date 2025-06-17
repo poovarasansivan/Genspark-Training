@@ -125,6 +125,7 @@ builder.Services.AddScoped<WorkOutLogRepository>();
 builder.Services.AddScoped<UserPlanRepository>();
 builder.Services.AddScoped<ProgressRepository>();
 builder.Services.AddScoped<ProgressImageRepository>();
+builder.Services.AddScoped<CoachClientMappingRepository>();
 
 // Add Services
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
@@ -136,6 +137,7 @@ builder.Services.AddScoped<IWorkOutLogService, WorkOutLogService>();
 builder.Services.AddScoped<IUserPlanService, UserPlanService>();
 builder.Services.AddScoped<IProgressService, ProgressService>();
 builder.Services.AddScoped<IProgressImageService, ProgressImageService>();
+builder.Services.AddScoped<ICoachMappingService, CoachClientMapService>();
 #endregion
 
 #region Authentication Configuration

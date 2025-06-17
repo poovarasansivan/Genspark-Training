@@ -21,7 +21,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<ProgressResponseDto?>> GetProgressByIdAsync(Guid id)
         {
             if (id == Guid.Empty)
@@ -43,7 +43,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("user/{userId}/workout/{workOutPlanId}")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<ProgressResponseDto?>> GetProgressByUserIdAndWorkOutPlanIdAsync(Guid userId, Guid workOutPlanId)
         {
             if (userId == Guid.Empty || workOutPlanId == Guid.Empty)
@@ -65,7 +65,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult<IEnumerable<ProgressResponseDto>>> GetAllProgressAsync()
         {
             try
@@ -107,7 +107,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("user/workout/{workOutPlanId}")]
-        [Authorize(Roles = "Admin,User")]
+        [Authorize(Roles = "Admin,User, Coach")]
         public async Task<ActionResult<IEnumerable<ProgressResponseDto>>> GetUserProgressByWorkOutPlanIdAsync(Guid workOutPlanId)
         {
             if (workOutPlanId == Guid.Empty)
@@ -130,7 +130,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("paginated")]
-        [Authorize(Roles = "Admin,User")]
+        [Authorize(Roles = "Admin,User, Coach")]
         public async Task<ActionResult<PaginatedResult<ProgressResponseDto>>> GetFilteredProgressAsync([FromQuery] ProgressUpdateFilterDto progressUpdateFilterDto)
         {
             try

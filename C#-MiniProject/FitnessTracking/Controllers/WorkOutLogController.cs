@@ -20,7 +20,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult<IEnumerable<WorkOutLogResponseDto>>> GetAllWorkOutLogsAsync()
         {
             _logger.LogInformation("Fetching all workout logs.");
@@ -36,7 +36,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<WorkOutLogResponseDto?>> GetWorkOutLogByIdAsync(Guid id)
         {
             if (id == Guid.Empty)
@@ -74,7 +74,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult> DeleteWorkOutLog(Guid id)
         {
             if (id == Guid.Empty)
@@ -90,7 +90,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("user/{userId}")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<IEnumerable<WorkOutLogResponseDto>>> GetUserWorkOutLogsAsync(Guid userId)
         {
             if (userId == Guid.Empty)
@@ -112,7 +112,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("paginated")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<PaginatedResult<WorkOutLogResponseDto>>> GetPaginatedWorkOutLogsAsync([FromQuery] WorkOutLogFilterDto filterDto)
         {
             if (filterDto == null)

@@ -1,0 +1,14 @@
+2025-06-12 09:00:16.163 +05:30 [INF] Application started
+2025-06-12 09:00:16.163 +05:30 [INF] Application started
+2025-06-12 09:19:08.826 +05:30 [INF] Application started
+2025-06-12 09:19:41.255 +05:30 [INF] Login attempt for em2025-06-12 09:19:41.255 +02025-06-12 09:19:42.703 +05:30 [INF] Login successful for2025-06-12 09:19:42.703 +05:32025-06-12 09:19:55.640 +05:30 [INF] GetFilteredProgressA2025-06-12 09:19:55.640 +05:30 [INF] GetFiltered2025-06-12 09:19:55.961 +05:30 [INF] GetFilteredProgressA2025-06-12 09:19:55.961 +05:30 [INF] GetFilter2025-06-12 09:20:00.995 +05:30 [INF] GetFilteredProgressA2025-06-12 09:20:00.995 +05:30 [INF] GetFiltered2025-06-12 09:20:01.057 +05:30 [INF] GetFilteredProgressA2025-06-12 09:20:01.057 +05:30 [INF] GetFilteredProgressAsync: Successfully fetched filtered progress.
+2025-06-12 14:33:35.160 +05:30 [INF] Application started
+2025-06-12 15:21:30.867 +05:30 [INF] Login attempt for em2025-06-12 15:21:30.867 2025-06-12 15:21:32.017 +05:30 [ERR] User is not active
+2025-06-12 15:21:32.018 +05:30 [WRN] Login failed for ema2025-06-12 15:21:32.018 +05:30 [WRN] Login failed for email: testuser@gmail.com
+FitnessTracking.Misc.CustomeExceptionHandler: User is not active
+   at FitnessTracking.Services.AuthenticationService.Login(UserLoginRequestDto user) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/AuthenticationService.cs:line 38
+   at FitnessTracking.Controllers.AuthenticationController.Login(UserLoginRequestDto loginRequestDto) in /Users/poovarasans/Desktop/Genspark/Task/Fitness2025-06-12 15:22:13.061 +05:30 [INF] Login attempt for em2025-06-12 15:22:13.0612025-06-12 15:22:13.420 +05:30 [INF] Login successful for2025-06-12 15:22:13.420 +02025-06-12 15:22:53.988 +05:30 [INF] Login attempt for em2025-06-12 15:22:53.988 +02025-06-12 15:22:54.141 +05:30 [INF] Login successful for2025-06-12 15:22:54.141 +05:32025-06-12 15:23:15.046 +05:30 [INF] Login attempt for em2025-06-12 15:23:15.0462025-06-12 15:23:15.197 +05:30 [INF] Login successful for2025-06-12 15:23:15.197 +05:30 [INF] Login successful for email: praveen@gmail.com
+2025-06-12 15:30:29.650 +05:30 [INF] Application started
+2025-06-12 15:30:48.958 +05:30 [INF] Fetching user with I2025-06-12 15:30:48.958 +05:30 [INF] Fetch2025-06-12 15:30:50.165 +05:30 [INF] User fetched success2025-06-12 15:30:50.165 +05:30 [INF] User fetched successfully for ID: "01975a77-4db6-7a99-b773-1578d904d824"
+2025-06-12 17:00:30.677 +05:30 [INF] Application started
+2025-06-12 17:00:46.127 +05:30 [INF] Login attempt for em2025-06-12 17:00:46.127 +02025-06-12 17:00:47.453 +05:30 [INF] Login successful for2025-06-12 17:00:47.453 +05:30 [INF] Login successful for email: poovarasan@gmail.com

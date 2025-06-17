@@ -16,6 +16,7 @@ namespace FitnessTracking.Contexts
         public DbSet<ProgressModel> ProgressUpdates { get; set; }
         public DbSet<ProgressImageModel> ProgressImage { get; set; }
 
+        public DbSet<CoachClientMap> CoachClientMaps { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -54,7 +55,24 @@ namespace FitnessTracking.Contexts
                 .WithOne(pi => pi.Progress)
                 .HasForeignKey(pi => pi.ProgressId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CoachClientMap>()
+                        .HasOne(m => m.Coach)
+                        .WithMany(u => u.Clients)
+                        .HasForeignKey(m => m.CoachId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<CoachClientMap>()
+                        .HasOne(m => m.Client)
+                        .WithMany(u => u.Coaches)
+                        .HasForeignKey(m => m.ClientId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<CoachClientMap>()
+                        .HasIndex(m => new { m.CoachId, m.ClientId })
+                        .IsUnique();
         }
+
 
     }
 }

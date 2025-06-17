@@ -22,7 +22,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User, Admin, Coach")]
         public async Task<ActionResult<UserModel?>> GetByUserId(Guid id)
         {
             _logger.LogInformation("Fetching user with ID: {UserId}", id);
@@ -39,7 +39,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult<IEnumerable<UserModel>>> GetAllUsersAsync()
         {
             _logger.LogInformation("Fetching all users");
@@ -56,7 +56,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPost]
-        // [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> AddUser([FromBody] UserRegisterDto user)
         {
             if (!ModelState.IsValid)
@@ -91,7 +91,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPut("password/{id}")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult> UpdatePassword(Guid id, [FromBody] UpdatePasswordDto updatePasswordDto)
         {
             if (id == Guid.Empty)
@@ -125,7 +125,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPut("status/{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult> UpdateUserStatus(Guid id, [FromBody] UpdateUserStatusDto updateUserStatusDto)
         {
             if (id == Guid.Empty || updateUserStatusDto == null)
@@ -142,7 +142,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("paginated")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<PaginatedResult<UserModel>>> GetPaginatedAllUsersAsync([FromQuery] PaginationParameterDto paginationParameterDto)
         {
             if (paginationParameterDto == null)

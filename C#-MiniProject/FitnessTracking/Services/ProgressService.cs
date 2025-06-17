@@ -241,6 +241,11 @@ namespace FitnessTracking.Services
                             ? query.OrderBy(p => p.Weight)
                             : query.OrderByDescending(p => p.Weight);
                         break;
+                    case "name":
+                        query = isAscending
+                            ? query.OrderBy(p => p.User != null ? p.User.Name : string.Empty)
+                            : query.OrderByDescending(p => p.User != null ? p.User.Name : string.Empty);
+                        break;
                     case "bodyfatpercentage":
                         query = isAscending
                             ? query.OrderBy(p => p.BodyFatPercentage)

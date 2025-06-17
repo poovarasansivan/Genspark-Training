@@ -26,6 +26,8 @@ namespace FitnessTracking.Models
         // Navigation
         public ICollection<WorkoutModel> Workouts { get; set; } = new List<WorkoutModel>();
         public ICollection<UserWorkOutPlanModel> UserWorkOutPlans { get; set; } = new List<UserWorkOutPlanModel>();
+        public ICollection<CoachClientMap> Clients { get; set; } = new List<CoachClientMap>();
+        public ICollection<CoachClientMap> Coaches { get; set; } = new List<CoachClientMap>(); 
 
     }
 }

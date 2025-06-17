@@ -21,7 +21,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult<IEnumerable<WorkOutResponeDto>>> GetAllWorkOutPlansAsync()
         {
             _logger.LogInformation("Fetching all workout plans.");
@@ -30,7 +30,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<WorkOutResponeDto?>> GetWorkOutPlanByIdAsync(Guid id)
         {
             if (id == Guid.Empty)
@@ -51,7 +51,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult> AddWorkOutPlan([FromBody] WorkOutAddRequestDto workOutAddDto)
         {
             if (!ModelState.IsValid)
@@ -67,7 +67,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult> DeleteWorkOutPlan(Guid id)
         {
             if (id == Guid.Empty)
@@ -83,7 +83,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Coach")]
         public async Task<ActionResult> UpdateWorkOutPlan(Guid id, [FromBody] WorkOutPlanUpdateDto updateWorkOutPlanDto)
         {
             if (id == Guid.Empty)
@@ -105,7 +105,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet("paginated")]
-        [Authorize(Roles = "Admin, User")]
+        [Authorize(Roles = "Admin, User, Coach")]
         public async Task<ActionResult<PaginatedResult<WorkOutResponeDto>>> GetWorkOutPlansByFilterAsync([FromQuery] WorkOutPlanFilterDto filter)
         {
             _logger.LogInformation("Fetching filtered workout plans with filter: {@Filter}", filter);
