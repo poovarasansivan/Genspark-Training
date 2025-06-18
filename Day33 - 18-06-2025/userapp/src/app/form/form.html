@@ -1,0 +1,200 @@
+<div class="bg-gray-100">
+  <app-notification
+    *ngIf="showSuccess"
+    [title]="'Success!'"
+    [message]="successMessage"
+    [type]="'success'"
+  ></app-notification>
+  <app-notification
+    *ngIf="showError"
+    [title]="'Error!'"
+    [message]="errorMessage"
+    [type]="'error'"
+  ></app-notification>
+  <div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="p-6 w-3/4 h-auto bg-white rounded-md shadow-md">
+      <p class="font-bold text-xl mb-5 text-emerald-800">Add New User</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="text-slate-800 font-bold">First Name</label>
+          <input
+            [(ngModel)]="user.firstName"
+            id="firstName"
+            name="firstName"
+            type="text"
+            placeholder="Enter your first name"
+            required
+            #fn="ngModel"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+          />
+          @if(fn.control.touched && fn.control.errors) {
+          <span class="text-red-500 text-sm">First name is required</span>
+          }
+        </div>
+
+        <div>
+          <label class="text-slate-800 font-bold">Last Name</label>
+          <input
+            [(ngModel)]="user.lastName"
+            id="lastName"
+            name="lastName"
+            type="text"
+            placeholder="Enter your last name"
+            required
+            #ln="ngModel"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+          />
+          @if(ln.control.touched && ln.control.errors) {
+          <span class="text-red-500 text-sm">Last name is required</span>
+          }
+        </div>
+
+        <div>
+          <label class="text-slate-800 font-bold">Age</label>
+          <input
+            [(ngModel)]="user.age"
+            id="age"
+            name="age"
+            type="number"
+            placeholder="Enter your age"
+            required
+            #age="ngModel"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+          />
+          @if(age.control.touched && age.control.errors) {
+          <span class="text-red-500 text-sm">Age is required</span>
+          }
+        </div>
+
+        <div>
+          <label class="text-slate-800 font-bold">Gender</label>
+          <select
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+            [(ngModel)]="user.gender"
+            required
+            #gender="ngModel"
+          >
+            <option value="">Select Option</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          @if(gender.control.touched && gender.control.errors) {
+          <span class="text-red-500 text-sm">Gender is required</span>
+          }
+        </div>
+
+        <div>
+          <label class="text-slate-800 font-bold">Email</label>
+          <input
+            [(ngModel)]="user.email"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+            #email="ngModel"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+          />
+          @if(email.control.touched && email.control.errors) {
+          <span class="text-red-500 text-sm">Email is required</span>
+          }
+        </div>
+
+        <div>
+          <label class="text-slate-800 font-bold">Phone</label>
+          <input
+            [(ngModel)]="user.phone"
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="Enter your phone number"
+            required
+            #phone="ngModel"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+          />
+          @if(phone.control.touched && phone.control.errors) {
+          <span class="text-red-500 text-sm">Phone number is required</span>
+          }
+        </div>
+
+        <div>
+          <label class="text-slate-800 font-bold">Username</label>
+          <input
+            [(ngModel)]="user.username"
+            id="username"
+            name="username"
+            type="text"
+            placeholder="Enter your username"
+            required
+            #username="ngModel"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+          />
+          @if(username.control.touched && username.control.errors) {
+          <span class="text-red-500 text-sm">Username is required</span>
+          }
+        </div>
+
+        <div>
+          <label class="text-slate-800 font-bold">Password</label>
+          <input
+            [(ngModel)]="user.password"
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            required
+            #password="ngModel"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+          />
+          @if(password.control.touched && password.control.errors) {
+          <span class="text-red-500 text-sm">Password is required</span>
+          }
+        </div>
+
+        <div>
+          <label class="text-slate-800 font-bold">State</label>
+          <select
+            [(ngModel)]="user.address.state"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+            required
+            #state="ngModel"
+          >
+            <option value="">Select Option</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+          </select>
+          @if(state.control.touched && state.control.errors) {
+          <span class="text-red-500 text-sm">State is required</span>
+          }
+        </div>
+
+        <div>
+          <label class="text-slate-800 font-bold">Role</label>
+          <select
+            [(ngModel)]="user.role"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+            required
+            #role="ngModel"
+            >
+            <option value="">Select Option</option>
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+            <option value="Guest">Guest</option>
+          </select>
+            @if(role.control.touched && role.control.errors) {
+            <span class="text-red-500 text-sm">Role is required</span>
+            }
+        </div>
+      </div>
+      <button
+        class="mt-6 w-full bg-teal-700 text-white px-4 py-2 rounded-md hover:bg-teal-800 transition-colors duration-300"
+        (click)="addUser(fn, ln, age,gender, email, phone, username, password, state, role)"
+      >
+        Add User
+      </button>
+    </div>
+  </div>
+</div>
