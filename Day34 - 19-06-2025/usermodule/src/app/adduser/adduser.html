@@ -1,0 +1,125 @@
+<div>
+  <app-notification
+    *ngIf="showSuccess"
+    [title]="'Success!'"
+    [message]="successMessage"
+    [type]="'success'"
+  ></app-notification>
+  <app-notification
+    *ngIf="showError"
+    [title]="'Error!'"
+    [message]="errorMessgae"
+    [type]="'error'"
+  ></app-notification>
+
+  <div class="h-screen flex items-center justify-center bg-gray-100">
+    <form
+      [formGroup]="userForm"
+      (ngSubmit)="onSubmit()"
+      class="max-w-3xl w-full bg-white p-8 shadow-md rounded-md"
+    >
+      <h2 class="text-2xl font-bold mb-6 text-center text-emerald-700">
+        Add New User
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-lg font-semibold text-gray-700"
+            >Username</label
+          >
+          <input
+            formControlName="username"
+            placeholder="Enter username"
+            class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+          />
+          <div
+            *ngIf="userForm.get('username')?.errors?.['required'] && userForm.get('username')?.touched"
+            class="text-red-500"
+          >
+            Username is required
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-lg font-semibold text-gray-700">Email</label>
+          <input
+            formControlName="email"
+            placeholder="Enter email"
+            class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+          />
+          <div
+            *ngIf="userForm.get('email')?.errors?.['required'] && userForm.get('email')?.touched"
+            class="text-red-500"
+          >
+            Email must be valid address
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-lg font-semibold text-gray-700"
+            >Password</label
+          >
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Enter password"
+            class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+          />
+          <div
+            *ngIf="userForm.get('password')?.errors?.['required'] && userForm.get('password')?.touched"
+            class="text-red-500"
+          >
+            Password is required
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-lg font-semibold text-gray-700"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Confirm password"
+            class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+          />
+          <div
+            *ngIf="userForm.get('confirmPassword')?.errors?.['required'] && userForm.get('confirmPassword')?.touched"
+            class="text-red-500"
+          >
+            Confirm Password is required
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-lg font-semibold text-gray-700">Role</label>
+          <select
+            formControlName="role"
+            class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+          >
+            <option value="">Select Role</option>
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+            <option value="Guest">Guest</option>
+          </select>
+          <div
+            *ngIf="userForm.get('role')?.errors?.['required'] && userForm.get('role')?.touched"
+            class="text-red-500"
+          >
+            Role is required
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 flex justify-center">
+        <button
+          type="submit"
+          class="bg-emerald-600 text-white w-full py-3 rounded-md hover:bg-emerald-800 transition"
+          [disabled]="userForm.invalid"
+        >
+          Add User
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

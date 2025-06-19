@@ -1,0 +1,30 @@
+<nav class="bg-white border-b border-gray-200 px-6 py-6 flex justify-between items-center shadow-md sm:px-12">
+
+    <div class="flex items-center space-x-4 hover:text-slate-600">
+    <lucide-angular [name]="UserIcon" [size]="30"></lucide-angular>
+    <a routerLink="/home" class="text-gray-700 text-2xl font-bold hover:text-slate-600">User Dashboard</a>
+    </div>
+  <div class="hidden md:flex space-x-8">
+    <div class="flex items-center space-x-4 hover:text-slate-600">
+        <lucide-angular [name]="homeIcon" [size]="24"></lucide-angular>
+        <a routerLink="/home" class="text-gray-700 text-lg font-semibold hover:text-slate-600">Home</a>
+    </div>
+    <div class="flex items-center space-x-4 hover:text-slate-600">
+        <lucide-angular [name]="plusIcon" [size]="24"></lucide-angular>
+        <a routerLink="/add-user" class="text-gray-700 text-lg font-semibold hover:text-slate-600">Add User</a>
+    </div>
+</div>
+
+ <div class="md:hidden">
+  <button (click)="toggleMenu()" class="text-3xl text-gray-700 focus:outline-none">
+    <span *ngIf="!menuOpen">&#9776;</span> 
+    <span *ngIf="menuOpen">&#10006;</span> 
+  </button>
+</div>
+
+</nav>
+
+<div *ngIf="menuOpen" class="md:hidden px-4 py-2 space-y-2 bg-white border-b border-gray-200">
+  <a routerLink="home" class="block text-gray-700 text-lg hover:text-slate-600">Home</a>
+  <a routerLink="about" class="block text-gray-700 text-lg hover:text-slate-600">About</a>
+</div>
