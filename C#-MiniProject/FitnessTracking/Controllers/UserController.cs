@@ -193,16 +193,16 @@ namespace FitnessTracking.Controllers
 
         private void SendResetEmail(string email, string resetLink)
         {
-            var fromAddress = new MailAddress("poovarasansivan3@gmail.com", "Fitness Tracking App");
+            var fromAddress = new MailAddress("your@gmail.com", "Fitness Tracking App");
             var toAddress = new MailAddress(email);
-            const string fromPassword = "zqjn tlmu myzg bchr";
+            const string fromPassword = "enter your password here"; // Use a secure way to store and retrieve passwords
             const string subject = "Reset your password";
             string body = $"Click the link to reset your password: {resetLink}";
 
             var smtp = new SmtpClient
             {
-                Host = "smtp.gmail.com",
-                Port = 587,
+                Host = "replace with your smtp server",
+                Port = "replace with your port number", 
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,

@@ -21,11 +21,11 @@ namespace FitnessTracking.Services
 
         public async Task SendEmailAsync(string userEmail, string subject, string message)
         {
-            var smtpHost = "smtp.gmail.com";
-            var smtpPort = 587;
-            var smtpUser = "poovarasansivan3@gmail.com";
-            var smtpPass = "zqjn tlmu myzg bchr";
-            var fromEmailAddress = "poovarasansivan3@gmail.com";
+            var smtpHost = "replace with your smtp server";
+            var smtpPort = "replace with your port number";
+            var smtpUser = "replace with your smtp user"; 
+            var smtpPass = "replace with your smtp password";
+            var fromEmailAddress = "repalace with your from email address";
             var fromDisplayName = "Fitness Tracking Application";
 
             var mailMessage = new MailMessage
