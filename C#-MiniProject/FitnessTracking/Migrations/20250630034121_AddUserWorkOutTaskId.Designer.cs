@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FitnessTracking.Migrations
 {
     [DbContext(typeof(FitnessContext))]
-    [Migration("20250617113735_AddCoachClientMap")]
-    partial class AddCoachClientMap
+    [Migration("20250630034121_AddUserWorkOutTaskId")]
+    partial class AddUserWorkOutTaskId
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,6 +173,9 @@ namespace FitnessTracking.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid?>("UserWorkOutTaskId")
+                        .HasColumnType("uuid");
+
                     b.Property<Guid>("WorkOutPlanId")
                         .HasColumnType("uuid");
 
@@ -180,9 +183,63 @@ namespace FitnessTracking.Migrations
 
                     b.HasIndex("UserId");
 
+                    b.HasIndex("UserWorkOutTaskId");
+
                     b.HasIndex("WorkOutPlanId");
 
                     b.ToTable("UserWorkOutPlans");
+                });
+
+            modelBuilder.Entity("FitnessTracking.Models.UserWorkOutTask", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CoachId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CompletedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ExerciseName")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<Guid>("PlanId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Reps")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("ScheduledDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Sets")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<double?>("Weight")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CoachId");
+
+                    b.HasIndex("PlanId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserWorkOutTask");
                 });
 
             modelBuilder.Entity("FitnessTracking.Models.WorkOutPlanModel", b =>
@@ -248,12 +305,17 @@ namespace FitnessTracking.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid?>("UserWorkOutTaskId")
+                        .HasColumnType("uuid");
+
                     b.Property<Guid>("WorkOutPlanId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UserWorkOutTaskId");
 
                     b.HasIndex("WorkOutPlanId");
 
@@ -317,8 +379,12 @@ namespace FitnessTracking.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("FitnessTracking.Models.UserWorkOutTask", null)
+                        .WithMany("UserWorkOutPlans")
+                        .HasForeignKey("UserWorkOutTaskId");
+
                     b.HasOne("FitnessTracking.Models.WorkOutPlanModel", "WorkOutPlan")
-                        .WithMany()
+                        .WithMany("UserWorkOutPlans")
                         .HasForeignKey("WorkOutPlanId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -328,6 +394,33 @@ namespace FitnessTracking.Migrations
                     b.Navigation("WorkOutPlan");
                 });
 
+            modelBuilder.Entity("FitnessTracking.Models.UserWorkOutTask", b =>
+                {
+                    b.HasOne("FitnessTracking.Models.UserModel", "Coach")
+                        .WithMany()
+                        .HasForeignKey("CoachId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("FitnessTracking.Models.WorkOutPlanModel", "Plan")
+                        .WithMany()
+                        .HasForeignKey("PlanId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FitnessTracking.Models.UserModel", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Coach");
+
+                    b.Navigation("Plan");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("FitnessTracking.Models.WorkoutModel", b =>
                 {
                     b.HasOne("FitnessTracking.Models.UserModel", "User")
@@ -335,6 +428,10 @@ namespace FitnessTracking.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("FitnessTracking.Models.UserWorkOutTask", null)
+                        .WithMany("Workouts")
+                        .HasForeignKey("UserWorkOutTaskId");
 
                     b.HasOne("FitnessTracking.Models.WorkOutPlanModel", "WorkOutPlan")
                         .WithMany("Workouts")
@@ -363,9 +460,18 @@ namespace FitnessTracking.Migrations
                     b.Navigation("Workouts");
                 });
 
+            modelBuilder.Entity("FitnessTracking.Models.UserWorkOutTask", b =>
+                {
+                    b.Navigation("UserWorkOutPlans");
+
+                    b.Navigation("Workouts");
+                });
+
             modelBuilder.Entity("FitnessTracking.Models.WorkOutPlanModel", b =>
                 {
                     b.Navigation("ProgressUpdates");
+
+                    b.Navigation("UserWorkOutPlans");
 
                     b.Navigation("Workouts");
                 });

@@ -12,5 +12,8 @@ namespace FitnessTracking.Interfaces
         Task DeleteWorkOutLogAsync(Guid id);
         Task<IEnumerable<WorkOutLogResponseDto>> GetUserWorkOutLogsAsync(Guid userId);
         Task<PaginatedResult<WorkOutLogResponseDto>> GetPaginatedWorkOutLogsAsync(WorkOutLogFilterDto filterDto);
+        Task<IEnumerable<WorkOutLogResponseDto>> GetWorkOutLogByUserIdAndWorkPlanId(Guid userId, Guid workOutPlanId);
+        Task<IEnumerable<WorkOutLogResponseDto>> GetWorkOutLogsByCoachId(Guid coachId);
+        Task UpdateWorkOutLogAsync(Guid id, WorkOutLogUpdateDto updateWorkOutLogDto);
     }
 }

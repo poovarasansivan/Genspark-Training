@@ -58,7 +58,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User, Admin")]
         public async Task<ActionResult> AddWorkOutLog([FromBody] WorkOutLogAddRequestDto workOutLogDto)
         {
             if (!ModelState.IsValid)
@@ -131,6 +131,66 @@ namespace FitnessTracking.Controllers
             }
 
             return Ok(ResponseHandler.Success(paginatedLogs, "Paginated workout logs fetched successfully"));
+        }
+
+        [HttpGet("user/{userId}/workoutplan/{workOutPlanId}")]
+        [Authorize(Roles = "Admin, User, Coach")]
+        public async Task<ActionResult<IEnumerable<WorkOutLogResponseDto>>> GetWorkOutLogByUserIdAndWorkPlanId(Guid userId, Guid workOutPlanId)
+        {
+            if (userId == Guid.Empty || workOutPlanId == Guid.Empty)
+            {
+                _logger.LogWarning("User ID or WorkOut Plan ID is empty in GetWorkOutLogByUserIdAndWorkPlanId.");
+                return BadRequest(ResponseHandler.Error<IEnumerable<WorkOutLogResponseDto>>("User ID and WorkOut Plan ID cannot be empty or null"));
+            }
+            _logger.LogInformation("Fetching workout logs for User ID: {UserId} and WorkOut Plan ID: {WorkOutPlanId}", userId, workOutPlanId);
+            var workOutLogs = await _workOutLogService.GetWorkOutLogByUserIdAndWorkPlanId(userId, workOutPlanId);
+            if (workOutLogs == null || !workOutLogs.Any())
+            {
+                _logger.LogWarning("No workout logs found for User ID: {UserId} and WorkOut Plan ID: {WorkOutPlanId}", userId, workOutPlanId);
+                return NotFound(ResponseHandler.Error<IEnumerable<WorkOutLogResponseDto>>("No workout logs found for this user and workout plan"));
+            }
+            return Ok(ResponseHandler.Success(workOutLogs, "Workout logs fetched successfully for user and workout plan"));
+
+        }
+        [HttpGet("coach/{coachId}")]
+        [Authorize(Roles = "Coach")]
+        public async Task<ActionResult<IEnumerable<WorkOutLogResponseDto>>> GetWorkOutLogsByCoachId(Guid coachId)
+        {
+            if (coachId == Guid.Empty)
+            {
+                _logger.LogWarning("Coach ID is empty in GetWorkOutLogsByCoachId.");
+                return BadRequest(ResponseHandler.Error<IEnumerable<WorkOutLogResponseDto>>("Coach ID cannot be empty or null"));
+            }
+
+            _logger.LogInformation("Fetching workout logs for Coach ID: {CoachId}", coachId);
+            var workOutLogs = await _workOutLogService.GetWorkOutLogsByCoachId(coachId);
+
+            if (workOutLogs == null || !workOutLogs.Any())
+            {
+                _logger.LogWarning("No workout logs found for Coach ID: {CoachId}", coachId);
+                return NotFound(ResponseHandler.Error<IEnumerable<WorkOutLogResponseDto>>("No workout logs found for this coach"));
+            }
+
+            return Ok(ResponseHandler.Success(workOutLogs, "Workout logs fetched successfully for coach"));
+        }
+
+        [HttpPatch("{id}")]
+        [Authorize(Roles = "User")]
+        public async Task<ActionResult> UpdateWorkOutLog(Guid id, [FromBody] WorkOutLogUpdateDto updateWorkOutLogDto)
+        {
+            if (id == Guid.Empty)
+            {
+                _logger.LogWarning("Workout log ID is empty in UpdateWorkOutLog.");
+                return BadRequest(ResponseHandler.Error<object>("WorkOut Log ID cannot be empty or null"));
+            }
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Invalid model state for updating workout log.");
+                return BadRequest(ModelState);
+            }
+            _logger.LogInformation("Updating workout log with ID: {Id}", id);
+            await _workOutLogService.UpdateWorkOutLogAsync(id, updateWorkOutLogDto);
+            return Ok(ResponseHandler.Success("Workout log updated successfully"));
         }
     }
 }

@@ -21,7 +21,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin, Coach")]
+        [Authorize(Roles = "Admin, Coach, User")]
         public async Task<ActionResult<IEnumerable<WorkOutResponeDto>>> GetAllWorkOutPlansAsync()
         {
             _logger.LogInformation("Fetching all workout plans.");
@@ -117,6 +117,68 @@ namespace FitnessTracking.Controllers
                 return NotFound(ResponseHandler.Error<IEnumerable<WorkOutResponeDto>>("No workout plans found"));
             }
 
+            return Ok(ResponseHandler.Success(workOutPlans, "Workout plans fetched successfully"));
+        }
+
+        [HttpGet("grouped/{id}")]
+        [Authorize(Roles = "Admin, User, Coach")]
+        public async Task<ActionResult<IEnumerable<GroupedResponseDto>>> GetGroupedWorkPlans(Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                _logger.LogWarning("Workout plan ID is empty for grouped plans.");
+                throw new CustomeExceptionHandler("Workout Plan ID could not be empty or null", 404);
+            }
+
+            _logger.LogInformation("Fetching grouped workout plans for ID: {Id}", id);
+            var groupedPlans = await _workOutPlanService.GetGroupedWorkPlans(id);
+
+            if (groupedPlans == null || !groupedPlans.Any())
+            {
+                _logger.LogWarning("No grouped workout plans found for ID: {Id}", id);
+                return NotFound(ResponseHandler.Error<IEnumerable<GroupedResponseDto>>("No grouped workout plans found"));
+            }
+
+            return Ok(ResponseHandler.Success(groupedPlans, "Grouped workout plans fetched successfully"));
+        }
+        [HttpGet("grouppedcoach/{coachId}")]
+        [Authorize(Roles = "Coach")]
+        public async Task<ActionResult<IEnumerable<GroupedResponseDto>>> GetGroupedWorkPlansByCoachId(Guid coachId)
+        {
+            if (coachId == Guid.Empty)
+            {
+                _logger.LogWarning("Coach ID is empty for grouped plans.");
+                throw new CustomeExceptionHandler("Coach ID could not be empty or null", 404);
+            }
+
+            _logger.LogInformation("Fetching grouped workout plans for Coach ID: {CoachId}", coachId);
+            var groupedPlans = await _workOutPlanService.GetGroupedWorkPlansByCoachId(coachId);
+
+            if (groupedPlans == null || !groupedPlans.Any())
+            {
+                _logger.LogWarning("No grouped workout plans found for Coach ID: {CoachId}", coachId);
+                return NotFound(ResponseHandler.Error<IEnumerable<GroupedResponseDto>>("No grouped workout plans found"));
+            }
+
+            return Ok(ResponseHandler.Success(groupedPlans, "Grouped workout plans by coach fetched successfully"));
+        }
+
+        [HttpGet("userenrolledplan/{userId}")]
+        [Authorize(Roles = "User")]
+        public async Task<ActionResult<IEnumerable<GroupedResponseDto>>> GetWorkOutPlansByCoachIdAndPlanId(Guid userId)
+        {
+            if (userId == Guid.Empty)
+            {
+                _logger.LogWarning("Coach ID or Plan ID is empty for fetching workout plans.");
+                throw new CustomeExceptionHandler("Coach ID and Plan ID could not be empty or null", 404);
+            }
+            _logger.LogInformation("Fetching workout plans for User ID: {userId}", userId);
+            var workOutPlans = await _workOutPlanService.GetWorkOutPlansByCoachIdAndPlanId(userId);
+            if (workOutPlans == null || !workOutPlans.Any())
+            {
+                _logger.LogWarning("No workout plans found for Coach ID: {userId} ", userId);
+                return NotFound(ResponseHandler.Error<IEnumerable<GroupedResponseDto>>("No workout plans found"));
+            }
             return Ok(ResponseHandler.Success(workOutPlans, "Workout plans fetched successfully"));
         }
     }

@@ -12,16 +12,18 @@ namespace FitnessTracking.Services
     {
         private readonly UserPlanRepository _userPlanRepository;
         private readonly WorkOutPlanRepository _workOutPlanRepository;
+        private readonly INotificationService _notificationService;
 
         private readonly FitnessContext _context;
-        public UserPlanService(UserPlanRepository userPlanRepository, WorkOutPlanRepository workOutPlanRepository, FitnessContext context)
+        public UserPlanService(UserPlanRepository userPlanRepository,INotificationService notificationService, WorkOutPlanRepository workOutPlanRepository, FitnessContext context)
         {
             _context = context;
             _userPlanRepository = userPlanRepository;
+            _notificationService = notificationService;
             _workOutPlanRepository = workOutPlanRepository;
         }
 
-        public Task AddUserPlanAsync(UserPlanAddRequestDto userPlanDto)
+        public async Task AddUserPlanAsync(UserPlanAddRequestDto userPlanDto)
         {
             if (userPlanDto == null)
                 throw new CustomeExceptionHandler("User Plan data cannot be null", 400);
@@ -38,8 +40,10 @@ namespace FitnessTracking.Services
                 UpdatedAt = null
             };
 
+            await _notificationService.SendNotificationAsync(userPlan.UserId.ToString(), "You have been assigned a new workout plan.", true);
+
             _context.UserWorkOutPlans.Add(userPlan);
-            return _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public Task DeleteUserPlanAsync(Guid id)
@@ -57,20 +61,26 @@ namespace FitnessTracking.Services
 
         public async Task<IEnumerable<UserPlanResponseDto>> GetAllUserPlansAsync()
         {
-            var userPlans = await _context.UserWorkOutPlans
-                 .Include(up => up.User)
-                 .Include(up => up.WorkOutPlan)
-                 .Select(up => new UserPlanResponseDto
-                 {
-                     Id = up.Id,
-                     UserId = up.UserId,
-                     UserName = up.User != null ? up.User.Name : "Unknown User",
-                     WorkOutPlanId = up.WorkOutPlanId,
-                     WorkOutPlanName = up.WorkOutPlan != null ? up.WorkOutPlan.Name : "No Plan",
-                     IsCompleted = up.IsCompleted,
-                     CreatedAt = up.CreatedAt,
-                     UpdatedAt = up.UpdatedAt
-                 }).ToListAsync();
+            var userPlans = await (from up in _context.UserWorkOutPlans
+                                   join u in _context.Users on up.UserId equals u.Id
+                                   join plan in _context.WorkOutPlans on up.WorkOutPlanId equals plan.Id
+                                   join map in _context.CoachClientMaps on u.Id equals map.ClientId
+                                   join coach in _context.Users on map.CoachId equals coach.Id
+                                   select new UserPlanResponseDto
+                                   {
+                                       Id = up.Id,
+                                       UserId = u.Id,
+                                       UserName = u.Name,
+                                       WorkOutPlanId = plan.Id,
+                                       WorkOutPlanName = plan.Name,
+                                       CoachId = coach.Id,
+                                       CoachName = coach.Name,
+                                       IsCompleted = up.IsCompleted,
+                                       StartDate = plan.StartDate,
+                                       EndDate = plan.EndDate,
+                                       CreatedAt = up.CreatedAt,
+                                       UpdatedAt = up.UpdatedAt
+                                   }).ToListAsync();
 
             if (userPlans == null || !userPlans.Any())
                 throw new CustomeExceptionHandler("No user plans found", 404);
@@ -131,16 +141,18 @@ namespace FitnessTracking.Services
             if (id == Guid.Empty)
                 throw new CustomeExceptionHandler("User Plan ID could not be empty or null", 404);
 
-            var userPlan = _context.UserWorkOutPlans.FirstOrDefaultAsync(up => up.Id == id).Result;
+            var userPlan = await _context.UserWorkOutPlans.FirstOrDefaultAsync(up => up.Id == id);
             if (userPlan == null)
                 throw new CustomeExceptionHandler("User Plan not found", 404);
 
             userPlan.IsCompleted = updateUserPlanDto.IsCompleted;
-            userPlan.UpdatedAt = DateTime.SpecifyKind(updateUserPlanDto.UpdatedAt ?? DateTime.UtcNow, DateTimeKind.Utc);
+            userPlan.UpdatedAt = updateUserPlanDto.UpdatedAt.HasValue
+                ? DateTime.SpecifyKind(updateUserPlanDto.UpdatedAt.Value, DateTimeKind.Utc)
+                : DateTime.UtcNow;
 
-            _context.UserWorkOutPlans.Update(userPlan);
             await _context.SaveChangesAsync();
         }
+
 
         public async Task<PaginatedResult<UserPlanResponseDto>> GetPaginatedUserPlansAsync(UserWorkOutPlanFilterDto filterDto)
         {

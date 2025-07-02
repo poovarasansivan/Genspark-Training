@@ -1,0 +1,240 @@
+<nav
+  class="bg-white border-b border-gray-300 px-6 py-5 flex justify-between items-center shadow-lg sm:px-12"
+>
+  <div class="flex items-center space-x-4">
+    <lucide-angular
+      [name]="UserIcon"
+      [size]="25"
+      color="oklch(59.6% 0.145 163.225)"
+    ></lucide-angular>
+    <a routerLink="/home" class="text-lg font-semibold hover:text-slate-600"
+      ><span class="text-blue-700">Fitness</span>
+      <span class="text-emerald-600 ml-1">Tracking</span></a
+    >
+  </div>
+
+  <div class="hidden md:flex items-center space-x-8">
+    @if(loggedInUserRole==='Admin'){
+    <a
+      routerLink="/home"
+      class="relative group text-slate-700 text-lg font-semibold hover:text-slate-800"
+    >
+      Home
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    } @if(loggedInUserRole==='Coach'){
+    <a
+      routerLink="/coach-home"
+      class="relative group text-slate-700 text-lg font-semibold hover:text-slate-800"
+    >
+      Home
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    } @if(loggedInUserRole==='User'){
+    <a
+      routerLink="/client-home"
+      class="relative group text-slate-700 text-lg font-semibold hover:text-slate-800"
+    >
+      Home
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    } @if(loggedInUserRole==='Admin'){
+    <a
+      routerLink="/manage-user"
+      class="relative group text-slate-700 text-lg font-semibold hover:text-slate-800"
+      >Manage User
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    <a
+      routerLink="/manage-coach"
+      class="relative group text-slate-700 text-lg font-semibold hover:text-slate-800"
+      >Manage Coach
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    } @if (loggedInUserRole==='Coach') {
+    <a
+      routerLink="/manage-coach"
+      class="relative group text-slate-700 text-lg font-semibold hover:text-slate-800"
+      >Manage Coach
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    }
+
+    <a
+      routerLink="/manage-plan"
+      class="relative group text-slate-700 text-lg font-semibold hover:text-slate-800"
+      >Plans
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+
+    <div
+      class="relative"
+      (mouseenter)="showDropdown()"
+      (mouseleave)="onMouseLeaveDropdownArea()"
+      [class.z-50]="dropdownOpen"
+    >
+      <div
+        class="flex items-center space-x-2 hover:text-slate-600 cursor-pointer"
+      >
+        <span class="text-gray-700 text-lg font-semibold">Workouts</span>
+      </div>
+      <div
+        *ngIf="dropdownOpen"
+        class="absolute left-0 mt-2 w-50 bg-white border-slate-100 rounded-md shadow-md"
+        (mouseenter)="cancelCloseTimeout()"
+        (mouseleave)="scheduleDropdownClose()"
+      >
+        <a
+          routerLink="/workout-logs"
+          (click)="closeDropdown()"
+          class="block px-4 py-3 text-lg font-semibold text-slate-700 border-b border-slate-300 hover:bg-gray-100 hover:rounded-md hover:text-slate-800"
+        >
+          Daily Workout Logs
+        </a>
+        <a
+          routerLink="/weekly-progress"
+          (click)="closeDropdown()"
+          class="block px-4 py-3 text-lg font-semibold text-slate-700 hover:bg-gray-100 hover:rounded-md hover:text-slate-800"
+        >
+          Weekly Progress
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex items-center space-x-4 md:space-x-6">
+    <div class="relative" (click)="toggleAvatarDropdown()" #avatarMenuRef>
+      <lucide-angular
+        [name]="circleUserIcon"
+        [size]="32"
+        color="oklch(43.7% 0.078 188.216)"
+      ></lucide-angular>
+      <div
+        *ngIf="avatarDropdownOpen"
+        class="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-md z-100"
+      >
+        <!-- <a
+          routerLink="/profile"
+          class="block px-4 py-2 text-slate-700 text-medium text-lg hover:bg-gray-100 border-b border-slate-300 hover:rounded-md"
+          (click)="closeAvatarDropdown()"
+        >
+          Profile
+        </a> -->
+        <a
+          (click)="logout()"
+          class="block px-4 py-2 text-slate-700 text-medium text-lg hover:bg-gray-100"
+        >
+          <div class="flex flex-row items-center space-x-2 gap-3">
+            <lucide-angular
+              [name]="logoutIcon"
+              [size]="20"
+              color="oklch(43.7% 0.078 188.216)"
+            ></lucide-angular>
+            Logout
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="md:hidden">
+      <button
+        (click)="toggleMenu()"
+        class="text-3xl mt-2 text-gray-700 focus:outline-none"
+      >
+        <span *ngIf="!menuOpen">
+          <lucide-angular
+            [name]="openIcon"
+            [size]="32"
+            color="oklch(54.6% 0.245 262.881)"
+          ></lucide-angular
+        ></span>
+        <span *ngIf="menuOpen"
+          ><lucide-angular
+            [name]="closeIcon"
+            [size]="32"
+            color="oklch(57.7% 0.245 27.325)"
+          ></lucide-angular
+        ></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div
+  *ngIf="menuOpen"
+  class="md:hidden px-6 py-4 space-y-4 bg-white border-b border-gray-200"
+>
+  @if(loggedInUserRole==='Admin'){
+  <a
+    routerLink="/home"
+    class="block text-slate-700 font-medium text-lg hover:text-slate-800"
+    >Home</a
+  >
+  }
+   @if(loggedInUserRole==='Coach'){
+  <a
+    routerLink="/coach-home"
+    class="block text-slate-700 font-medium text-lg hover:text-slate-800"
+    >Home</a
+  >
+  }
+  @if(loggedInUserRole==='User'){
+  <a
+    routerLink="/client-home"
+    class="block text-slate-700 font-medium text-lg hover:text-slate-800"
+    >Home</a
+  >
+  } @if(loggedInUserRole === 'Admin'){
+  <a
+    routerLink="/manage-user"
+    class="block text-slate-700 font-medium text-lg hover:text-slate-800"
+    >Manage User</a
+  >
+  } @if(loggedInUserRole==='Coach' || loggedInUserRole === 'Admin') {
+  <a
+    routerLink="/manage-coach"
+    class="block text-slate-700 font-medium text-lg hover:text-slate-800"
+    >Manage Coach</a
+  >
+  }
+  <a
+    routerLink="/manage-plan"
+    class="block text-slate-700 font-medium text-lg hover:text-slate-800"
+    >Plans</a
+  >
+
+  <div class="block">
+    <button
+      (click)="toggleWorkoutMenu()"
+      class="text-slate-700 font-medium text-lg w-full text-left hover:text-slate-600"
+    >
+      Workouts
+    </button>
+    <div *ngIf="showWorkoutMenu" class="pl-4">
+      <a
+        routerLink="/workout-logs"
+        class="block text-slate-700 font-medium text-lg py-2 hover:text-slate-800"
+        >Daily WorkOut Logs</a
+      >
+      <a
+        routerLink="/weekly-progress"
+        class="block text-slate-700 font-medium text-lg py-2 hover:text-slate-800"
+        >Weekly Progress</a
+      >
+    </div>
+  </div>
+</div>

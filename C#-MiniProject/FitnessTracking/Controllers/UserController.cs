@@ -5,6 +5,10 @@ using FitnessTracking.Models.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using FitnessTracking.Misc;
 using Microsoft.Extensions.Logging;
+using System.Net.Mail;
+using System.Net;
+using FitnessTracking.Contexts;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace FitnessTracking.Controllers
 {
@@ -14,11 +18,15 @@ namespace FitnessTracking.Controllers
     {
         private readonly IUserService _userService;
         private readonly ILogger<UserController> _logger;
+        private readonly FitnessContext _context;
+        private readonly IMemoryCache _cache;
 
-        public UserController(IUserService userService, ILogger<UserController> logger)
+        public UserController(IUserService userService, ILogger<UserController> logger, FitnessContext context, IMemoryCache cache)
         {
             _userService = userService;
             _logger = logger;
+            _context = context;
+            _cache = cache;
         }
 
         [HttpGet("{id}")]
@@ -73,7 +81,7 @@ namespace FitnessTracking.Controllers
             return Ok(ResponseHandler.Success("User created successfully"));
         }
 
-        [HttpPut("{id}")]
+        [HttpPatch("{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult> UpdateUser(Guid id, [FromBody] UpdateUserDto updateUserDto)
         {
@@ -90,22 +98,28 @@ namespace FitnessTracking.Controllers
             return Ok(ResponseHandler.Success("User updated successfully"));
         }
 
-        [HttpPut("password/{id}")]
-        [Authorize(Roles = "Admin, User, Coach")]
-        public async Task<ActionResult> UpdatePassword(Guid id, [FromBody] UpdatePasswordDto updatePasswordDto)
+        [HttpPost("reset-password")]
+        public async Task<ActionResult> ResetPassword([FromBody] UpdatePasswordDto model)
         {
-            if (id == Guid.Empty)
+            if (string.IsNullOrWhiteSpace(model.Token) || string.IsNullOrWhiteSpace(model.Password))
             {
-                _logger.LogWarning("UpdatePassword called with empty ID");
-                throw new CustomeExceptionHandler("User Id cannot be empty", 404);
+                return BadRequest("Token and password are required.");
             }
 
-            _logger.LogInformation("Updating password for user ID: {UserId}", id);
-            await _userService.UpdatePasswordAsync(id, updatePasswordDto);
-            _logger.LogInformation("Password updated successfully for user ID: {UserId}", id);
+            if (!_cache.TryGetValue(model.Token, out Guid userId))
+            {
+                _logger.LogWarning("Invalid or expired reset token: {Token}", model.Token);
+                return BadRequest("Invalid or expired reset token.");
+            }
 
-            return Ok(ResponseHandler.Success("Password updated successfully"));
+            await _userService.UpdatePasswordAsync(userId, model);
+
+            _cache.Remove(model.Token);
+
+            _logger.LogInformation("Password reset successfully for user ID: {UserId}", userId);
+            return Ok(ResponseHandler.Success("Password has been reset successfully."));
         }
+
 
         [HttpDelete("{id}")]
         [Authorize(Roles = "Admin")]
@@ -158,6 +172,48 @@ namespace FitnessTracking.Controllers
 
             _logger.LogInformation("Paginated users fetched successfully");
             return Ok(ResponseHandler.Success(paginatedUsers, "Paginated users fetched successfully"));
+        }
+
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotpasswordModel forgotPasswordModel)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Email == forgotPasswordModel.Email);
+            if (user == null)
+            {
+                _logger.LogWarning("Forgot password request failed: User not found for email {Email}.", forgotPasswordModel.Email);
+                return NotFound("User not found");
+            }
+            var token = Guid.NewGuid().ToString("N");
+            _cache.Set(token, user.Id, TimeSpan.FromMinutes(15));
+
+            var resetUrl = $"http://localhost:4200/reset-password?token={token}";
+            SendResetEmail(forgotPasswordModel.Email, resetUrl);
+            return Ok(new { message = "Password reset link sent to your email." });
+        }
+
+        private void SendResetEmail(string email, string resetLink)
+        {
+            var fromAddress = new MailAddress("poovarasansivan3@gmail.com", "Fitness Tracking App");
+            var toAddress = new MailAddress(email);
+            const string fromPassword = "zqjn tlmu myzg bchr";
+            const string subject = "Reset your password";
+            string body = $"Click the link to reset your password: {resetLink}";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            };
+            smtp.Send(message);
         }
     }
 }

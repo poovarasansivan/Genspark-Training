@@ -1,0 +1,264 @@
+<div class="min-h-screen bg-slate-100 p-3 md:p-7">
+   <app-popup></app-popup>
+  <h3 class="text-slate-700 text-xl md:text-2xl font-semibold mb-4">
+    Manage Coach
+  </h3>
+  <div class="bg-white shadow-md rounded-lg p-6 w-full">
+    <div
+      class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4"
+    >
+      <div class="flex flex-col md:flex-row items-center gap-3">
+        <div class="relative w-full md:w-96">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <lucide-angular
+              [name]="searchIcon"
+              class="w-5 h-5 text-gray-400"
+            ></lucide-angular>
+          </div>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            (input)="onSearchInput(searchTerm)"
+            placeholder="Type to search..."
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+      </div>
+      @if(currentUserRole === 'Admin') {
+        <button
+          (click)="showAddCoachForm = true"
+          class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+        >
+          <lucide-angular [name]="addIcon" class="w-5 h-5 mr-2"></lucide-angular>
+          Add New Mapping
+        </button>
+      }
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white text-md text-left rounded-md">
+        <thead>
+          <tr class="bg-slate-100 text-gray-700">
+            <th class="py-2 px-4 border-b whitespace-nowrap">S No</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Coach ID</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Coach Name</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Coach Email</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">User Name</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">User Email</th>
+            @if(currentUserRole === 'Admin') {
+              <th class="py-2 px-4 border-b whitespace-nowrap">Actions</th>
+            }
+          </tr>
+        </thead>
+        <ng-container *ngFor="let coach of filteredCoaches; let i = index">
+          <tbody>
+            <tr class="hover:bg-slate-50">
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ (pageNumber - 1) * pageSize + i + 1 }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{coach.coachId}}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{coach.coachName}}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{coach.coachEmail}}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{coach.clientName}}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{coach.clientEmail}}
+              </td>
+              @if(currentUserRole === 'Admin') {
+                <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                <button
+                  (click)="openDeleteModal(filteredCoaches[i])"
+                  class="text-white bg-red-700 px-3 py-[0.5] md:px-5 md:py-1 rounded-md"
+                >
+                  Delete
+                </button>
+              </td>
+              }
+            </tr>
+          </tbody>
+        </ng-container>
+        <tbody *ngIf="allCoaches.length === 0">
+          <tr>
+            <td colspan="7" class="text-center py-4 text-red-500">
+              No mapping found.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flex justify-end mt-4" *ngIf="filteredCoaches.length > 0">
+      <nav class="flex space-x-1">
+        <button
+          class="px-3 py-1 border rounded"
+          [disabled]="pageNumber === 1"
+          (click)="changePage(pageNumber - 1)"
+        >
+          &laquo;
+        </button>
+
+        <button
+          *ngFor="let page of pageNumbers"
+          [disabled]="page < 0"
+          class="px-3 py-1 border rounded"
+          [ngClass]="{
+        'bg-blue-600 text-white': page === pageNumber,
+        'bg-white hover:bg-gray-100': page !== pageNumber,
+        'cursor-default': page < 0
+      }"
+          (click)="page > 0 && changePage(page)"
+        >
+          <ng-container *ngIf="page > 0">{{ page }}</ng-container>
+          <ng-container *ngIf="page < 0">...</ng-container>
+        </button>
+
+        <button
+          class="px-3 py-1 border rounded"
+          [disabled]="pageNumber === totalPages"
+          (click)="changePage(pageNumber + 1)"
+        >
+          &raquo;
+        </button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- Add new Mapping Modal -->
+
+<div
+  *ngIf="showAddCoachForm"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <button
+      (click)="showAddCoachForm = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Add New User</h2>
+
+    <form
+      (ngSubmit)="addMapping()"
+      [formGroup]="addMappingForm"
+      class="space-y-4"
+      novalidate
+    >
+      <div>
+        <label class="block mb-1 text-gray-700">Select a Coach</label>
+        <select
+          formControlName="coach"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">Select a Coach</option>
+          <option *ngFor="let coach of coaches" [value]="coach.id">
+            {{ coach.name }}
+          </option>
+        </select>
+        <small *ngIf="coach?.invalid && coach?.touched" class="text-red-500"
+          >Coach is required</small
+        >
+
+        <label class="block mb-1 text-gray-700 mt-4">Select Client</label>
+        <select
+          formControlName="client"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">Select Client</option>
+          <option *ngFor="let client of clients" [value]="client.id">
+            {{ client.name }}
+          </option>
+        </select>
+        <small *ngIf="client?.invalid && client?.touched" class="text-red-500"
+          >Client is required</small
+        >
+      </div>
+
+      <div class="flex justify-end gap-3">
+        <button
+          type="button"
+          (click)="showAddCoachForm = false"
+          class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition text-gray-700"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div> 
+<!-- End of New Mapping Modal -->
+
+
+<!-- Delete Confirmation Modal -->
+ <div
+  *ngIf="showDeleteModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <button
+      (click)="showDeleteModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Delete User</h2>
+
+    <p class="mb-4">
+      Are you sure you want to delete the mapping for 
+      <span class="font-semibold">{{ selectedCoach?.clientName }}</span> with coach
+      <span class="font-semibold">{{ selectedCoach?.coachName }}</span>?
+    </p>
+
+    <div class="flex justify-end gap-3">
+      <button
+        type="button"
+        (click)="showDeleteModal = false"
+        class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition text-gray-700"
+      >
+        Cancel
+      </button>
+      <button
+        (click)="deleteMapping()"
+        type="button"
+        class="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition flex items-center justify-center"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+ <!-- End of Delete Confirmation Modal -->

@@ -22,7 +22,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPost("add")]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin")]
         public async Task<IActionResult> AddProgressImage([FromForm] AddProgressImageDto dto)
         {
             if (dto.File == null || dto.File.Length == 0)

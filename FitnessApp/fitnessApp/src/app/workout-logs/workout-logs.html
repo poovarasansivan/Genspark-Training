@@ -1,0 +1,487 @@
+<div class="min-h-screen bg-slate-100 p-3 md:p-7">
+  <app-popup></app-popup>
+  <h3 class="text-slate-700 text-xl md:text-2xl font-semibold mb-4">
+    Workout Logs
+  </h3>
+  <div class="bg-white shadow-md rounded-lg p-6 w-full">
+    <div
+      class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4"
+    >
+      <div class="flex flex-col md:flex-row items-center gap-3">
+        <div class="relative w-full md:w-96">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <lucide-angular
+              [name]="searchIcon"
+              class="w-5 h-5 text-gray-400"
+            ></lucide-angular>
+          </div>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            (input)="onSearchInput(searchTerm)"
+            placeholder="Type to search..."
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+      </div>
+      @if(loggedInUserRole==='User'){
+      <button
+        (click)="showAddLogModal = true"
+        class="bg-blue-600 text-white px-4 py-2 flex items-center justify-center rounded-md hover:bg-blue-700 transition"
+      >
+        <lucide-angular [name]="addIcon" class="w-5 h-5 mr-2"></lucide-angular>
+        Add Log
+      </button>
+      }
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white text-md text-left rounded-md">
+        <thead>
+          <tr class="bg-slate-100 text-gray-700">
+            <th class="py-2 px-4 border-b whitespace-nowrap">S No</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">User ID</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">User Name</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Plan Name</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">WorkOut Type</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Date</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Duration</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">
+              Calories Burned
+            </th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Actions</th>
+          </tr>
+        </thead>
+        <ng-container *ngFor="let logs of filteredWorkoutLogs; let i=index">
+          <tbody>
+            <tr class="hover:bg-slate-50">
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{i + 1}}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ logs.userId }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ logs.userName }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ logs.workOutPlanName }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ logs.type }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ logs.date | date: 'yyyy-MM-dd' }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ logs.duration }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ logs.caloriesBurned }}
+              </td>
+              <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">
+                <button
+                  (click)="onClickViewLog(logs)"
+                  class="text-white bg-blue-600 px-3 py-[0.5] md:px-5 md:py-1 mr-3 rounded-md"
+                >
+                  View
+                </button>
+                <button
+                  (click)="onClickEditLog(logs)"
+                  class="text-white bg-blue-600 px-3 py-[0.5] md:px-5 md:py-1 mr-3 rounded-md"
+                >
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </ng-container>
+        <tbody *ngIf="filteredWorkoutLogs.length === 0">
+          <tr>
+            <td colspan="9" class="text-center py-4 text-red-500">
+              No logs found.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flex justify-end mt-4" *ngIf="totalLogs > 0">
+      <nav class="flex space-x-1">
+        <button
+          class="px-3 py-1 border rounded"
+          [ngClass]="{
+        'bg-gray-300 text-gray-500 cursor-not-allowed': LogFilter.pageNumber === 1,
+        'bg-white hover:bg-gray-100': LogFilter.pageNumber > 1
+      }"
+          (click)="changePage(LogFilter.pageNumber - 1)"
+          [disabled]="LogFilter.pageNumber === 1"
+        >
+          &laquo;
+        </button>
+
+        <button
+          *ngFor="let page of pageNumbers"
+          class="px-3 py-1 border rounded"
+          [ngClass]="{
+        'bg-blue-600 text-white': page === LogFilter.pageNumber,
+        'bg-white hover:bg-gray-100': page !== LogFilter.pageNumber && page > 0,
+        'cursor-default': page < 0
+      }"
+          (click)="page > 0 && changePage(page)"
+        >
+          <ng-container *ngIf="page > 0">{{ page }}</ng-container>
+          <ng-container *ngIf="page === -1">...</ng-container>
+          <ng-container *ngIf="page === -2">...</ng-container>
+        </button>
+
+        <button
+          class="px-3 py-1 border rounded"
+          [ngClass]="{
+        'bg-gray-300 text-gray-500 cursor-not-allowed': LogFilter.pageNumber === pageNumbers.length,
+        'bg-white hover:bg-gray-100': LogFilter.pageNumber < pageNumbers.length
+      }"
+          [disabled]="LogFilter.pageNumber === totalLogs"
+          (click)="changePage(LogFilter.pageNumber + 1)"
+        >
+          &raquo;
+        </button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- Add WorkLog Modal -->
+<div
+  *ngIf="showAddLogModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <button
+      (click)="showAddLogModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Add WorkOut Log</h2>
+
+    <form
+      class="space-y-4"
+      (ngSubmit)="addNewLog()"
+      [formGroup]="addWorkLog"
+      novalidate
+    >
+      <div>
+        <label class="block mb-1 text-gray-700">Name</label>
+        <select
+          formControlName="name"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <!-- <option value="" disabled selected>Select User</option>
+        <option *ngFor="let user of users" [value]="user.id">
+            {{ user.name }}
+        </option> -->
+          <option value="" disabled selected>Select User</option>
+          <option value="{{loggedInUserId}}">{{loggedInUserName}}</option>
+        </select>
+        <small *ngIf="name?.invalid && name?.touched" class="text-red-500"
+          >Name is required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Plan Name</label>
+
+        <select
+          formControlName="plan"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">Select Plan</option>
+          <ng-container *ngFor="let plan of plansOptions">
+            <option value="{{plan.id}}">{{ plan.name }}</option>
+          </ng-container>
+        </select>
+        <small *ngIf="plan?.invalid && plan?.touched" class="text-red-500"
+          >Plan Name is required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Workout Type</label>
+        <input
+          type="text"
+          formControlName="workoutType"
+          placeholder="Enter Workout Type"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          *ngIf="workoutType?.invalid && workoutType?.touched"
+          class="text-red-500"
+          >WorkOut Type is required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Date</label>
+        <input
+          type="date"
+          formControlName="date"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small *ngIf="date?.invalid && date?.touched" class="text-red-500"
+          >Date is required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Duration</label>
+        <input
+          placeholder="Enter Duration (e.g., 30, 1:30, 2:00)"
+          type="text"
+          formControlName="duration"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          *ngIf="duration?.invalid && duration?.touched"
+          class="text-red-500"
+          >Duration is required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Calories Burned</label>
+        <input
+          type="number"
+          formControlName="calories"
+          placeholder="Enter Calories Burned"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          *ngIf="calories?.invalid && calories?.touched"
+          class="text-red-500"
+          >Calories Burned is required</small
+        >
+      </div>
+
+      <div class="flex justify-end gap-3">
+        <button
+          type="button"
+          (click)="showAddLogModal = false"
+          class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition text-gray-700"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- End Add WorkLog Modal -->
+
+<!-- View Modal -->
+
+<div
+  *ngIf="showViewLogModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <button
+      (click)="showViewLogModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+    <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-4">
+      View Log
+    </h2>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Name :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{selectedLog?.userName}}
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Plan Name :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{selectedLog?.workOutPlanName}}
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Workout Type :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{selectedLog?.type}}
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Date :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{selectedLog?.date | date: 'yyyy-MM-dd'}}
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Duration :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{selectedLog?.duration}}
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Calories Burned :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{selectedLog?.caloriesBurned}}
+      </p>
+    </div>
+    <div class="flex justify-end mt-4">
+      <button
+        (click)="showViewLogModal = false"
+        class="px-6 py-2 bg-blue-600 text-white text-md md:text-lg rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- End View Modal -->
+
+<!-- Edit WorkLog Modal -->
+<div
+  *ngIf="showEditLogModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <button
+      (click)="showEditLogModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Edit WorkOut Log</h2>
+    <form
+      class="space-y-4"
+      (ngSubmit)="updateLog()"
+      [formGroup]="editWorkLog"
+      novalidate
+    >
+      <div>
+        <label class="block mb-1 text-gray-700">Plan Name</label>
+
+        <select
+          formControlName="editplan"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">Select Plan</option>
+          <ng-container *ngFor="let plan of plansOptions">
+            <option value="{{plan.id}}">{{ plan.name }}</option>
+          </ng-container>
+        </select>
+        <small
+          *ngIf="editplan?.invalid && editplan?.touched"
+          class="text-red-500"
+          >Plan Name is required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Name</label>
+        <input
+          formControlName="workouttype"
+          type="text"
+          placeholder="Enter workout type"
+          class="w-full border border-gray-300 rounded-md p-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          *ngIf="workouttype?.invalid && workouttype?.touched"
+          class="text-red-500"
+          >Valid Name required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Date</label>
+        <input
+          type="date"
+          formControlName="editdate"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small *ngIf="editdate?.invalid && editdate?.touched" class="text-red-500"
+          >Date is required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Duration</label>
+        <input
+          type="text"
+          formControlName="editduration"
+          placeholder="Enter Duration (e.g., 30, 1:30, 2:00)"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          *ngIf="editduration?.invalid && editduration?.touched" class="text-red-500"
+          >Duration is required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Calories Burned</label
+        >
+        <input
+          type="number"
+          formControlName="editcalories"
+          placeholder="Enter Calories Burned"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          *ngIf="editcalories?.invalid && editcalories?.touched" class="text-red-500"
+          >Calories Burned is required</small
+        >
+      </div>
+      <div class="flex justify-end gap-3">
+        <button
+          type="button"
+          (click)="showEditLogModal = false"
+          class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition text-gray-700"
+        >
+          Cancel
+        </button> 
+        <button
+          type="submit"
+          class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+        > 
+          Save
+        </button>
+      </div>  
+    </form>
+  </div>
+</div>

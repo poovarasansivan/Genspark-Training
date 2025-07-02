@@ -1,0 +1,26 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+  <app-popup></app-popup>
+  <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+        
+    <h2 class="text-2xl font-bold text-center text-gray-700 mb-6">Verify Email</h2>
+        <form (ngSubmit)="verifyEmailAddress()" [formGroup]="verifyEmail" class="space-y-4">
+                 <div>
+        <label class="block text-gray-700 mb-1">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          placeholder="poovarsan@example.com"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        />
+        <small *ngIf="email.invalid && email.touched" class="text-red-500">Valid email required</small>
+      </div>
+            <button
+        type="submit"
+        class="w-full bg-emerald-600 text-white py-2 rounded-md hover:bg-emerald-700 transition"
+        [disabled]="verifyEmail.invalid"
+      >
+        Verify
+      </button>
+    </form>
+  </div>
+</div>

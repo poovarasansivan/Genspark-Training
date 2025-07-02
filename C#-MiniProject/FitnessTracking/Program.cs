@@ -15,6 +15,8 @@ using System.Text.Json.Serialization;
 using Serilog;
 using Microsoft.IdentityModel.Tokens;
 using System.Threading.RateLimiting;
+using FitnessTracking.notification;
+using Microsoft.AspNetCore.SignalR;
 
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -32,7 +34,7 @@ Log.Logger = new LoggerConfiguration()
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog();
-
+builder.Services.AddSignalR();
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
@@ -64,7 +66,7 @@ builder.Services.AddRateLimiter(options =>
             partitionKey: httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
             factory: _ => new FixedWindowRateLimiterOptions
             {
-                PermitLimit = 10,
+                PermitLimit = 4000,
                 Window = TimeSpan.FromMinutes(1),
                 QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
                 QueueLimit = 2
@@ -118,6 +120,7 @@ builder.Services.AddDbContext<FitnessContext>(opts =>
 });
 #endregion
 
+builder.Services.AddMemoryCache();
 #region Repository and Service Configuration
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<WorkOutPlanRepository>();
@@ -126,6 +129,7 @@ builder.Services.AddScoped<UserPlanRepository>();
 builder.Services.AddScoped<ProgressRepository>();
 builder.Services.AddScoped<ProgressImageRepository>();
 builder.Services.AddScoped<CoachClientMappingRepository>();
+builder.Services.AddScoped<UserWorkTaskRepository>();
 
 // Add Services
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
@@ -138,6 +142,10 @@ builder.Services.AddScoped<IUserPlanService, UserPlanService>();
 builder.Services.AddScoped<IProgressService, ProgressService>();
 builder.Services.AddScoped<IProgressImageService, ProgressImageService>();
 builder.Services.AddScoped<ICoachMappingService, CoachClientMapService>();
+builder.Services.AddScoped<IUserWorkOutTaskService, UserWorkOutTaskService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddSingleton<IUserIdProvider, NameIdentifierUserIdProvider>();
 #endregion
 
 #region Authentication Configuration
@@ -150,18 +158,37 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = false,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Keys:JwtTokenKey"]))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Keys:JwtTokenKey"])),
+            ClockSkew = TimeSpan.Zero
+        };
+        options.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                var accessToken = context.Request.Query["access_token"];
+
+                // If the request is for our SignalR hub...
+                var path = context.HttpContext.Request.Path;
+                if (!string.IsNullOrEmpty(accessToken) &&
+                    path.StartsWithSegments("/notificationhub"))
+                {
+                    context.Token = accessToken;
+                }
+
+                return Task.CompletedTask;
+            }
         };
     });
+
 #endregion
 
 #region CORS Configuration
 // Enable CORS
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(policy =>
+    options.AddPolicy("AllowLocalhostFrontend", policy =>
     {
-        policy.WithOrigins("http://127.0.0.1:5500")
+        policy.WithOrigins("http://localhost:4200", "http://127.0.0.1:5500")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -179,7 +206,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.MapHub<NotificationHub>("/notificationHub");
 app.UseRateLimiter();
+app.UseCors("AllowLocalhostFrontend");
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<ExceptionMiddleware>();

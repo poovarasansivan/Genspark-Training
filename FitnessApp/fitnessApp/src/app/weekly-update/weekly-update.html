@@ -1,0 +1,594 @@
+<div class="min-h-screen bg-slate-100 p-3 md:p-7">
+  <app-popup></app-popup>
+  <h3 class="text-slate-700 text-xl md:text-2xl font-semibold mb-4">
+    Weekly Progress
+  </h3>
+  <div class="bg-white shadow-md rounded-lg p-6 w-full">
+    <div
+      class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4"
+    >
+      <div class="flex flex-col md:flex-row items-center gap-3">
+        <div class="relative w-full md:w-96">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <lucide-angular
+              [name]="searchIcon"
+              class="w-5 h-5 text-gray-400"
+            ></lucide-angular>
+          </div>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            (input)="onSearchInput(searchTerm)"
+            placeholder="Type to search..."
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+      </div>
+      @if (loggedInUserRole==='User') {
+      <button
+        (click)="showAddProgressModal = true"
+        class="bg-blue-600 text-white px-4 py-2 flex items-center justify-center rounded-md hover:bg-blue-700 transition"
+      >
+        <lucide-angular [name]="addIcon" class="w-5 h-5 mr-2"></lucide-angular>
+        Add Progress
+      </button>
+      }
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white text-md text-left rounded-md">
+        <thead>
+          <tr class="bg-slate-100 text-gray-700">
+            <th class="py-2 px-4 border-b whitespace-nowrap">S No</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">User Name</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">
+              WorkOut PlanName
+            </th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Progress Date</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Body Weight</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">
+              Body Fat Percentage
+            </th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Muscle Mass</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">
+              Water Percentage
+            </th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Progress Image</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Actions</th>
+          </tr>
+        </thead>
+        <ng-container *ngFor="let progress of filteredProgress; let i = index">
+          <tbody>
+            <tr class="hover:bg-slate-50">
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ i + 1 }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ progress.userName }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ progress.workOutPlanName }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ progress.date | date: 'dd/MM/yyyy' }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ progress.weight }} kg
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ progress.bodyFatPercentage }}%
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ progress.muscleMass }} kg
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ progress.waterPercentage }} %
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                <ng-container
+                  *ngFor="let image of progress.progressImage.$values"
+                >
+                  <a
+                    [href]="image.downloadUrl"
+                    target="_blank"
+                    class="text-blue-600 hover:underline block"
+                  >
+                    View Image
+                  </a>
+                </ng-container>
+              </td>
+              <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">
+                <button
+                  (click)="viewProgressDetails(progress)"
+                  class="text-white bg-blue-600 px-3 py-[0.5] md:px-5 md:py-1 mr-3 rounded-md"
+                >
+                  View
+                </button>
+                <button
+                  (click)="editProgressDetails(progress)"
+                  class="text-white bg-blue-600 px-3 py-[0.5] md:px-5 md:py-1 mr-3 rounded-md"
+                >
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </ng-container>
+        <tbody *ngIf="filteredProgress.length === 0">
+          <tr>
+            <td colspan="10" class="text-center py-4 text-red-500">
+              No progress records found.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flex justify-end mt-4" *ngIf="totalProgress > 0">
+      <nav class="flex space-x-1">
+        <button
+          class="px-3 py-1 border rounded"
+          [ngClass]="{
+        'bg-gray-300 text-gray-500 cursor-not-allowed': progressFilters.pageNumber === 1,
+        'bg-white hover:bg-gray-100': progressFilters.pageNumber > 1
+        }"
+          (click)="changePage(progressFilters.pageNumber - 1)"
+          [disabled]="progressFilters.pageNumber === 1"
+        >
+          &laquo;
+        </button>
+        <button
+          *ngFor="let page of pageNumbers"
+          class="px-3 py-1 border rounded"
+          [ngClass]="{
+        'bg-blue-600 text-white': page === progressFilters.pageNumber,
+        'bg-white hover:bg-gray-100': page !== progressFilters.pageNumber && page > 0,
+        'cursor-default': page < 0
+        }"
+          (click)="page > 0 && changePage(page)"
+        >
+          <ng-container *ngIf="page > 0">{{ page }}</ng-container>
+          <ng-container *ngIf="page === -1">...</ng-container>
+          <ng-container *ngIf="page === -2">...</ng-container>
+        </button>
+        <button
+          class="px-3 py-1 border rounded"
+          [ngClass]="{
+        'bg-gray-300 text-gray-500 cursor-not-allowed': progressFilters.pageNumber === pageNumbers.length,
+        'bg-white hover:bg-gray-100': progressFilters.pageNumber < pageNumbers.length
+        }"
+          [disabled]="progressFilters.pageNumber === totalProgress"
+          (click)="changePage(progressFilters.pageNumber + 1)"
+        >
+          &raquo;
+        </button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- Add Progress Modal -->
+
+<div
+  *ngIf="showAddProgressModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <button
+      (click)="showAddProgressModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Add WorkOut Log</h2>
+    <form
+      class="space-y-4"
+      (ngSubmit)="addNewProgress()"
+      [formGroup]="addProgress"
+      novalidate
+    >
+      <div>
+        <label class="block mb-1 text-gray-700">Name</label>
+        <select
+          formControlName="name"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="" disabled selected>Select User</option>
+          <option value="{{loggedInUserId}}">{{loggedInUser}}</option>
+        </select>
+        <small class="text-red-500" *ngIf="name?.invalid && name?.touched">
+          Please select a user.
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">WorkOut Plan</label>
+        <select
+          formControlName="workOutPlan"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="" disabled selected>Select Plan</option>
+          <ng-container *ngFor="let plan of WorkOutPlansOptions">
+            <option [value]="plan.id">{{ plan.name }}</option>
+          </ng-container>
+        </select>
+        <small
+          class="text-red-500"
+          *ngIf="workOutPlan?.invalid && workOutPlan?.touched"
+        >
+          Please select a workout plan.
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Submission Date</label>
+        <input
+          type="date"
+          formControlName="submissionDate"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="submissionDate?.invalid && submissionDate?.touched"
+        >
+          Please enter a valid date.
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Current Body Weight</label>
+        <input
+          type="number"
+          formControlName="bodyWeight"
+          placeholder="Enter Body Weight"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="bodyWeight?.invalid && bodyWeight?.touched"
+        >
+          Please enter a valid body weight.
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700"
+          >Current Body Fat Percentage</label
+        >
+        <input
+          type="number"
+          formControlName="fatPercentage"
+          placeholder="Enter Body Fat Percentage"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="fatPercentage?.invalid && fatPercentage?.touched"
+          class="text-red-500"
+        >
+          Please enter a valid body fat percentage.
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Current Muscle Mass</label>
+        <input
+          type="number"
+          formControlName="muscleMass"
+          placeholder="Enter Muscle Mass"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="muscleMass?.invalid && muscleMass?.touched"
+          >Please Enter a Valid Input</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Current Water Percentage</label>
+        <input
+          type="number"
+          formControlName="waterPercentage"
+          placeholder="Enter Water Percentage"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="waterPercentage?.invalid && waterPercentage?.touched"
+        >
+          Please Enter a Valid Water Percentage
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Progress Image</label>
+        <input
+          type="file"
+          accept="image/*"
+          (change)="onImageSelected($event)"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div class="flex justify-end gap-3">
+        <button
+          type="button"
+          (click)="showAddProgressModal = false"
+          class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition text-gray-700"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          [disabled]="addProgress.invalid"
+          class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- End of Add Progress Modal -->
+
+<!-- View Progress Details Modal -->
+<div
+  *ngIf="showProgressDetailsModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <button
+      (click)="showProgressDetailsModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+    <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-4">
+      View Progress Details
+    </h2>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Name :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{ selectedProgress?.userName }}
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >PlanName :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{ selectedProgress?.workOutPlanName }}
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Progress Date :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{ selectedProgress?.date | date: 'dd/MM/yyyy' }}
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Body Weight :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{ selectedProgress?.weight }} kg
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Body Fat Percentage :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{ selectedProgress?.fatPercentage }} kg
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Muscle Mass :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{ selectedProgress?.muscleMass }} kg
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Water Percentage :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        {{ selectedProgress?.waterPercentage }} %
+      </p>
+    </div>
+    <div class="flex flex-row">
+      <label class="block mb-1 text-md md:text-lg font-semibold text-gray-800"
+        >Progress Image :</label
+      >
+      <p class="ml-2 text-md md:text-lg font-medium text-gray-700">
+        <ng-container
+          *ngFor="let image of selectedProgress?.progressImage.$values"
+        >
+          <a
+            [href]="image.downloadUrl"
+            target="_blank"
+            class="text-blue-600 text-md md:text-lg font-medium hover:underline block"
+          >
+            View Image
+          </a>
+        </ng-container>
+      </p>
+    </div>
+    <div class="flex justify-end mt-4">
+      <button
+        (click)="showProgressDetailsModal = false"
+        class="px-6 py-2 bg-blue-600 text-white text-md md:text-lg rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+<!-- End of View Progress Details Modal -->
+
+<!-- Edit Modal -->
+<div
+  *ngIf="showEditProgressModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <button
+      (click)="showEditProgressModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Edit Weekly Update</h2>
+    <form
+      class="space-y-4"
+      (ngSubmit)="updateProgress()"
+      [formGroup]="editProgressForm"
+      novalidate
+    >
+      <div>
+        <label class="block mb-1 text-gray-700">WorkOut Plan</label>
+        <select
+          formControlName="editPlanName"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="" disabled selected>Select Plan</option>
+          <ng-container *ngFor="let plan of WorkOutPlansOptions">
+            <option [value]="plan.id">{{ plan.name }}</option>
+          </ng-container>
+        </select>
+        <small
+          class="text-red-500"
+          *ngIf="editPlanName?.invalid && editPlanName?.touched"
+        >
+          Please select a workout plan.
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Submission Date</label>
+        <input
+          type="date"
+          formControlName="esubmissionDate"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="esubmissionDate?.invalid && esubmissionDate?.touched"
+        >
+          Please enter a valid date.
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Current Body Weight</label>
+        <input
+          type="number"
+          formControlName="ebodyWeight"
+          placeholder="Enter Body Weight"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="ebodyWeight?.invalid && ebodyWeight?.touched"
+        >
+          Please enter a valid body weight.
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700"
+          >Current Body Fat Percentage</label
+        >
+        <input
+          type="number"
+          formControlName="efatPercentage"
+          placeholder="Enter Body Fat Percentage"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="efatPercentage?.invalid && efatPercentage?.touched"
+          class="text-red-500"
+        >
+          Please enter a valid body fat percentage.
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Current Muscle Mass</label>
+        <input
+          type="number"
+          formControlName="emuscleMass"
+          placeholder="Enter Muscle Mass"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="emuscleMass?.invalid && emuscleMass?.touched"
+          >Please Enter a Valid Input</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Current Water Percentage</label>
+        <input
+          type="number"
+          formControlName="ewaterPercentage"
+          placeholder="Enter Water Percentage"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="ewaterPercentage?.invalid && ewaterPercentage?.touched"
+        >
+          Please Enter a Valid Water Percentage
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Progress Image</label>
+        <input
+          type="file"
+          accept="image/*"
+          (change)="onImageSelected($event)"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div class="flex justify-end gap-3">
+        <button
+          type="button"
+          (click)="showEditProgressModal = false"
+          class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition text-gray-700"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+        >
+          Save
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+<!-- End of edit modal -->

@@ -22,7 +22,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin, Coach")]
+        [Authorize(Roles = "Admin, Coach, User")]
         public async Task<ActionResult<IEnumerable<UserPlanResponseDto>>> GetAllUserPlansAsync()
         {
             _logger.LogInformation("Fetching all user plans");

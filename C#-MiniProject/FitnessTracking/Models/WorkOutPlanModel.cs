@@ -20,7 +20,8 @@ namespace FitnessTracking.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public DateTime? UpdatedAt { get; set; }
-
+        
+        public ICollection<UserWorkOutPlanModel> UserWorkOutPlans { get; set; } = new List<UserWorkOutPlanModel>();
         public ICollection<WorkoutModel> Workouts { get; set; } = new List<WorkoutModel>();
         public ICollection<ProgressModel> ProgressUpdates { get; set; } = new List<ProgressModel>();
     }

@@ -8,6 +8,10 @@ using FitnessTracking.Services;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using FitnessTracking.Contexts;
+using Microsoft.Extensions.Caching.Memory;
+using System.Net.Mail;
+using System.Net;
 
 namespace FitnessTracking.Controllers
 {
@@ -18,18 +22,22 @@ namespace FitnessTracking.Controllers
         private readonly IAuthenticationService _authenticationService;
         private readonly ITokenService _tokenService;
         private readonly UserRepository _userRepository;
+        private readonly IMemoryCache _cache;
+        private readonly FitnessContext _context;
         private readonly ILogger<AuthenticationController> _logger;
 
         public AuthenticationController(
             IAuthenticationService authenticationService,
             ITokenService tokenService,
             UserRepository userRepository,
-            ILogger<AuthenticationController> logger)
+            ILogger<AuthenticationController> logger, IMemoryCache cache, FitnessContext context)
         {
             _authenticationService = authenticationService;
             _tokenService = tokenService;
             _userRepository = userRepository;
             _logger = logger;
+            _cache = cache;
+            _context = context;
         }
 
         [HttpPost("login")]
@@ -95,7 +103,7 @@ namespace FitnessTracking.Controllers
                     return Unauthorized("Refresh token expired");
                 }
 
-                var email = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+                var email = principal.FindFirstValue(ClaimTypes.Email);
                 if (email == null)
                 {
                     _logger.LogWarning("Refresh token validation failed: Email claim not found.");

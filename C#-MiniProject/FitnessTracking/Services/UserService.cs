@@ -28,7 +28,8 @@ namespace FitnessTracking.Services
             {
                 Name = userDto.Name!,
                 Email = userDto.Email!,
-                Role = userDto.Role ?? "User"
+                Role = userDto.Role ?? "User",
+                IsActive = userDto.IsActive,
             };
 
             var encryptedData = await _encryptionService.EncryptData(new EncryptModel
@@ -140,7 +141,7 @@ namespace FitnessTracking.Services
                 IsActive = user.IsActive
             };
         }
-
+        
         public async Task UpdatePasswordAsync(Guid id, UpdatePasswordDto updatePasswordDto)
         {
             var user = await _userRepository.GetByIdAsync(id);
@@ -173,6 +174,8 @@ namespace FitnessTracking.Services
                 });
                 user.Password = encrypted.EncryptedData;
             }
+            if (!string.IsNullOrEmpty(updateUserDto.Role)) user.Role = updateUserDto.Role;
+            if (updateUserDto.IsActive != user.IsActive) user.IsActive = updateUserDto.IsActive;
 
             await _userRepository.UpdateAsync(user);
         }

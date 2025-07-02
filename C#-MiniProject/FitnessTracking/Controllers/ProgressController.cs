@@ -90,7 +90,7 @@ namespace FitnessTracking.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User, Admin, Coach")]
         public async Task<ActionResult> AddProgress([FromBody] ProgressAddRequestDto progressDto)
         {
             if (!ModelState.IsValid)
@@ -100,33 +100,38 @@ namespace FitnessTracking.Controllers
             }
 
             _logger.LogInformation("AddProgress: Adding progress for userId {UserId}", progressDto.UserId);
-            await _progressService.AddProgressAsync(progressDto);
+            var progressId = await _progressService.AddProgressAsync(progressDto);
             _logger.LogInformation("AddProgress: Progress added successfully for userId {UserId}", progressDto.UserId);
 
-            return Ok(ResponseHandler.Success("Progress added successfully"));
+            return Ok(new
+            {
+                success = true,
+                message = "Progress added successfully",
+                id = progressId
+            });
         }
 
-        [HttpGet("user/workout/{workOutPlanId}")]
+        [HttpGet("userprogress/{userId}")]
         [Authorize(Roles = "Admin,User, Coach")]
-        public async Task<ActionResult<IEnumerable<ProgressResponseDto>>> GetUserProgressByWorkOutPlanIdAsync(Guid workOutPlanId)
+        public async Task<ActionResult<IEnumerable<ProgressResponseDto>>> GetUserProgressByWorkOutPlanIdAsync(Guid userId)
         {
-            if (workOutPlanId == Guid.Empty)
+            if (userId == Guid.Empty)
             {
-                _logger.LogWarning("GetUserProgressByWorkOutPlanIdAsync: Empty WorkOutPlanId provided.");
-                return BadRequest(ResponseHandler.Error<IEnumerable<ProgressResponseDto>>("Work Out Plan ID cannot be empty or null"));
+                _logger.LogWarning(" Empty userId provided.");
+                return BadRequest(ResponseHandler.Error<IEnumerable<ProgressResponseDto>>("user ID cannot be empty or null"));
             }
 
-            _logger.LogInformation("GetUserProgressByWorkOutPlanIdAsync: Fetching progress for workout plan ID {WorkOutPlanId}", workOutPlanId);
-            var progressList = await _progressService.GetUserProgressByWorkOutPlanIdAsync(workOutPlanId);
+            _logger.LogInformation("GetUserProgressByWorkOutPlanIdAsync: Fetching progress for user ID {WorkOutPlanId}", userId);
+            var progressList = await _progressService.GetWorkOutProgressByUserId(userId);
 
             if (progressList == null || !progressList.Any())
             {
-                _logger.LogWarning("GetUserProgressByWorkOutPlanIdAsync: No progress records found for workout plan ID {WorkOutPlanId}", workOutPlanId);
+                _logger.LogWarning("GetUserProgressByWorkOutPlanIdAsync: No progress records found for user ID {userId}", userId);
                 return NotFound(ResponseHandler.Error<IEnumerable<ProgressResponseDto>>("No progress records found for the specified workout plan"));
             }
 
             _logger.LogInformation("GetUserProgressByWorkOutPlanIdAsync: Successfully fetched progress list.");
-            return Ok(ResponseHandler.Success(progressList, "User progress by workout plan fetched successfully"));
+            return Ok(ResponseHandler.Success(progressList, "User progress by user ID fetched successfully"));
         }
 
         [HttpGet("paginated")]
@@ -152,6 +157,49 @@ namespace FitnessTracking.Controllers
                 _logger.LogError(ex, "GetFilteredProgressAsync: Error while fetching filtered progress.");
                 return StatusCode(500, ResponseHandler.Error<string>($"An error occurred: {ex.Message}"));
             }
+        }
+
+        [HttpGet("coach/{coachId}")]
+        [Authorize(Roles = "Coach")]
+        public async Task<ActionResult<IEnumerable<ProgressResponseDto>>> GetProgressByCoachIdAsync(Guid coachId)
+        {
+            if (coachId == Guid.Empty)
+            {
+                _logger.LogWarning("GetProgressByCoachIdAsync: Empty CoachId provided.");
+                return BadRequest(ResponseHandler.Error<IEnumerable<ProgressResponseDto>>("Coach ID cannot be empty or null"));
+            }
+
+            _logger.LogInformation("GetProgressByCoachIdAsync: Fetching progress for CoachId {CoachId}", coachId);
+            var progressList = await _progressService.GetProgressByCoachIdAsync(coachId);
+
+            if (progressList == null || !progressList.Any())
+            {
+                _logger.LogWarning("GetProgressByCoachIdAsync: No progress records found for CoachId {CoachId}", coachId);
+                return NotFound(ResponseHandler.Error<IEnumerable<ProgressResponseDto>>("No progress records found for the specified coach"));
+            }
+
+            _logger.LogInformation("GetProgressByCoachIdAsync: Successfully fetched progress records for CoachId {CoachId}", coachId);
+            return Ok(ResponseHandler.Success(progressList, "Progress records by coach fetched successfully"));
+        }
+
+        [HttpPatch("{id}")]
+        [Authorize(Roles = "User")]
+        public async Task<ActionResult> UpdateProgressAsync(Guid id, [FromBody] UpdateProgressDto progressUpdateDto)
+        {
+            if (id == Guid.Empty)
+            {
+                _logger.LogWarning("UpdateProgressAsync: Empty ID provided.");
+                return BadRequest(ResponseHandler.Error<object>("Progress ID cannot be empty or null"));
+            }
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("UpdateProgressAsync: Invalid model state.");
+                return BadRequest(ModelState);
+            }
+            _logger.LogInformation("UpdateProgressAsync: Updating progress with ID {ProgressId}", id);
+            await _progressService.UpdateProgressAsync(id, progressUpdateDto);
+            _logger.LogInformation("UpdateProgressAsync: Progress with ID {ProgressId} updated successfully", id);
+            return Ok(ResponseHandler.Success("Progress updated successfully"));
         }
     }
 }

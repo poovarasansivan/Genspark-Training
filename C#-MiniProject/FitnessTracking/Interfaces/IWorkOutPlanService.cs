@@ -11,5 +11,8 @@ namespace FitnessTracking.Interfaces
         Task UpdateWorkOutPlanAsync(Guid id, WorkOutPlanUpdateDto updateWorkOutPlanDto);
         Task DeleteWorkOutPlanAsync(Guid id);
         Task<PaginatedResult<WorkOutResponeDto>> GetFilteredWorkOutPlansAsync(WorkOutPlanFilterDto filter);
+        Task<IEnumerable<GroupedResponseDto>> GetGroupedWorkPlans(Guid id);
+        Task<IEnumerable<GroupedResponseDto>> GetGroupedWorkPlansByCoachId(Guid coachId);
+        Task<IEnumerable<GroupedResponseDto>> GetWorkOutPlansByCoachIdAndPlanId(Guid userId);
     }
 }

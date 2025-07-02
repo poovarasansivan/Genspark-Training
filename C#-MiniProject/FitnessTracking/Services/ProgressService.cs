@@ -22,7 +22,7 @@ namespace FitnessTracking.Services
             _progressRepository = progressRepository;
             _httpContextAccessor = httpContextAccessor;
         }
-        public Task AddProgressAsync(ProgressAddRequestDto progress)
+        public async Task<Guid> AddProgressAsync(ProgressAddRequestDto progress)
         {
             if (progress == null)
                 throw new CustomeExceptionHandler("Progress data cannot be null", 400);
@@ -44,8 +44,11 @@ namespace FitnessTracking.Services
             };
 
             _context.ProgressUpdates.Add(progressModel);
-            return _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+
+            return progressModel.Id; // 👈 Return the generated ID
         }
+
 
 
         public async Task<IEnumerable<ProgressResponseDto>> GetAllProgressAsync()
@@ -131,30 +134,33 @@ namespace FitnessTracking.Services
             };
         }
 
-        public async Task<ProgressResponseDto?> GetProgressByUserIdAndWorkOutPlanIdAsync(Guid userId, Guid workOutPlanId)
+        public async Task<List<ProgressResponseDto>> GetProgressByUserIdAndWorkOutPlanIdAsync(Guid userId, Guid workOutPlanId)
         {
             if (userId == Guid.Empty || workOutPlanId == Guid.Empty)
                 throw new CustomeExceptionHandler("User ID and WorkOut Plan ID cannot be empty or null", 400);
 
-            var progress = await _context.ProgressUpdates
+            var progresses = await _context.ProgressUpdates
                 .Include(p => p.User)
                 .Include(p => p.WorkOutPlan)
                 .Include(p => p.ProgressImage)
-                .FirstOrDefaultAsync(p => p.UserId == userId && p.WorkOutPlanId == workOutPlanId);
+                .Where(p => p.UserId == userId && p.WorkOutPlanId == workOutPlanId)
+                .OrderBy(p => p.Date) // Optional: to show progress in timeline
+                .ToListAsync();
+
+            if (progresses == null || !progresses.Any())
+                throw new CustomeExceptionHandler("No progress entries found for the specified user and workout plan", 404);
 
             var request = _httpContextAccessor.HttpContext?.Request;
             var scheme = request?.Scheme ?? "http";
             var host = request?.Host.ToString() ?? "localhost";
-            if (progress == null)
-                throw new CustomeExceptionHandler("Progress not found for the specified user and workout plan", 404);
 
-            return new ProgressResponseDto
+            return progresses.Select(progress => new ProgressResponseDto
             {
                 Id = progress.Id,
                 UserId = progress.UserId,
-                UserName = progress.User != null ? progress.User.Name : string.Empty,
+                UserName = progress.User?.Name ?? string.Empty,
                 WorkOutPlanId = progress.WorkOutPlanId,
-                WorkOutPlanName = progress.WorkOutPlan != null ? progress.WorkOutPlan.Name : string.Empty,
+                WorkOutPlanName = progress.WorkOutPlan?.Name ?? string.Empty,
                 Date = progress.Date,
                 Weight = progress.Weight,
                 BodyFatPercentage = progress.BodyFatPercentage,
@@ -169,19 +175,19 @@ namespace FitnessTracking.Services
                     FileName = $"Progress_{img.ProgressId}_{img.UploadedAt:yyyyMMddHHmmss}.{ImageExtension.GetExtension(img.ContentType)}",
                     DownloadUrl = $"{scheme}://{host}/api/v1/progressimage/download/{img.Id}"
                 }).ToList()
-            };
+            }).ToList();
         }
 
-        public async Task<IEnumerable<ProgressResponseDto>> GetUserProgressByWorkOutPlanIdAsync(Guid workOutPlanId)
+        public async Task<IEnumerable<ProgressResponseDto>> GetWorkOutProgressByUserId(Guid userId)
         {
-            if (workOutPlanId == Guid.Empty)
+            if (userId == Guid.Empty)
                 throw new CustomeExceptionHandler("WorkOut Plan ID cannot be empty or null", 400);
 
             var progressUpdates = await _context.ProgressUpdates
                 .Include(p => p.User)
                 .Include(p => p.WorkOutPlan)
                 .Include(p => p.ProgressImage)
-                .Where(p => p.WorkOutPlanId == workOutPlanId)
+                .Where(p => p.UserId == userId)
                 .ToListAsync();
 
             if (progressUpdates == null || !progressUpdates.Any())
@@ -280,7 +286,7 @@ namespace FitnessTracking.Services
             }
             else
             {
-                query = query.OrderByDescending(p => p.User.Name); 
+                query = query.OrderByDescending(p => p.User.Name);
             }
 
 
@@ -324,6 +330,58 @@ namespace FitnessTracking.Services
             };
         }
 
+        public async Task<IEnumerable<ProgressResponseDto>> GetProgressByCoachIdAsync(Guid coachId)
+        {
+            if (coachId == Guid.Empty)
+                throw new CustomeExceptionHandler("Coach ID cannot be empty or null", 400);
+
+            var clientIds = await _context.CoachClientMaps
+                .Where(m => m.CoachId == coachId)
+                .Select(m => m.ClientId)
+                .ToListAsync();
+
+            if (!clientIds.Any())
+                throw new CustomeExceptionHandler("No clients mapped to this coach", 404);
+
+            var progressUpdatesRaw = await _context.ProgressUpdates
+                .Include(p => p.User)
+                .Include(p => p.WorkOutPlan)
+                .Include(p => p.ProgressImage)
+                .Where(p => clientIds.Contains(p.UserId))
+                .ToListAsync();
+
+            if (!progressUpdatesRaw.Any())
+                throw new CustomeExceptionHandler("No progress updates found for the coach", 404);
+
+            var request = _httpContextAccessor.HttpContext?.Request;
+            var scheme = request?.Scheme ?? "http";
+            var host = request?.Host.ToString() ?? "localhost";
+
+            var progressUpdates = progressUpdatesRaw.Select(p => new ProgressResponseDto
+            {
+                Id = p.Id,
+                UserId = p.UserId,
+                UserName = p.User?.Name ?? string.Empty,
+                WorkOutPlanId = p.WorkOutPlanId,
+                WorkOutPlanName = p.WorkOutPlan?.Name ?? string.Empty,
+                Date = p.Date,
+                Weight = p.Weight,
+                BodyFatPercentage = p.BodyFatPercentage,
+                MuscleMass = p.MuscleMass,
+                WaterPercentage = p.WaterPercentage,
+                Notes = p.Notes,
+                CreatedAt = p.CreatedAt,
+                ProgressImage = p.ProgressImage?.Select(img => new ProgressImageDto
+                {
+                    Id = img.Id,
+                    ContentType = img.ContentType,
+                    FileName = $"Progress_{img.ProgressId}_{img.UploadedAt:yyyyMMddHHmmss}.{ImageExtension.GetExtension(img.ContentType)}",
+                    DownloadUrl = $"{scheme}://{host}/api/v1/progressimage/download/{img.Id}"
+                }).ToList()
+            }).ToList();
+
+            return progressUpdates;
+        }
         private string GetExtension(string contentType)
         {
             return contentType switch
@@ -337,5 +395,42 @@ namespace FitnessTracking.Services
             };
         }
 
+        public async Task UpdateProgressAsync(Guid id, UpdateProgressDto updateProgressDto)
+        {
+           var progress = await _context.ProgressUpdates.FindAsync(id);
+            if (progress == null)
+                throw new CustomeExceptionHandler("Progress not found", 404);
+
+            if (updateProgressDto.WorkOutLogId != Guid.Empty)
+                progress.WorkOutPlanId = updateProgressDto.WorkOutLogId;
+
+            if (updateProgressDto.Date != default)
+            {
+                progress.Date = updateProgressDto.Date;
+            }
+            if (updateProgressDto.Weight > 0)
+            {
+                progress.Weight = updateProgressDto.Weight;
+            }
+            if (updateProgressDto.BodyFatPercentage > 0)
+            {
+                progress.BodyFatPercentage = updateProgressDto.BodyFatPercentage;
+            }
+            if (updateProgressDto.MuscleMass > 0)
+            {
+                progress.MuscleMass = updateProgressDto.MuscleMass;
+            }
+            if (updateProgressDto.WaterPercentage > 0)
+            {
+                progress.WaterPercentage = updateProgressDto.WaterPercentage;
+            }
+            if (!string.IsNullOrEmpty(updateProgressDto.Notes))
+            {
+                progress.Notes = updateProgressDto.Notes;
+            }
+
+            _context.ProgressUpdates.Update(progress);
+            await _context.SaveChangesAsync();
+        }
     }
 }

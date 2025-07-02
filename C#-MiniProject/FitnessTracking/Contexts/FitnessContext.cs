@@ -15,8 +15,9 @@ namespace FitnessTracking.Contexts
         public DbSet<WorkOutPlanModel> WorkOutPlans { get; set; }
         public DbSet<ProgressModel> ProgressUpdates { get; set; }
         public DbSet<ProgressImageModel> ProgressImage { get; set; }
-
+        public DbSet<UserWorkOutTask> UserWorkOutTask { get; set; }
         public DbSet<CoachClientMap> CoachClientMaps { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -71,8 +72,24 @@ namespace FitnessTracking.Contexts
             modelBuilder.Entity<CoachClientMap>()
                         .HasIndex(m => new { m.CoachId, m.ClientId })
                         .IsUnique();
+            // UserWorkOutTask - UserModel: Many-to-One
+            modelBuilder.Entity<UserWorkOutTask>()
+                        .HasOne(t => t.User)
+                        .WithMany()
+                        .HasForeignKey(t => t.UserId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<UserWorkOutTask>()
+                        .HasOne(t => t.Coach)
+                        .WithMany()
+                        .HasForeignKey(t => t.CoachId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<UserWorkOutTask>()
+                        .HasOne(t => t.Plan)
+                        .WithMany()
+                        .HasForeignKey(t => t.PlanId)
+                        .OnDelete(DeleteBehavior.Cascade);
         }
-
-
     }
 }

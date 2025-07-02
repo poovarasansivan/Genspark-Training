@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FitnessTracking.Migrations
 {
     /// <inheritdoc />
-    public partial class updatedtable : Migration
+    public partial class AddUserWorkOutTaskId : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -47,6 +47,32 @@ namespace FitnessTracking.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CoachClientMaps",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    CoachId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ClientId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CoachClientMaps", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CoachClientMaps_Users_ClientId",
+                        column: x => x.ClientId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CoachClientMaps_Users_CoachId",
+                        column: x => x.CoachId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProgressUpdates",
                 columns: table => new
                 {
@@ -79,6 +105,67 @@ namespace FitnessTracking.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserWorkOutTask",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CoachId = table.Column<Guid>(type: "uuid", nullable: false),
+                    PlanId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ExerciseName = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: true),
+                    Reps = table.Column<int>(type: "integer", nullable: false),
+                    Sets = table.Column<int>(type: "integer", nullable: false),
+                    Weight = table.Column<double>(type: "double precision", nullable: true),
+                    ScheduledDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CompletedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    IsCompleted = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserWorkOutTask", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserWorkOutTask_Users_CoachId",
+                        column: x => x.CoachId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_UserWorkOutTask_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_UserWorkOutTask_WorkOutPlans_PlanId",
+                        column: x => x.PlanId,
+                        principalTable: "WorkOutPlans",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProgressImage",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProgressId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ImageData = table.Column<byte[]>(type: "bytea", nullable: false),
+                    ContentType = table.Column<string>(type: "text", nullable: false),
+                    UploadedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProgressImage", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProgressImage_ProgressUpdates_ProgressId",
+                        column: x => x.ProgressId,
+                        principalTable: "ProgressUpdates",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserWorkOutPlans",
                 columns: table => new
                 {
@@ -87,11 +174,17 @@ namespace FitnessTracking.Migrations
                     WorkOutPlanId = table.Column<Guid>(type: "uuid", nullable: false),
                     IsCompleted = table.Column<string>(type: "text", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UserWorkOutTaskId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserWorkOutPlans", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserWorkOutPlans_UserWorkOutTask_UserWorkOutTaskId",
+                        column: x => x.UserWorkOutTaskId,
+                        principalTable: "UserWorkOutTask",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_UserWorkOutPlans_Users_UserId",
                         column: x => x.UserId,
@@ -119,11 +212,17 @@ namespace FitnessTracking.Migrations
                     CaloriesBurned = table.Column<int>(type: "integer", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UserWorkOutTaskId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Workouts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Workouts_UserWorkOutTask_UserWorkOutTaskId",
+                        column: x => x.UserWorkOutTaskId,
+                        principalTable: "UserWorkOutTask",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Workouts_Users_UserId",
                         column: x => x.UserId,
@@ -138,26 +237,16 @@ namespace FitnessTracking.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "ProgressImage",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    ProgressId = table.Column<Guid>(type: "uuid", nullable: false),
-                    ImageData = table.Column<byte[]>(type: "bytea", nullable: false),
-                    ContentType = table.Column<string>(type: "text", nullable: false),
-                    UploadedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProgressImage", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProgressImage_ProgressUpdates_ProgressId",
-                        column: x => x.ProgressId,
-                        principalTable: "ProgressUpdates",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_CoachClientMaps_ClientId",
+                table: "CoachClientMaps",
+                column: "ClientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CoachClientMaps_CoachId_ClientId",
+                table: "CoachClientMaps",
+                columns: new[] { "CoachId", "ClientId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProgressImage_ProgressId",
@@ -180,14 +269,39 @@ namespace FitnessTracking.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserWorkOutPlans_UserWorkOutTaskId",
+                table: "UserWorkOutPlans",
+                column: "UserWorkOutTaskId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserWorkOutPlans_WorkOutPlanId",
                 table: "UserWorkOutPlans",
                 column: "WorkOutPlanId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserWorkOutTask_CoachId",
+                table: "UserWorkOutTask",
+                column: "CoachId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserWorkOutTask_PlanId",
+                table: "UserWorkOutTask",
+                column: "PlanId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserWorkOutTask_UserId",
+                table: "UserWorkOutTask",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Workouts_UserId",
                 table: "Workouts",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Workouts_UserWorkOutTaskId",
+                table: "Workouts",
+                column: "UserWorkOutTaskId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Workouts_WorkOutPlanId",
@@ -199,6 +313,9 @@ namespace FitnessTracking.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "CoachClientMaps");
+
+            migrationBuilder.DropTable(
                 name: "ProgressImage");
 
             migrationBuilder.DropTable(
@@ -209,6 +326,9 @@ namespace FitnessTracking.Migrations
 
             migrationBuilder.DropTable(
                 name: "ProgressUpdates");
+
+            migrationBuilder.DropTable(
+                name: "UserWorkOutTask");
 
             migrationBuilder.DropTable(
                 name: "Users");

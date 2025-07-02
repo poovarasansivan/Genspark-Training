@@ -25,8 +25,10 @@ namespace FitnessTracking.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Email),
-                new Claim(ClaimTypes.Role, user.Role ?? "User")
+                new Claim(ClaimTypes.Name, user.Name),               // User Name
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString() ),         // User ID
+                new Claim(ClaimTypes.Email, user.Email),               // Email
+                new Claim(ClaimTypes.Role, user.Role ?? "User")        // Role
             };
 
             var creds = new SigningCredentials(_securityKey, SecurityAlgorithms.HmacSha256Signature);
@@ -35,7 +37,7 @@ namespace FitnessTracking.Services
             var accessTokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddDays(1),
+                Expires = DateTime.UtcNow.AddMinutes(15),
                 SigningCredentials = creds
             };
 
@@ -59,8 +61,10 @@ namespace FitnessTracking.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Email),
-                new Claim(ClaimTypes.Role, user.Role ?? "User")
+                new Claim(ClaimTypes.Name, user.Name),               // User Name
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),         // User ID
+                new Claim(ClaimTypes.Email, user.Email),               // Email
+                new Claim(ClaimTypes.Role, user.Role ?? "User")        // Role
             };
 
             var creds = new SigningCredentials(_securityKey, SecurityAlgorithms.HmacSha256Signature);
@@ -69,7 +73,7 @@ namespace FitnessTracking.Services
             var accessTokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddDays(1),
+                Expires = DateTime.UtcNow.AddMinutes(15),
                 SigningCredentials = creds
             };
 

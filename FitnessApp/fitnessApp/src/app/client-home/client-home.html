@@ -1,0 +1,115 @@
+<div class="min-h-screen bg-slate-100 py-8 px-8">
+  <!-- Welcome Message -->
+   <app-popup></app-popup>
+  <h1 class="text-slate-700 text-lg md:text-xl font-semibold mb-4 md:mb-6">
+    👋 Welcome Back, <span class="text-emerald-700">{{ clientName }}</span>
+  </h1>
+
+  <h2 class="text-slate-800 text-lg md:text-xl font-semibold mb-4">Active Plans</h2>
+  <ng-container *ngIf="activeplan.length > 0; else noPlans">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
+    >
+      <div
+        class="bg-white shadow-md rounded-lg p-4"
+        *ngFor="let plan of activeplan"
+      >
+        <h3 class="text-slate-800 text-md font-semibold mb-2 md:text-lg">
+          Plan Name :
+          <span class="text-slate-600 font-medium"
+            >{{ plan.workOutPlanName }}</span
+          >
+        </h3>
+        <p class="text-slate-800 text-lg font-semibold mb-2">
+          Coach Name :
+          <span class="text-slate-600 font-medium">{{ plan.coachName }}</span>
+        </p>
+        <p class="text-slate-800 text-lg font-semibold mb-2">
+          Start Date :
+          <span class="text-slate-600 font-medium"
+            >{{ plan.startDate | date: 'yyyy-MM-dd' }}</span
+          >
+        </p>
+        <p class="text-slate-800 text-lg font-semibold mb-2">
+          End Date :
+          <span class="text-slate-600 font-medium"
+            >{{ plan.endDate | date: 'yyyy-MM-dd' }}</span
+          >
+        </p>
+        <div class="flex justify-end">
+          <button
+          (click)="viewLogs()"
+            class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-md transition duration-300"
+          >
+            <lucide-angular
+              [name]="viewIcon"
+              [size]="16"
+              color="white"
+            ></lucide-angular>
+            View Logs
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noPlans>
+    <div class="text-red-500 text-center mt-6">
+      No plans available for you
+    </div>
+  </ng-template>
+
+  <h2 class="text-slate-800 text-lg md:text-xl font-semibold mb-4">Completed Plans</h2>
+
+  <ng-container *ngIf="completedplan.length > 0; else noPlans">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
+    >
+      <div
+        class="bg-white shadow-md rounded-lg p-4"
+        *ngFor="let plan of completedplan"
+      >
+        <h3 class="text-slate-800 text-md md:text-lg font-semibold mb-2">
+          Plan Name :
+          <span class="text-slate-600 font-medium"
+            >{{ plan.workOutPlanName }}</span
+          >
+        </h3>
+        <p class="text-slate-800 text-md md:text-lg font-semibold mb-2">
+          Coach Name :
+          <span class="text-slate-600 font-medium">{{ plan.coachName }}</span>
+        </p>
+        <p class="text-slate-800 text-md md:text-lg font-semibold mb-2">
+          Start Date :
+          <span class="text-slate-600 font-medium"
+            >{{ plan.startDate | date: 'yyyy-MM-dd' }}</span
+          >
+        </p>
+        <p class="text-slate-800 text-md md:text-lg font-semibold mb-2">
+          End Date :
+          <span class="text-slate-600 font-medium"
+            >{{ plan.endDate | date: 'yyyy-MM-dd' }}</span
+          >
+        </p>
+        <div class="flex justify-end">
+          <button
+          (click)="viewLogs()"
+            class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-md transition duration-300"
+          >
+            <lucide-angular
+              [name]="viewIcon"
+              [size]="16"
+              color="white"
+            ></lucide-angular>
+            View Logs
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noPlans>
+    <div class="text-red-500 text-center mt-6">
+      No completed plans available for you
+    </div>
+  </ng-template>
+</div>

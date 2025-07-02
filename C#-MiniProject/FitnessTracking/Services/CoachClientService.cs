@@ -10,10 +10,12 @@ namespace FitnessTracking.Services
     public class CoachClientMapService : ICoachMappingService
     {
         private readonly FitnessContext _context;
+        private readonly INotificationService _notificationService;
 
-        public CoachClientMapService(FitnessContext context)
+        public CoachClientMapService(FitnessContext context, INotificationService notificationService)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
+            _notificationService = notificationService ?? throw new ArgumentNullException(nameof(notificationService));
         }
 
         public async Task<CoachMappingResponseDto> AddCoachClientMappingAsync(CoachMappingRequestDto dto)
@@ -42,6 +44,15 @@ namespace FitnessTracking.Services
                 CreatedAt = DateTime.UtcNow
             };
 
+            await _notificationService.SendNotificationAsync(
+                dto.ClientId.ToString(),
+                $"You have been assigned a new coach: {coach.Name}.",
+                true);
+            await _notificationService.SendNotificationAsync(
+                dto.CoachId.ToString(),
+                $"You have been assigned a new client: {client.Name}.",
+                true);
+                
             _context.CoachClientMaps.Add(mapping);
             await _context.SaveChangesAsync();
 
@@ -67,7 +78,6 @@ namespace FitnessTracking.Services
 
             var result = mappings.Select(m => new CoachMappingResponseDto
             {
-                Id = m.Id,
                 CoachId = m.CoachId,
                 CoachName = m.Coach?.Name ?? "",
                 CoachEmail = m.Coach?.Email ?? "",
@@ -94,8 +104,9 @@ namespace FitnessTracking.Services
 
             var result = mappings.Select(m => new CoachMappingResponseDto
             {
-               CoachId = m.CoachId,
+                CoachId = m.CoachId,
                 CoachName = _context.Users.Find(m.CoachId)?.Name,
+                CoachEmail = _context.Users.Find(m.CoachId)?.Email,
                 ClientId = m.ClientId,
                 ClientName = m.Client?.Name ?? "",
                 ClientEmail = m.Client?.Email ?? "",

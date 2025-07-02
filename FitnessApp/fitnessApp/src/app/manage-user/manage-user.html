@@ -1,0 +1,468 @@
+<div class="min-h-screen bg-slate-100 p-3 md:p-7">
+  <app-popup></app-popup>
+  <h3 class="text-slate-700 text-xl md:text-2xl font-semibold mb-4">
+    Manage Users
+  </h3>
+
+  <div class="bg-white shadow-md rounded-lg p-6 w-full">
+    <div
+      class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4"
+    >
+      <div class="flex flex-col md:flex-row items-center gap-3">
+        <div class="relative w-full md:w-96">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <lucide-angular
+              [name]="searchIcon"
+              class="w-5 h-5 text-gray-400"
+            ></lucide-angular>
+          </div>
+          <input
+            [(ngModel)]="searchTerm"
+            (input)="handleSearchInput()"
+            type="text"
+            placeholder="Search by name or email"
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <select
+          [(ngModel)]="roleFilter"
+          (ngModelChange)="onRoleChange($event)"
+          class="px-4 py-2 border border-gray-300 w-full md:w-40 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">All Roles</option>
+          <option value="Admin">Admin</option>
+          <option value="Coach">Coach</option>
+          <option value="User">User</option>
+        </select>
+
+        <select
+          [(ngModel)]="statusFilter"
+          (ngModelChange)="onStatusChange($event)"
+          class="px-4 py-2 border border-gray-300 w-full md:w-40 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">All Status</option>
+          <option value="true">Active</option>
+          <option value="false">Not Active</option>
+        </select>
+
+        <button
+          class="bg-gray-200 text-gray-700 px-4 py-2 w-full md:w-48 rounded hover:bg-gray-300 transition"
+          (click)="resetFilters()"
+        >
+          Reset Filters
+        </button>
+      </div>
+
+      <button
+        (click)="showAddUserModal = true"
+        class="bg-blue-600 text-white px-4 py-2 flex items-center justify-center rounded-md hover:bg-blue-700 transition"
+      >
+        <lucide-angular [name]="addIcon" class="w-5 h-5 mr-2"></lucide-angular>
+        Add User
+      </button>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white text-md text-left rounded-md">
+        <thead>
+          <tr class="bg-slate-100 text-gray-700">
+            <th class="py-2 px-4 border-b whitespace-nowrap">S No</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">User ID</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Name</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Email</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Role</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Status</th>
+            <th class="py-2 px-4 border-b whitespace-nowrap">Actions</th>
+          </tr>
+        </thead>
+        <ng-container *ngFor="let user of users; let i = index">
+          <tbody>
+            <tr class="hover:bg-slate-50">
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ ((filter.pageNumber ?? 1) - 1) * (filter.pageSize ?? 10) + i
+                + 1 }}
+              </td>
+
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ user.id }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ user.name }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ user.email }}
+              </td>
+              <td
+                class="py-2 px-4 border-b text-md text-slate-700 border-gray-300 whitespace-nowrap"
+              >
+                {{ user.role }}
+              </td>
+              <td class="py-2 px-4 border-b border-gray-300">
+                @if(user.isActive) {
+                <span
+                  class="inline-block bg-green-100 text-green-800 text-md px-2 py-[0.5] rounded-lg whitespace-nowrap"
+                  >Active</span
+                >
+                } @else {
+                <span
+                  class="inline-block bg-red-100 text-red-800 text-md px-2 py-[0.5] rounded-lg whitespace-nowrap"
+                  >Not Active</span
+                >
+                }
+              </td>
+              <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">
+                <button
+                  class="text-white bg-blue-600 px-3 py-[0.5] md:px-5 md:py-1 mr-3 rounded-md"
+                  (click)="openEditModal(user)"
+                >
+                  Edit
+                </button>
+                <button
+                  class="text-white bg-red-700 px-3 py-[0.5] md:px-5 md:py-1 rounded-md"
+                  (click)="openDeleteModal(user)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </ng-container>
+        <tbody *ngIf="users.length === 0">
+          <tr>
+            <td colspan="7" class="text-center py-4 text-red-500">
+              No users found.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-end mt-4" *ngIf="totalUsers > 0">
+      <nav class="flex space-x-1">
+        <button
+          class="px-3 py-1 border rounded"
+          [ngClass]="{
+        'bg-gray-300 text-gray-500 cursor-not-allowed': (filter.pageNumber ?? 1) === 1,
+        'bg-white hover:bg-gray-100': (filter.pageNumber ?? 1) > 1
+        }"
+          [disabled]="(filter.pageNumber ?? 1) === 1"
+          (click)="changePage((filter.pageNumber ?? 1) - 1)"
+        >
+          &laquo;
+        </button>
+
+        <button
+          *ngFor="let page of pageNumbers"
+          class="px-3 py-1 border rounded"
+          [disabled]="page === -1 || page === -2"
+          [ngClass]="{
+            'bg-blue-600 text-white': page === (filter.pageNumber ?? 1),
+            'bg-white hover:bg-gray-100': page !== (filter.pageNumber ?? 1) && page > 0,
+            'cursor-default': page < 0
+            }"
+          (click)="page > 0 && changePage(page)"
+        >
+          <ng-container *ngIf="page > 0">{{ page }}</ng-container>
+          <ng-container *ngIf="page === -1">...</ng-container>
+          <ng-container *ngIf="page === -2">...</ng-container>
+        </button>
+
+        <button
+          class="px-3 py-1 border rounded"
+          [ngClass]="{
+        'bg-gray-300 text-gray-500 cursor-not-allowed': (filter.pageNumber ?? 1) === pageNumbers.length,
+        'bg-white hover:bg-gray-100': (filter.pageNumber ?? 1) < pageNumbers.length
+      }"
+          [disabled]="(filter.pageNumber ?? 1) === pageNumbers.length"
+          (click)="changePage((filter.pageNumber ?? 1) + 1)"
+        >
+          &raquo;
+        </button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- Add User Modal -->
+<div
+  *ngIf="showAddUserModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <!-- Close Button -->
+    <button
+      (click)="showAddUserModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Add New User</h2>
+
+    <form
+      (ngSubmit)="addUser()"
+      [formGroup]="addUserForm"
+      class="space-y-4"
+      novalidate
+    >
+      <div>
+        <label class="block mb-1 text-gray-700">Name</label>
+        <input
+          formControlName="name"
+          type="text"
+          placeholder="Enter user name"
+          class="w-full border border-gray-300 rounded-md p-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small *ngIf="name.invalid && name.touched" class="text-red-500"
+          >Valid Name required</small
+        >
+      </div>
+
+      <div>
+        <label class="block mb-1 text-gray-700">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          placeholder="Enter user email"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small *ngIf="email.invalid && email.touched" class="text-red-500"
+          >Valid Email required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Password</label>
+        <input
+          formControlName="password"
+          type="password"
+          placeholder="••••••••"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small *ngIf="password.invalid && password.touched" class="text-red-500"
+          >Password is required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Confirm Password</label>
+        <input
+          formControlName="confirmPassword"
+          type="password"
+          placeholder="••••••••"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small
+          *ngIf="confirmPassword.invalid && confirmPassword.touched"
+          class="text-red-500"
+          >Confirm Password is required</small
+        >
+        <small
+          *ngIf="addUserForm.errors?.['passwordMismatch'] && addUserForm.touched"
+          class="text-red-500 ml-5"
+        >
+          Passwords do not match
+        </small>
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Role</label>
+        <select
+          formControlName="role"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">Select Role</option>
+          <option value="Admin">Admin</option>
+          <option value="Coach">Coach</option>
+          <option value="User">User</option>
+        </select>
+        <small *ngIf="role.invalid && role.touched" class="text-red-500"
+          >Role is required</small
+        >
+
+        <label class="block mb-1 text-gray-700 mt-4">Status</label>
+        <select
+          formControlName="status"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">Select Status</option>
+          <option value="true">Active</option>
+          <option value="false">Not Active</option>
+        </select>
+        <small *ngIf="status.invalid && status.touched" class="text-red-500"
+          >Status is required</small
+        >
+      </div>
+
+      <div class="flex justify-end gap-3">
+        <button
+          type="button"
+          (click)="showAddUserModal = false"
+          class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition text-gray-700"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- End of Add User Modal -->
+
+<!-- Edit User Modal-->
+
+<div
+  *ngIf="showEditUserModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <button
+      (click)="showEditUserModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">
+      Edit User - {{ selectedUser?.name }}
+    </h2>
+
+    <form
+      (ngSubmit)="editUser()"
+      [formGroup]="editUserForm"
+      class="space-y-4"
+      novalidate
+    >
+      <div>
+        <label class="block mb-1 text-gray-700">Name</label>
+        <input
+          formControlName="ename"
+          type="text"
+          placeholder="Enter user name"
+          class="w-full border border-gray-300 rounded-md p-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small *ngIf="ename.invalid && ename.touched" class="text-red-500"
+          >Valid Name required</small
+        >
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Email</label>
+        <input
+          formControlName="eemail"
+          type="email"
+          placeholder="Enter user email"
+          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <small *ngIf="eemail.invalid && eemail.touched" class="text-red-500"
+          >Valid Email required</small
+        >
+      </div>
+
+      <label class="block mb-1 text-gray-700">Role</label>
+      <select
+        formControlName="erole"
+        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <option value="">Select Role</option>
+        <option value="Admin">Admin</option>
+        <option value="Coach">Coach</option>
+        <option value="User">User</option>
+      </select>
+      <small *ngIf="erole.invalid && erole.touched" class="text-red-500"
+        >Role is required</small
+      >
+      <label class="block mb-1 text-gray-700 mt-4">Status</label>
+      <select
+        formControlName="estatus"
+        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <option value="">Select Status</option>
+        <option value="true">Active</option>
+        <option value="false">Not Active</option>
+      </select>
+      <small *ngIf="estatus.invalid && estatus.touched" class="text-red-500"
+        >Status is required</small
+      >
+      <div class="flex justify-end gap-3">
+        <button
+          type="button"
+          (click)="showEditUserModal = false"
+          class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition text-gray-700"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- End of Edit User Modal -->
+
+<!-- Delete Confirmation Modal -->
+<div
+  *ngIf="showDeleteUserModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+>
+  <div
+    class="bg-white rounded-lg shadow-md ml-2 mr-2 md:ml-0 md:mr-0 w-full md:max-w-1/2 p-6 relative max-h-[90vh] overflow-y-auto"
+  >
+    <!-- Close Button -->
+    <button
+      (click)="showDeleteUserModal = false"
+      class="absolute top-2 right-2 text-red-400 mr-2 mt-2 hover:text-red-600"
+    >
+      <lucide-angular [name]="cancelIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+
+    <!-- Title -->
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Delete User</h2>
+
+    <!-- Confirmation Text -->
+    <p class="mb-4">
+      Are you sure you want to delete
+      <span class="font-semibold">{{ selectedUser?.name }}</span>?
+    </p>
+
+    <!-- Action Buttons -->
+    <div class="flex justify-end gap-3">
+      <button
+        type="button"
+        (click)="showDeleteUserModal = false"
+        class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition text-gray-700"
+      >
+        Cancel
+      </button>
+      <button
+        (click)="deleteUser()"
+        type="button"
+        class="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition flex items-center justify-center"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- End of Delete Confirmation Modal -->

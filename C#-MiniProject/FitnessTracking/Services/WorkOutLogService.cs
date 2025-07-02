@@ -211,5 +211,106 @@ namespace FitnessTracking.Services
 
             return log;
         }
+
+        public async Task<IEnumerable<WorkOutLogResponseDto>> GetWorkOutLogByUserIdAndWorkPlanId(Guid userId, Guid workOutPlanId)
+        {
+            if (userId == Guid.Empty || workOutPlanId == Guid.Empty)
+                throw new CustomeExceptionHandler("User ID and WorkOut Plan ID cannot be empty or null", 404);
+
+            var logs = await _context.Workouts
+                .Include(w => w.User)
+                .Include(w => w.WorkOutPlan)
+                .Where(w => w.UserId == userId && w.WorkOutPlanId == workOutPlanId)
+                .Select(w => new WorkOutLogResponseDto
+                {
+                    Id = w.Id,
+                    UserId = w.UserId,
+                    UserName = w.User != null ? w.User.Name : "Unknown User",
+                    WorkOutPlanId = w.WorkOutPlanId,
+                    WorkOutPlanName = w.WorkOutPlan != null ? w.WorkOutPlan.Name : "No Plan",
+                    Type = w.Type,
+                    Date = w.Date,
+                    Duration = w.Duration,
+                    CaloriesBurned = w.CaloriesBurned,
+                    Notes = w.Notes,
+                    CreatedAt = w.CreatedAt,
+                    UpdatedAt = w.UpdatedAt
+                })
+                .ToListAsync();
+
+            if (logs == null || !logs.Any())
+                throw new CustomeExceptionHandler("Workout log not found for the specified user and plan", 404);
+
+            return logs;
+        }
+
+        public async Task<IEnumerable<WorkOutLogResponseDto>> GetWorkOutLogsByCoachId(Guid coachId)
+        {
+            if (coachId == Guid.Empty)
+                throw new CustomeExceptionHandler("Coach ID cannot be empty or null", 400);
+
+            var logs = await (from w in _context.Workouts
+                              join map in _context.CoachClientMaps on w.UserId equals map.ClientId
+                              join user in _context.Users on w.UserId equals user.Id
+                              join plan in _context.WorkOutPlans on w.WorkOutPlanId equals plan.Id
+                              where map.CoachId == coachId
+                              select new WorkOutLogResponseDto
+                              {
+                                  Id = w.Id,
+                                  UserId = w.UserId,
+                                  UserName = user.Name,
+                                  WorkOutPlanId = w.WorkOutPlanId,
+                                  WorkOutPlanName = plan.Name,
+                                  Type = w.Type,
+                                  Date = w.Date,
+                                  Duration = w.Duration,
+                                  CaloriesBurned = w.CaloriesBurned,
+                                  Notes = w.Notes,
+                                  CreatedAt = w.CreatedAt,
+                                  UpdatedAt = w.UpdatedAt
+                              }).ToListAsync();
+
+            if (logs == null || !logs.Any())
+                throw new CustomeExceptionHandler("No workout logs found for the specified coach", 404);
+
+            return logs;
+        }
+
+        public async Task UpdateWorkOutLogAsync(Guid id, WorkOutLogUpdateDto updateWorkOutLogDto)
+        {
+            if (updateWorkOutLogDto == null)
+                throw new CustomeExceptionHandler("Update data cannot be null", 400);
+
+            var existingLog = await _context.Workouts.FindAsync(id);
+
+            if (existingLog == null)
+                throw new CustomeExceptionHandler("Workout log not found", 404);
+
+            // Update only if non-null or non-empty
+            if (updateWorkOutLogDto.Date.HasValue)
+            {
+                existingLog.Date = updateWorkOutLogDto.Date.Value;
+            }
+
+           if (updateWorkOutLogDto.Duration != TimeSpan.Zero)
+            {
+                existingLog.Duration = updateWorkOutLogDto.Duration;
+            }
+            if (updateWorkOutLogDto.CaloriesBurned > 0)
+            {
+                existingLog.CaloriesBurned = updateWorkOutLogDto.CaloriesBurned.Value;
+            }
+
+            if (!string.IsNullOrWhiteSpace(updateWorkOutLogDto.Type))
+            {
+                existingLog.Type = updateWorkOutLogDto.Type;
+            }
+
+            existingLog.UpdatedAt = DateTime.UtcNow;
+
+            _context.Workouts.Update(existingLog);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

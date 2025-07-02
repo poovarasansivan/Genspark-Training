@@ -166,5 +166,119 @@ namespace FitnessTracking.Services
 
             return _workOutPlanRepository.UpdateAsync(workOutPlan);
         }
+
+        public async Task<IEnumerable<GroupedResponseDto>> GetGroupedWorkPlans(Guid id)
+        {
+            if (id == Guid.Empty)
+                throw new CustomeExceptionHandler("Workout Plan ID cannot be empty or null", 400);
+
+            var groupedList = await (from uwp in _context.UserWorkOutPlans
+                                     join plan in _context.WorkOutPlans on uwp.WorkOutPlanId equals plan.Id
+                                     join coachMap in _context.CoachClientMaps on uwp.UserId equals coachMap.ClientId
+                                     join coach in _context.Users on coachMap.CoachId equals coach.Id
+                                     join client in _context.Users on uwp.UserId equals client.Id
+                                     where plan.Id == id // ✅ Filtering by plan ID
+                                     select new GroupedResponseDto
+                                     {
+                                         Id = plan.Id,
+                                         UserWorkOutPlanId = uwp.Id,
+                                         PlanName = plan.Name,
+                                         PlanDescription = plan.Description,
+                                         StartDate = plan.StartDate,
+                                         EndDate = plan.EndDate,
+
+                                         CoachId = coach.Id,
+                                         CoachName = coach.Name,
+                                         CoachEmail = coach.Email,
+
+                                         ClientId = client.Id,
+                                         ClientName = client.Name,
+                                         ClientEmail = client.Email,
+                                         IsActive = client.IsActive,
+
+                                         IsCompleted = uwp.IsCompleted ?? "Not Completed"
+                                     }).ToListAsync();
+
+            if (!groupedList.Any())
+                throw new CustomeExceptionHandler("No grouped workout plans found", 404);
+
+            return groupedList;
+        }
+
+        public async Task<IEnumerable<GroupedResponseDto>> GetGroupedWorkPlansByCoachId(Guid coachId)
+        {
+            if (coachId == Guid.Empty)
+                throw new CustomeExceptionHandler("Coach ID cannot be empty or null", 400);
+
+            var groupedList = await (from uwp in _context.UserWorkOutPlans
+                                     join plan in _context.WorkOutPlans on uwp.WorkOutPlanId equals plan.Id
+                                     join coachMap in _context.CoachClientMaps on uwp.UserId equals coachMap.ClientId
+                                     join coach in _context.Users on coachMap.CoachId equals coach.Id
+                                     join client in _context.Users on uwp.UserId equals client.Id
+                                     where coach.Id == coachId // ✅ Filtering by coach ID
+                                     select new GroupedResponseDto
+                                     {
+                                         Id = plan.Id,
+                                         UserWorkOutPlanId = uwp.Id,
+                                         PlanName = plan.Name,
+                                         PlanDescription = plan.Description,
+                                         StartDate = plan.StartDate,
+                                         EndDate = plan.EndDate,
+
+                                         CoachId = coach.Id,
+                                         CoachName = coach.Name,
+                                         CoachEmail = coach.Email,
+
+                                         ClientId = client.Id,
+                                         ClientName = client.Name,
+                                         ClientEmail = client.Email,
+                                         IsActive = client.IsActive,
+
+                                         IsCompleted = uwp.IsCompleted ?? "Not Completed"
+                                     }).ToListAsync();
+
+            if (!groupedList.Any())
+                throw new CustomeExceptionHandler("No workout plans found for the specified coach", 404);
+
+            return groupedList;
+        }
+
+        public async Task<IEnumerable<GroupedResponseDto>> GetWorkOutPlansByCoachIdAndPlanId(Guid userId)
+        {
+            if (userId == Guid.Empty)
+                throw new CustomeExceptionHandler("Coach ID and User WorkOut Plan ID cannot be empty or null", 400);
+
+            var results = await (from uwp in _context.UserWorkOutPlans
+                                 join plan in _context.WorkOutPlans on uwp.WorkOutPlanId equals plan.Id
+                                 join coachMap in _context.CoachClientMaps on uwp.UserId equals coachMap.ClientId
+                                 join coach in _context.Users on coachMap.CoachId equals coach.Id
+                                 join client in _context.Users on uwp.UserId equals client.Id
+                                 where client.Id == userId 
+                                 select new GroupedResponseDto
+                                 {
+                                     Id = plan.Id,
+                                     UserWorkOutPlanId = uwp.Id,
+                                     PlanName = plan.Name,
+                                     PlanDescription = plan.Description,
+                                     StartDate = plan.StartDate,
+                                     EndDate = plan.EndDate,
+
+                                     CoachId = coach.Id,
+                                     CoachName = coach.Name,
+                                     CoachEmail = coach.Email,
+
+                                     ClientId = client.Id,
+                                     ClientName = client.Name,
+                                     ClientEmail = client.Email,
+                                     IsActive = client.IsActive,
+
+                                     IsCompleted = uwp.IsCompleted ?? "Not Completed"
+                                 }).ToListAsync();
+
+            if (!results.Any())
+                throw new CustomeExceptionHandler("No workout plans found for the specified coach and user plan", 404);
+
+            return results;
+        }
     }
 }

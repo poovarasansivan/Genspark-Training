@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace FitnessTracking.Models
 {
     public class UserWorkOutPlanModel
@@ -8,7 +10,11 @@ namespace FitnessTracking.Models
 
         public Guid WorkOutPlanId { get; set; }
         public WorkOutPlanModel? WorkOutPlan { get; set; }
-        public string? IsCompleted { get; set; } = "Not Completed"; 
+        public Guid? UserWorkOutTaskId { get; set; }
+        
+        [ForeignKey(nameof(UserWorkOutTaskId))]
+        public UserWorkOutTask? UserWorkOutTask { get; set; }
+        public string? IsCompleted { get; set; } = "Not Completed";
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
     }
