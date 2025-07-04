@@ -1,0 +1,140 @@
+<div
+  class="bg-gray-900 dark:bg-gray-900 min-h-screen flex flex-col items-center justify-center px-4"
+>
+  <div
+    *ngIf="paymentResult"
+    class="mt-4 text-center font-medium bg-white px-8 py-4 rounded-lg shadow-md transition-colors duration-300 mb-10 animate-fade-in"
+    [ngClass]="{
+  'text-green-600': paymentResult.success,
+  'text-red-600': !paymentResult.success
+}"
+  >
+    {{ paymentResult.message }}
+  </div>
+
+  <div>
+    <form
+      class="w-full max-w-md bg-white p-6 rounded-lg shadow-md"
+      [formGroup]="paymentForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <h1 class="text-xl text-blue-600 font-bold mb-6 text-center">
+        UPI Payment Simulation
+      </h1>
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700"
+          >Name</label
+        >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          formControlName="name"
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-4 py-2 focus:border-blue-500 focus:ring-blue-500"
+          placeholder="Poovarasan"
+          required
+        />
+        <small
+          class="text-red-500"
+          *ngIf="name?.invalid && (name?.touched || name?.dirty)"
+        >
+          Valid name is required.
+        </small>
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700"
+          >Email</label
+        >
+        <input
+          type="text"
+          id="email"
+          name="email"
+          formControlName="email"
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-4 py-2 focus:border-blue-500 focus:ring-blue-500"
+          placeholder="poovarasan@gmail.com"
+          required
+        />
+        <small
+          class="text-red-500"
+          *ngIf="email?.invalid && (email?.touched || email?.dirty)"
+        >
+          Valid email is required.
+        </small>
+      </div>
+      <div class="mb-4">
+        <label for="phone" class="block text-sm font-medium text-gray-700"
+          >Phone no</label
+        >
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          formControlName="phone"
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-4 py-2 focus:border-blue-500 focus:ring-blue-500"
+          placeholder="9876543210"
+          required
+        />
+        <small
+          class="text-red-500"
+          *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)"
+        >
+          Valid phone no is required.
+        </small>
+      </div>
+      <div class="mb-4">
+        <label for="upiId" class="block text-sm font-medium text-gray-700"
+          >UPI ID</label
+        >
+        <input
+          type="text"
+          id="upiId"
+          name="upiId"
+          formControlName="upiId"
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-4 py-2 focus:border-blue-500 focus:ring-blue-500"
+          placeholder="example@upi"
+          required
+        />
+        <small
+          class="text-red-500"
+          *ngIf="upiId?.invalid && (upiId?.touched || upiId?.dirty)"
+        >
+          Valid upiId is required.
+        </small>
+      </div>
+      <div class="mb-4">
+        <label for="amount" class="block text-sm font-medium text-gray-700"
+          >Amount (INR)</label
+        >
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          formControlName="amount"
+          class="mt-1 block w-full border-gray-300 rounded-md px-4 py-2 border shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          placeholder="100"
+          required
+        />
+        <small
+          class="text-red-500"
+          *ngIf="amount?.invalid && (amount?.touched || amount?.dirty)"
+        >
+          Amount must be a greater than 0.
+        </small>
+      </div>
+      <button
+        type="submit"
+        [disabled]="paymentForm.invalid || loading"
+        class="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {{ loading ? 'Processing...' : 'Pay Now' }}
+      </button>
+
+      <div class="mt-4 text-sm text-gray-600 text-center">
+        By clicking "Pay Now", you agree to our
+        <a href="#" class="text-blue-600 hover:underline">Terms of Service</a>
+        and
+        <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>.
+      </div>
+    </form>
+  </div>
+</div>
