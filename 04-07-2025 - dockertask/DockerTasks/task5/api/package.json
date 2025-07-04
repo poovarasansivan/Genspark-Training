@@ -1,0 +1,10 @@
+{
+  "name": "task4",
+  "description": "A simple Node.js application for Docker Task ",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^4.9.1"
+  }
+}
