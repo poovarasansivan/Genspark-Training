@@ -1,0 +1,25 @@
+.home {
+  background-color: oklch(28.2% 0.091 267.935);
+  height: 100vh;
+}
+
+.home__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.home__container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.home__container p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+.home__container p:last-child {
+  margin-bottom: 2rem;
+}
