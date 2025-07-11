@@ -1,0 +1,249 @@
+using FitnessTracking.Models;
+using FitnessTracking.Models.DTOs;
+using FitnessTracking.Contexts;
+using FitnessTracking.Interfaces;
+using FitnessTracking.Repositories;
+using FitnessTracking.Services;
+using FitnessTracking.Helpers;
+using FitnessTracking.Middlewares;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Text;
+using System.Text.Json.Serialization;
+using Serilog;
+using Serilog.Events;
+using Microsoft.IdentityModel.Tokens;
+using System.Threading.RateLimiting;
+using FitnessTracking.notification;
+using Microsoft.AspNetCore.SignalR;
+using Serilog.Sinks.AzureBlobStorage;
+
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .Build();
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog();
+
+try
+{
+    Log.Logger = new LoggerConfiguration()
+      .MinimumLevel.Debug()
+      .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+      .Enrich.FromLogContext()
+      .WriteTo.Console()
+      .WriteTo.AzureBlobStorage(
+          storageContainerName: "logs",
+          storageFileName: "log.txt",
+          outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
+          restrictedToMinimumLevel: LogEventLevel.Information)
+      .CreateLogger();
+    Console.WriteLine("Azure configured successfully.");
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Failed to configure Serilog: " + ex.Message);
+    throw;
+}
+
+
+
+builder.Services.AddSignalR();
+
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.InvalidModelStateResponseFactory = context =>
+    {
+        var errors = context.ModelState
+            .Where(e => e.Value?.Errors.Count > 0)
+            .ToDictionary(
+                kvp => kvp.Key,
+                kvp => kvp.Value!.Errors.Select(e => e.ErrorMessage).ToArray()
+            );
+
+        var errorResponse = new ApiErrorResponseDto
+        {
+            Message = "Validation Failed",
+            Errors = errors
+        };
+
+        return new BadRequestObjectResult(errorResponse);
+    };
+});
+
+
+#region Rate Limiting Configuration
+builder.Services.AddRateLimiter(options =>
+{
+    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            factory: _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 4000,
+                Window = TimeSpan.FromMinutes(1),
+                QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+                QueueLimit = 2
+            }));
+
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+});
+
+#endregion
+
+builder.Services.AddControllers()
+    .AddJsonOptions(x =>
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+
+builder.Services.AddEndpointsApiExplorer();
+
+#region Swagger Configuration
+builder.Services.AddSwaggerGen(opt =>
+{
+    opt.SwaggerDoc("v1", new OpenApiInfo { Title = "Fitness Tracking API", Version = "v1" });
+    opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Enter JWT",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "bearer"
+    });
+    opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
+#endregion
+
+#region Database Configuration
+builder.Services.AddDbContext<FitnessContext>(opts =>
+{
+    opts.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+});
+#endregion
+
+builder.Services.AddMemoryCache();
+#region Repository and Service Configuration
+builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<WorkOutPlanRepository>();
+builder.Services.AddScoped<WorkOutLogRepository>();
+builder.Services.AddScoped<UserPlanRepository>();
+builder.Services.AddScoped<ProgressRepository>();
+builder.Services.AddScoped<ProgressImageRepository>();
+builder.Services.AddScoped<CoachClientMappingRepository>();
+builder.Services.AddScoped<UserWorkTaskRepository>();
+
+// Add Services
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IEncryptionService, EncryptionService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IWorkOutPlanService, WorkOutPlanService>();
+builder.Services.AddScoped<IWorkOutLogService, WorkOutLogService>();
+builder.Services.AddScoped<IUserPlanService, UserPlanService>();
+builder.Services.AddScoped<IProgressService, ProgressService>();
+builder.Services.AddScoped<IProgressImageService, ProgressImageService>();
+builder.Services.AddScoped<ICoachMappingService, CoachClientMapService>();
+builder.Services.AddScoped<IUserWorkOutTaskService, UserWorkOutTaskService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddSingleton<IUserIdProvider, NameIdentifierUserIdProvider>();
+builder.Services.AddScoped<BlobService>(provider =>
+{
+    var connectionString = configuration["AzureBlob:ConnectionString"];
+    var containerName = "progress-images"; 
+    return new BlobService(connectionString, containerName);
+});
+#endregion
+
+#region Authentication Configuration
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Keys:JwtTokenKey"])),
+            ClockSkew = TimeSpan.Zero
+        };
+        options.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                var accessToken = context.Request.Query["access_token"];
+
+                // If the request is for our SignalR hub...
+                var path = context.HttpContext.Request.Path;
+                if (!string.IsNullOrEmpty(accessToken) &&
+                    path.StartsWithSegments("/notificationhub"))
+                {
+                    context.Token = accessToken;
+                }
+
+                return Task.CompletedTask;
+            }
+        };
+    });
+
+#endregion
+
+#region CORS Configuration
+// Enable CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhostFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200", "http://127.0.0.1:5500", "http://localhost:8081")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
+#endregion
+
+builder.Services.AddHttpContextAccessor();
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.MapHub<NotificationHub>("/notificationHub");
+app.UseRateLimiter();
+app.UseCors("AllowLocalhostFrontend");
+
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseMiddleware<ExceptionMiddleware>();
+app.MapControllers();
+
+
+Log.Information("Application started");
+
+// using (var scope = app.Services.CreateScope())
+// {
+//     var dbContext = scope.ServiceProvider.GetRequiredService<FitnessContext>();
+//     dbContext.Database.Migrate();
+// }
+Console.WriteLine("Database migration completed successfully.");
+app.Run();

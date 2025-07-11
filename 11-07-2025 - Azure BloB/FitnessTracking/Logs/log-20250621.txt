@@ -1,0 +1,255 @@
+2025-06-21 10:53:49.318 +05:30 [INF] Application started
+2025-06-21 11:31:43.604 +05:30 [INF] Login attempt for em2025-06-21 11:31:43.604 +05:30 [IN2025-06-21 11:31:45.057 +05:30 [INF] Login successful for2025-06-21 11:31:45.057 +05:30 [INF] 2025-06-21 11:32:02.969 +05:30 [INF] Fetching all users
+2025-06-21 11:32:03.018 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:43:36.152 +05:30 [INF] Login attempt for em2025-06-21 11:43:36.152 +05:30 [IN2025-06-21 11:43:36.444 +05:30 [INF] Login successful for2025-06-21 11:43:36.444 +05:30 [INF] 2025-06-21 11:45:10.831 +05:30 [INF] Fetching all users
+2025-06-21 11:45:10.834 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:46:03.432 +05:30 [INF] Fetching all users
+2025-06-21 11:46:03.435 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:46:15.473 +05:30 [INF] Fetching all users
+2025-06-21 11:46:15.475 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:46:22.848 +05:30 [INF] Fetching all users
+2025-06-21 11:46:22.850 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:46:25.461 +05:30 [INF] Fetching all users
+2025-06-21 11:46:25.463 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:46:42.820 +05:30 [INF] Fetching all users
+2025-06-21 11:46:42.821 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:46:44.767 +05:30 [INF] Fetching all users
+2025-06-21 11:46:44.769 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:47:03.458 +05:30 [INF] Fetching all users
+2025-06-21 11:47:03.461 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:47:23.176 +05:30 [INF] Fetching all users
+2025-06-21 11:47:23.178 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:48:38.947 +05:30 [INF] Fetching all users
+2025-06-21 11:48:38.963 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:48:59.504 +05:30 [INF] Fetching all users
+2025-06-21 11:48:59.506 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:49:04.767 +05:30 [INF] Fetching all users
+2025-06-21 11:49:04.768 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:49:11.022 +05:30 [INF] Fetching all users
+2025-06-21 11:49:11.023 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:49:15.878 +05:30 [INF] Fetching all users
+2025-06-21 11:49:15.882 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:49:38.949 +05:30 [INF] Fetching all users
+2025-06-21 11:49:38.950 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:49:51.780 +05:30 [INF] Fetching all users
+2025-06-21 11:49:51.789 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:49:58.843 +05:30 [INF] Fetching all users
+2025-06-21 11:49:58.845 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:50:06.809 +05:30 [INF] Fetching all users
+2025-06-21 11:50:06.811 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:51:06.760 +05:30 [INF] Fetching all users
+2025-06-21 11:51:06.761 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:51:18.999 +05:30 [INF] Fetching all users
+2025-06-21 11:51:19.000 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:51:45.040 +05:30 [INF] Fetching all users
+2025-06-21 11:51:45.041 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:51:49.800 +05:30 [INF] Fetching all users
+2025-06-21 11:51:49.802 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:54:04.817 +05:30 [INF] Fetching all users
+2025-06-21 11:54:04.838 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:54:15.895 +05:30 [INF] Fetching all users
+2025-06-21 11:54:15.897 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:54:42.822 +05:30 [INF] Fetching all users
+2025-06-21 11:54:42.824 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:54:53.422 +05:30 [INF] Fetching all users
+2025-06-21 11:54:53.424 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:55:46.763 +05:30 [INF] Fetching all users
+2025-06-21 11:55:46.764 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:56:17.933 +05:30 [INF] Fetching all workout2025-06-2025-06-21 11:56:54.372 +05:30 [INF] Fetching all users
+2025-06-21 11:56:54.373 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:57:17.703 +05:30 [INF] Fetching all users
+2025-06-21 11:57:17.705 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:57:37.081 +05:30 [INF] Fetching all users
+2025-06-21 11:57:37.081 +05:30 [INF] Fetching all workout2025-06-2025-06-21 11:57:37.082 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:57:41.327 +05:30 [INF] Fetching all users
+2025-06-21 11:57:41.328 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:57:41.328 +05:30 [INF] Fetching all workout2025-06-2025-06-21 11:57:59.792 +05:30 [INF] Fetching all users
+2025-06-21 11:57:59.792 +05:30 [INF] Fetching all workout2025-06-2025-06-21 11:57:59.793 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:58:06.994 +05:30 [INF] Fetching all users
+22025-06-21 11:58:06.994 +05:30 [INF] Fetching all workout plans.2025-06-21 11:58:06.996 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:58:11.272 +05:30 [INF] Fetching all users
+2025-06-21 11:58:11.272 +05:30 [INF] Fetching all workout2025-06-2025-06-21 11:58:11.273 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:59:31.724 +05:30 [INF] Fetching all users
+2025-06-21 11:59:31.729 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 11:59:31.730 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:01:25.306 +05:30 [INF] Fetching all workout2025-06-21 12:01:25.306 +05:30 [INF] Fetching all workout plans.2025-06-21 12:01:25.307 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:01:30.643 +05:30 [INF] Fetching all users
+22025-06-21 12:01:30.643 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:01:30.645 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:02:25.396 +05:30 [INF] Fetching all users
+2025-06-21 12:02:25.396 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:02:25.397 +05:30 [INF] All users fetched su2025-06-21 12:02:25.397 +05:30 [INF] All users fetched successfully
+2025-06-21 12:02:38.969 +05:30 [INF] Application started
+2025-06-21 12:04:09.012 +05:30 [INF] Fetching all users
+22025-06-21 12:04:09.012 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:04:10.099 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:04:12.626 +05:30 [INF] Fetching all workout2025-06-21 12:04:12.626 +05:30 [INF] Fetching all workout plans.2025-06-21 12:04:12.688 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:04:14.220 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:04:14.221 +05:30 [INF] Fetching all users
+2025-06-21 12:04:14.223 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:04:20.218 +05:30 [INF] Fetching all workout2025-06-21 12:04:20.218 +05:30 [INF] Fetching all workout plans.2025-06-21 12:04:20.220 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:09:00.162 +05:30 [INF] Fetching all users
+22025-06-21 12:09:00.162 +05:30 [INF] Fetching all workout plans.2025-06-21 12:09:00.164 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:11:00.747 +05:30 [INF] Fetching all users
+22025-06-21 12:11:00.747 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:11:00.762 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:11:19.707 +05:30 [INF] Fetching all workout2025-06-21 12:11:19.707 +05:30 [INF] Fetching all workout plans.2025-06-21 12:11:19.710 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:11:46.702 +05:30 [INF] Fetching all workout2025-06-21 12:11:46.702 +05:30 [INF] Fetching all workout plans.2025-06-21 12:11:46.703 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:12:04.436 +05:30 [INF] Fetching all workout2025-06-21 12:12:04.436 +05:30 [INF] Fetching all workout plans.2025-06-21 12:12:04.453 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:12:08.081 +05:30 [INF] Fetching all workout2025-06-21 12:12:08.081 +05:30 [INF] Fetching all workout plans.2025-06-21 12:12:08.082 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:13:01.129 +05:30 [INF] Fetching all users
+22025-06-21 12:13:01.129 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:13:01.131 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:13:04.830 +05:30 [INF] Fetching all users
+22025-06-21 12:13:04.830 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:13:04.831 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:13:20.441 +05:30 [INF] Fetching all workout2025-06-21 12:13:20.441 +05:30 [INF] Fetching all workout plans.2025-06-21 12:13:20.444 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:13:50.686 +05:30 [INF] Fetching all users
+22025-06-21 12:13:50.686 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:13:50.688 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:14:03.119 +05:30 [INF] Fetching all users
+22025-06-21 12:14:03.119 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:14:03.121 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:14:06.659 +05:30 [INF] Fetching all workout2025-06-21 12:14:06.659 +05:30 [INF] Fetching all workout plans.2025-06-21 12:14:06.660 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:14:26.859 +05:30 [INF] Fetching all users
+22025-06-21 12:14:26.859 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:14:26.861 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:14:41.027 +05:30 [INF] Fetching all users
+22025-06-21 12:14:41.027 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:14:41.029 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:14:42.742 +05:30 [INF] Fetching all users
+22025-06-21 12:14:42.742 +05:30 [INF] Fetching all workout plans.2025-06-21 12:14:42.743 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:14:52.078 +05:30 [INF] Fetching all users
+22025-06-21 12:14:52.078 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:14:52.079 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:14:55.651 +05:30 [INF] Fetching all users
+22025-06-21 12:14:55.651 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:14:55.652 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:15:03.029 +05:30 [INF] Fetching all workout2025-06-21 12:15:03.029 +05:30 [INF] Fetching all workout plans.2025-06-21 12:15:03.031 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:15:03.709 +05:30 [INF] Fetching all users
+22025-06-21 12:15:03.709 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:15:03.710 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:15:17.094 +05:30 [INF] Fetching all users
+22025-06-21 12:15:17.094 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:15:17.095 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:15:20.340 +05:30 [INF] Fetching all users
+22025-06-21 12:15:20.340 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:15:20.341 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:15:55.087 +05:30 [INF] Fetching all users
+22025-06-21 12:15:55.087 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:15:55.088 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:15:57.705 +05:30 [INF] Fetching all users
+22025-06-21 12:15:57.705 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:15:57.707 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:16:12.242 +05:30 [INF] Fetching all users
+2025-06-21 12:16:12.242 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:16:12.265 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:16:13.376 +05:30 [INF] Fetching all users
+2025-06-21 12:16:13.378 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:16:13.382 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:16:14.070 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:16:14.070 +05:30 [INF] Fetching all users
+2025-06-21 12:16:14.070 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:17:48.229 +05:30 [INF] Fetching all users
+2025-06-21 12:17:48.229 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:17:48.230 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:18:04.811 +05:30 [INF] Fetching all users
+22025-06-21 12:18:04.811 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:18:04.813 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:21:25.125 +05:30 [INF] Fetching all workout2025-06-21 12:21:25.125 +05:30 [INF] Fetching all workout plans.2025-06-21 12:21:25.138 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:21:32.046 +05:30 [INF] Fetching all workout2025-06-21 12:21:32.046 +05:30 [INF] Fetching all workout plans.2025-06-21 12:21:32.048 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:22:05.066 +05:30 [INF] Fetching all users
+22025-06-21 12:22:05.066 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:22:05.067 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:22:32.856 +05:30 [INF] Fetching all workout2025-06-21 12:22:32.856 +05:30 [INF] Fetching all workout plans.2025-06-21 12:22:32.858 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:22:50.770 +05:30 [INF] Fetching all users
+2025-06-21 12:22:50.770 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:22:50.771 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:23:16.297 +05:30 [INF] Fetching all workout2025-06-21 12:23:16.297 +05:30 [INF] Fetching all workout plans.2025-06-21 12:23:16.298 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:23:33.616 +05:30 [INF] Fetching all workout2025-06-21 12:23:33.616 +05:30 [INF] Fetching all workout plans.2025-06-21 12:23:33.618 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:24:05.794 +05:30 [INF] Fetching all workout2025-06-21 12:24:05.794 +05:30 [INF] Fetching all workout plans.2025-06-21 12:24:05.795 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:34:19.435 +05:30 [INF] Fetching all workout2025-06-21 12:34:19.435 +05:30 [INF] Fetching all workout plans.2025-06-21 12:34:19.448 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:34:37.744 +05:30 [INF] Fetching all workout2025-06-21 12:34:37.744 +05:30 [INF] Fetching all workout plans.2025-06-21 12:34:37.745 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:04.279 +05:30 [INF] Fetching all workout2025-06-21 12:35:04.279 +05:30 [INF] Fetching all workout plans.2025-06-21 12:35:04.281 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:10.571 +05:30 [INF] Fetching all workout2025-06-21 12:35:10.571 +05:30 [INF] Fetching all workout plans.2025-06-21 12:35:10.572 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:11.244 +05:30 [INF] Fetching all users
+22025-06-21 12:35:11.244 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:35:11.245 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:13.570 +05:30 [INF] Fetching all users
+2025-06-21 12:35:13.570 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:35:13.571 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:16.716 +05:30 [INF] Fetching all workout2025-06-21 12:35:16.716 +05:30 [INF] Fetching all workout plans.2025-06-21 12:35:16.717 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:36.147 +05:30 [INF] Fetching all users
+2025-06-21 12:35:36.148 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:35:36.148 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:39.633 +05:30 [INF] Fetching all users
+22025-06-21 12:35:39.633 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:35:39.634 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:41.869 +05:30 [INF] Fetching all workout2025-06-21 12:35:41.869 +05:30 [INF] Fetching all workout plans.2025-06-21 12:35:41.870 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:45.531 +05:30 [INF] Fetching all users
+2025-06-21 12:35:45.531 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:35:45.533 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:36:06.792 +05:30 [INF] Fetching all users
+22025-06-21 12:36:06.792 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:36:06.793 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:36:19.746 +05:30 [INF] Fetching all users
+22025-06-21 12:36:19.746 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:36:19.747 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:36:39.628 +05:30 [INF] Fetching all workout2025-06-21 12:36:39.628 +05:30 [INF] Fetching all workout plans.2025-06-21 12:36:39.629 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:37:06.864 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:37:06.864 +05:30 [INF] Fetching all users
+2025-06-21 12:37:06.865 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:37:17.713 +05:30 [INF] Fetching all users
+2025-06-21 12:37:17.714 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:37:17.716 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:37:23.330 +05:30 [INF] Fetching all workout2025-06-21 12:37:23.330 +05:30 [INF] Fetching all workout plans.2025-06-21 12:37:23.331 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:38:44.197 +05:30 [INF] Fetching all users
+22025-06-21 12:38:44.197 +05:30 [INF] Fetching all workout plans.2025-06-21 12:38:44.198 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:38:48.210 +05:30 [INF] Fetching all workout2025-06-21 12:38:48.210 +05:30 [INF] Fetching all workout plans.2025-06-21 12:38:48.212 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:38:54.190 +05:30 [INF] Fetching all workout2025-06-21 12:38:54.190 +05:30 [INF] Fetching all workout plans.2025-06-21 12:38:54.191 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:39:01.246 +05:30 [INF] Fetching all workout2025-06-21 12:39:01.246 +05:30 [INF] Fetching all workout plans.2025-06-21 12:39:01.247 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:39:05.970 +05:30 [INF] Fetching all workout2025-06-21 12:39:05.970 +05:30 [INF] Fetching all workout plans.2025-06-21 12:39:05.971 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:41:01.789 +05:30 [INF] Fetching all users
+22025-06-21 12:41:01.789 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 12:41:01.801 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:42:11.951 +05:30 [INF] Fetching all workout2025-06-21 12:42:11.951 +05:30 [INF] Fetching all workout plans.2025-06-21 12:42:11.952 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 12:44:01.838 +05:30 [INF] Fetching all workout2025-06-2025-06-21 12:44:01.838 +05:30 [INF] Fetching all users
+2025-06-21 12:44:01.839 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 13:18:04.171 +05:30 [INF] Fetching all workout2025-06-21 13:18:04.171 +05:30 [INF] Fetching all workout plans.2025-06-21 13:18:04.174 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 14:40:57.286 +05:30 [INF] Fetching all users
+2025-06-21 14:40:57.286 +05:30 [INF] Fetching all workout2025-06-2025-06-21 14:40:57.299 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 19:40:13.113 +05:30 [INF] Fetching all user pl2025-06-21 19:40:13.113 +05:30 [INF] Fetching all user plans
+2025-06-21 19:46:14.672 +05:30 [INF] Application started
+2025-06-21 19:46:19.304 +05:30 [INF] Fetching all user pl20252025-06-21 19:46:20.385 +05:30 [ERR] Failed executing DbC2025-06-21 19:46:20.385 +05:30 [ERR] Failed executing DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."UserId", u0."Name" AS "UserName", u."WorkOutPlanId", w."Name" AS "WorkOutPlanName", u."CoachId", u1."Name" AS "CoachName", u."IsCompleted", u."CreatedAt", u."UpdatedAt"
+FROM "UserWorkOutPlans" AS u
+INNER JOIN "Users" AS u0 ON u."UserId" = u0."Id"
+INNER JOIN "WorkOutPlans" AS w ON u."WorkOutPlanId" = 2025-06-21 19:46:20.411 +05:30 [ERR] An exception occurre2025-06-21 19:46:20.411 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'FitnessTracking.Contexts.FitnessContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.CoachId does not exist
+
+POSITION: 355
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.CoachId does not exist
+    Position: 355
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.CoachId does not exist
+
+POSITION: 355
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.CoachId does not exist
+    Position: 355
+    File: parse_r2025-06-21 19:46:20.424 +05:30 [ERR] Unhandled Exception
+2025-06-21 19:46:20.424 +05:30 [ERR] Unhandled Exception
+Npgsql.PostgresException (0x80004005): 42703: column u.CoachId does not exist
+
+POSITION: 355
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at FitnessTracking.Services.UserPlanService.GetAllUserPlansAsync() in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/UserPlanService.cs:line 60
+   at FitnessTracking.Controllers.UserPlanController.GetAllUserPlansAsync() in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Controllers/UserPlanController.cs:line 29
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at FitnessTracking.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Middlewares/ExceptionMiddleware.cs:line 22
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.CoachId does not exist
+    Position: 355
+    File: parse_r2025-06-21 19:49:26.480 +05:30 [INF] Fetched all coach-cl2025-06-21 19:49:26.480 +05:30 [INF] Fetched all coach-client mappings
+2025-06-21 19:53:13.976 +05:30 [INF] Application started
+2025-06-21 19:53:20.561 +05:30 [INF] Fetched all coach-cl2025-06-21 19:2025-06-21 19:53:25.131 +05:30 [INF] Fetching all user pl20252025-06-21 19:56:14.215 +05:30 [ERR] Failed to create Coa2025-06-21 19:56:14.215 +05:30 [ERR] Failed to create Coach-Client mapping
+System.Collections.Generic.KeyNotFoundException: Invalid Coach or Client ID.
+   at FitnessTracking.Services.CoachClientMapService.AddCoachClientMappingAsync(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/CoachClientService.cs:line 31
+   at FitnessTracking.Controllers.CoachClientMapController.AddMapping(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/Fitn2025-06-21 19:56:30.517 +05:30 [ERR] Failed to create Coa2025-06-21 19:56:30.517 +05:30 [ERR] Failed to create Coach-Client mapping
+System.Collections.Generic.KeyNotFoundException: Invalid Coach or Client ID.
+   at FitnessTracking.Services.CoachClientMapService.AddCoachClientMappingAsync(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/CoachClientService.cs:line 31
+   at FitnessTracking.Controllers.CoachClientMapController.AddMapping(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/Fitn2025-06-21 19:57:23.098 +05:30 [ERR] Failed to create Coa2025-06-21 19:57:23.098 +05:30 [ERR] Failed to create Coach-Client mapping
+System.Collections.Generic.KeyNotFoundException: Invalid Coach or Client ID.
+   at FitnessTracking.Services.CoachClientMapService.AddCoachClientMappingAsync(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/CoachClientService.cs:line 31
+   at FitnessTracking.Controllers.CoachClientMapController.AddMapping(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/Fitn2025-06-21 19:57:58.117 +05:30 [ERR] Failed to create Coa2025-06-21 19:57:58.117 +05:30 [ERR] Failed to create Coach-Client mapping
+System.InvalidOperationException: Coach and Client cannot be the same user.
+   at FitnessTracking.Services.CoachClientMapService.AddCoachClientMappingAsync(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/CoachClientService.cs:line 25
+   at FitnessTracking.Controllers.CoachClientMapController.AddMapping(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/Fitn2025-06-21 19:58:14.460 +05:30 [INF] Coach-Client mapping2025-06-21 19:58:14.460 +05:30 [INF] Coach-Client mapping created: {"Id":"c62c0740-5550-44cb-b059-cf8877e44464","CoachId":"01975f7e-2c23-75c7-82c0-cf61c35b6f6e","CoachName":"TestUser","CoachEmail":"testuser@gmail.com","ClientId":"01977d2a-5cb3-7133-a1d8-0dd40da04cf1","ClientName":"Praveenraja","ClientEmail":"praveenraja@gmail.com","CreatedAt":"2025-06-2025-06-21 19:59:12.746 +05:30 [ERR] Failed to create Coa2025-06-21 19:59:12.746 +05:30 [ERR] Failed to create Coach-Client mapping
+System.InvalidOperationException: Mapping already exists.
+   at FitnessTracking.Services.CoachClientMapService.AddCoachClientMappingAsync(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/FitnessTracking/Services/CoachClientService.cs:line 35
+   at FitnessTracking.Controllers.CoachClientMapController.AddMapping(CoachMappingRequestDto dto) in /Users/poovarasans/Desktop/Genspark/Task/Fitn2025-06-21 19:59:28.708 +05:30 [INF] Coach-Client mapping2025-06-21 19:59:28.708 +05:30 [INF] Coach-Client mapping created: {"Id":"b9a45248-107a-4627-805b-7e10b842d973","CoachId":"01977dc0-b224-7863-b5eb-3d161b58f05c","CoachName":"Murali","CoachEmail":"murali@gmail.com","ClientId":"01975a8f-3e35-7191-8889-f5524d7e15ed","ClientName":"Sathish Kumar","ClientEmail":"sathishkumar@gmail.com","CreatedAt":"2025-06-2025-06-21 19:59:44.060 +05:30 [INF] Fetching all user pl20252025-06-21 20:00:19.582 +05:30 [INF] Fetching all user pl20252025-06-21 20:01:59.737 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:01:59.738 +05:30 [INF] Fetching all users
+2025-06-21 20:01:59.774 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:02:13.151 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:02:13.151 +05:30 [INF] Fetching all users
+2025-06-21 20:02:13.154 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:02:36.865 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:02:36.866 +05:30 [INF] Fetching all users
+2025-06-21 20:02:36.868 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:06:26.381 +05:30 [INF] Fetching all user pl20252025-06-21 20:06:26.383 +05:30 [INF] Fetching all users
+2025-06-21 20:06:26.383 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:06:26.399 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:07:19.335 +05:30 [INF] Fetching all user pl20252025-06-21 20:07:19.336 +05:30 [INF] Fetching all workout2025-06-21 20:07:19.336 +05:30 [INF] Fetching all workout plans.2025-06-21 20:07:19.338 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:08:24.734 +05:30 [INF] Fetching all user pl20252025-06-21 20:08:24.736 +05:30 [INF] Fetching all workout2025-06-21 20:08:24.736 +05:30 [INF] Fetching all workout plans.2025-06-21 20:08:24.737 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:15:08.309 +05:30 [INF] Fetching all workout2025-062025-06-21 20:16:00.021 +05:30 [INF] Fetching all workout2025-062025-06-21 20:16:19.012 +05:30 [INF] Fetching all user pl20252025-06-21 20:16:19.013 +05:30 [INF] Fetching all users
+2025-06-21 20:16:19.014 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:16:19.027 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:16:33.303 +05:30 [INF] Fetching all user pl20252025-06-21 20:16:33.304 +05:30 [INF] Fetching all users
+22025-06-21 20:16:33.304 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 20:16:33.305 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:19:12.284 +05:30 [INF] Fetching all user pl20252025-06-21 20:19:12.289 +05:30 [INF] Fetching all workout2025-06-21 20:19:12.289 +05:30 [INF] Fetching all workout plans.2025-06-21 20:19:12.298 +05:30 [INF] Fetching all workout2025-062025-06-21 20:19:12.310 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:19:13.843 +05:30 [INF] Fetching all user pl2025-06-21 20:19:13.843 +05:30 [INF] Fetching all user plans
+2025-062025-06-21 20:19:13.845 +05:30 [INF] Fetching all users
+22025-06-21 20:19:13.845 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 20:19:13.846 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:19:37.663 +05:30 [INF] Fetching all workout2025-062025-06-21 20:20:23.516 +05:30 [INF] Fetching all workout2025-06-21 20:20:23.516 +05:30 [INF] Fetching all workout logs.
+20252025-06-21 20:20:23.520 +05:30 [INF] Fetching all workout2025-06-21 20:20:23.520 +05:30 [INF] Fetching all workout plans.2025-06-21 20:20:23.536 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:20:46.273 +05:30 [INF] Fetching all user pl20252025-06-21 20:20:46.273 +05:30 [INF] Fetching all workout2025-062025-06-21 20:20:46.275 +05:30 [INF] Fetching all users
+2025-06-21 20:20:46.275 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:20:46.277 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:20:51.650 +05:30 [INF] Fetching all user pl20252025-06-21 20:20:51.650 +05:30 [INF] Fetching all workout2025-062025-06-21 20:20:51.651 +05:30 [INF] Fetching all users
+2025-06-21 20:20:51.651 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:20:51.652 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:21:05.507 +05:30 [INF] Fetching all user pl20252025-06-21 20:21:05.508 +05:30 [INF] Fetching all workout2025-062025-06-21 20:21:05.510 +05:30 [INF] Fetching all users
+2025-06-21 20:21:05.510 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:21:05.511 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:21:20.656 +05:30 [INF] Fetching all user pl20252025-06-21 20:21:20.660 +05:30 [INF] Fetching all workout2025-062025-06-21 20:21:20.661 +05:30 [INF] Fetching all users
+2025-06-21 20:21:20.663 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:21:20.666 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:21:29.543 +05:30 [INF] Fetching all workout2025-06-21 20:21:29.543 +05:30 [INF] Fetching all workout plans.
+2025-06-21 20:21:29.543 +05:30 [INF] Fetching all workout logs.
+2025-06-21 20:21:29.543 +05:30 [INF] Fetching all user plans2025-06-21 20:21:29.545 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:21:45.472 +05:30 [INF] Fetching all user pl2025-06-21 20:21:45.472 +05:30 [INF] Fetching all user plans
+2025-062025-06-21 20:21:45.474 +05:30 [INF] Fetching all workout2025-06-21 20:21:45.474 +05:30 [INF] Fetching all workout plans.2025-06-21 20:21:45.475 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:21:50.872 +05:30 [INF] Fetching all user pl20252025-06-21 20:21:50.872 +05:30 [INF] Fetching all workout2025-062025-06-21 20:21:50.874 +05:30 [INF] Fetching all workout2025-06-21 20:21:50.874 +05:30 [INF] Fetching all workout plans.2025-06-21 20:21:50.875 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:21:57.278 +05:30 [INF] Fetching all workout2025-062025-06-21 20:21:57.278 +05:30 [INF] Fetching all user pl20252025-06-21 20:21:57.278 +05:30 [INF] Fetching all users
+22025-06-21 20:21:57.278 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 20:21:57.279 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:23:38.288 +05:30 [INF] Fetching all user pl20252025-06-21 20:23:38.290 +05:30 [INF] Fetching all users
+22025-06-21 20:23:38.290 +05:30 [INF] Fetching all users
+2025-06-21 20:23:38.290 +05:30 [INF] Fetching all workout logs.
+2025-06-2025-06-21 20:23:38.291 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:23:41.306 +05:30 [INF] Fetching all user pl2025-06-21 20:23:41.306 +05:30 [INF] Fetching all user plans
+2025-062025-06-21 20:23:41.308 +05:30 [INF] Fetching all workout2025-06-21 20:23:41.308 +05:30 [INF] Fetching all workout plans.2025-06-21 20:23:41.310 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:23:47.525 +05:30 [INF] Fetching all user pl20252025-06-21 20:23:47.526 +05:30 [INF] Fetching all workout2025-06-21 20:23:47.526 +05:30 [INF] Fetching all users
+2025-06-21 20:23:47.526 +05:30 [INF] Fetching all workout logs.
+2025-06-2025-06-21 20:23:47.527 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:24:00.866 +05:30 [INF] Fetching all user pl20252025-06-21 20:24:00.866 +05:30 [INF] Fetching all workout2025-062025-06-21 20:24:00.867 +05:30 [INF] Fetching all users
+22025-06-21 20:24:00.867 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 20:24:00.869 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:24:05.849 +05:30 [INF] Fetching all workout2025-06-21 20:24:05.849 +05:30 [INF] Fetching all workout logs.
+20252025-06-21 20:24:05.849 +05:30 [INF] Fetching all users
+22025-06-21 20:24:05.849 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 20:24:05.850 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:25:27.318 +05:30 [INF] Fetching all user pl2025-06-21 20:25:27.318 +05:30 [INF] Fetching all user plans
+2025-062025-06-21 20:25:27.320 +05:30 [INF] Fetching all workout2025-06-21 20:25:27.320 +05:30 [INF] Fetching all workout plans.2025-06-21 20:25:27.342 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:25:31.289 +05:30 [INF] Fetching all user pl20252025-06-21 20:25:31.289 +05:30 [INF] Fetching all workout2025-062025-06-21 20:25:31.291 +05:30 [INF] Fetching all workout2025-06-21 20:25:31.291 +05:30 [INF] Fetching all workout plans.2025-06-21 20:25:31.293 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:25:40.277 +05:30 [INF] Fetching all workout2025-062025-06-21 20:25:40.277 +05:30 [INF] Fetching all user pl20252025-06-21 20:25:40.278 +05:30 [INF] Fetching all users
+22025-06-21 20:25:40.278 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 20:25:40.278 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:27:12.402 +05:30 [INF] Fetching all user pl20252025-06-21 20:27:12.402 +05:30 [INF] Fetching all workout2025-06-21 20:27:12.402 +05:30 [INF] Fetching all workout logs.2025-06-21 20:27:12.403 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:27:12.403 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:27:45.749 +05:30 [INF] Fetching all user pl20252025-06-21 20:27:45.750 +05:30 [INF] Fetching all workout2025-062025-06-21 20:27:45.751 +05:30 [INF] Fetching all users
+22025-06-21 20:27:45.751 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 20:27:45.752 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:28:03.828 +05:30 [INF] Fetching all user pl20252025-06-21 20:28:03.829 +05:30 [INF] Fetching all workout2025-06-21 20:28:03.829 +05:30 [INF] Fetching all workout logs.2025-06-21 20:28:03.829 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:28:03.830 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:28:13.397 +05:30 [INF] Fetching all user pl2025-06-21 20:28:13.397 +05:30 [INF] Fetching all user plans
+2025-062025-06-21 20:28:13.398 +05:30 [INF] Fetching all users
+2025-06-21 20:28:13.398 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:28:13.399 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:28:17.276 +05:30 [INF] Fetching all user pl20252025-06-21 20:28:17.276 +05:30 [INF] Fetching all workout2025-062025-06-21 20:28:17.277 +05:30 [INF] Fetching all users
+2025-06-21 20:28:17.277 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:28:17.278 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:28:23.322 +05:30 [INF] Fetching all user pl2025-06-21 20:28:23.322 +05:30 [INF] Fetching all user plans
+2025-062025-06-21 20:28:23.324 +05:30 [INF] Fetching all workout2025-06-21 20:28:23.324 +05:30 [INF] Fetching all workout plans.2025-06-21 20:28:23.325 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:28:26.912 +05:30 [INF] Fetching all user pl2025-06-21 20:28:26.912 +05:30 [INF] Fetching all user plans
+2025-062025-06-21 20:28:26.913 +05:30 [INF] Fetching all users
+22025-06-21 20:28:26.913 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 20:28:26.914 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:28:36.063 +05:30 [INF] Fetching all user pl20252025-06-21 20:28:36.063 +05:30 [INF] Fetching all workout2025-062025-06-21 20:28:36.064 +05:30 [INF] Fetching all users
+22025-06-21 20:28:36.064 +05:30 [INF] Fetching all users
+2025-06-2025-06-21 20:28:36.066 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:29:00.274 +05:30 [INF] Fetching all user pl20252025-06-21 20:29:00.276 +05:30 [INF] Fetching all workout2025-06-21 20:29:00.276 +05:30 [INF] Fetching all workout logs.2025-06-21 20:29:00.276 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:29:00.277 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:29:02.209 +05:30 [INF] Fetching all user pl20252025-06-21 20:29:02.217 +05:30 [INF] Fetching all workout2025-062025-06-21 20:29:02.217 +05:30 [INF] Fetching all workout2025-06-21 20:29:02.217 +05:30 [INF] Fetching all workout plans.2025-06-21 20:29:02.218 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:29:13.157 +05:30 [INF] Fetching all user pl2025-06-21 20:29:13.157 +05:30 [INF] Fetching all user plans
+2025-062025-06-21 20:29:13.158 +05:30 [INF] Fetching all users
+2025-06-21 20:29:13.158 +05:30 [INF] All users fetched su2025-06-21 2025-06-21 20:29:13.159 +05:30 [INF] Fetching all workout2025-06-2025-06-21 20:29:15.291 +05:30 [INF] Fetching all workout2025-06-21 20:29:15.291 +05:30 [INF] Fetching all workout logs.
+20252025-06-21 20:29:15.292 +05:30 [INF] Fetching all workout2025-06-21 20:29:15.292 +05:30 [INF] Fetching all workout plans.2025-06-21 20:29:15.293 +05:30 [INF] All users fetched su2025-06-21 20:29:15.293 +05:30 [INF] All users fetched successfully
