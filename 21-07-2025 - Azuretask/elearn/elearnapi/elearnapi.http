@@ -1,0 +1,6 @@
+@elearnapi_HostAddress = http://localhost:5283
+
+GET {{elearnapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

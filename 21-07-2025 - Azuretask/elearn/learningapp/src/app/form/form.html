@@ -1,0 +1,131 @@
+<nav
+  class="z-50 bg-white border-b border-gray-300 px-6 py-5 flex justify-between items-center shadow-sm sm:px-12"
+>
+  <div class="flex items-center space-x-4">
+    <lucide-angular
+      [name]="bookIcon"
+      [size]="25"
+      color="oklch(59.6% 0.145 163.225)"
+    ></lucide-angular>
+    <a routerLink="/home" class="text-lg font-semibold hover:text-slate-600">
+      <span class="text-blue-700">E-Learn</span>
+      <span class="text-emerald-600 ml-1">Platform</span>
+    </a>
+  </div>
+
+  <div class="hidden md:flex items-center space-x-8">
+    <a
+      routerLink="/"
+      class="relative group text-slate-700 text-lg font-semibold hover:text-slate-800"
+    >
+      Home
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    <a
+      routerLink="/create-course"
+      class="relative group text-slate-700 text-lg font-semibold hover:text-slate-800"
+    >
+      Create Course
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+  </div>
+</nav>
+<div class="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+  <div class="w-full max-w-4xl bg-white shadow-md rounded-lg p-8">
+    <form
+      (ngSubmit)="onSubmit()"
+      #videoForm="ngForm"
+      class="grid md:grid-cols-2 gap-6"
+    >
+      <div class="flex flex-col">
+        <label for="title" class="font-semibold mb-1">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Enter video title"
+          class="border border-gray-300 rounded-md px-4 py-2"
+          required
+          [(ngModel)]="video.title"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="category" class="font-semibold mb-1">Category</label>
+        <input
+          type="text"
+          id="category"
+          name="category"
+          placeholder="Enter video category"
+          class="border border-gray-300 rounded-md px-4 py-2"
+          required
+          [(ngModel)]="video.category"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="uploadDate" class="font-semibold mb-1">Upload Date</label>
+        <input
+          type="date"
+          id="uploadDate"
+          name="uploadDate"
+          class="border border-gray-300 rounded-md px-4 py-2"
+          required
+          [(ngModel)]="video.uploadDate"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="videoFile" class="font-semibold mb-1">Video File</label>
+        <input
+          type="file"
+          accept="video/*"
+          id="videoFile"
+          name="videoFile"
+          class="border border-gray-300 rounded-md px-4 py-2"
+          (change)="onVideoFileSelected($event)"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="thumbnailFile" class="font-semibold mb-1"
+          >Thumbnail File</label
+        >
+        <input
+          type="file"
+          accept="image/*"
+          id="thumbnailFile"
+          name="thumbnailFile"
+          class="border border-gray-300 rounded-md px-4 py-2"
+          (change)="onThumbnailFileSelected($event)"
+        />
+      </div>
+
+      <div class="md:col-span-2 flex flex-col">
+        <label for="description" class="font-semibold mb-1">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Enter video description"
+          class="border border-gray-300 rounded-md px-4 py-2"
+          rows="4"
+          required
+          [(ngModel)]="video.description"
+        ></textarea>
+      </div>
+
+      <div class="md:col-span-2 text-center">
+        <button
+          type="submit"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-semibold"
+        >
+          Upload Video
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
