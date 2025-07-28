@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/11adcd1a-907f-4827-9b1d-262ba3d80157.png",
+      "PackagePath": "staticwebassets/Images/11adcd1a-907f-4827-9b1d-262ba3d80157.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/2107fd4d-c810-43d3-918c-702cf966e691.png",
+      "PackagePath": "staticwebassets/Images/2107fd4d-c810-43d3-918c-702cf966e691.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/b8fe1f0f-4365-472c-b451-634965b3d42b.png",
+      "PackagePath": "staticwebassets/Images/b8fe1f0f-4365-472c-b451-634965b3d42b.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/c43e6bc4-bfbf-4f6b-889c-a87ab11ee48b.png",
+      "PackagePath": "staticwebassets/Images/c43e6bc4-bfbf-4f6b-889c-a87ab11ee48b.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/e264e43c-76cf-4251-8b89-b7b2391e2324.png",
+      "PackagePath": "staticwebassets/Images/e264e43c-76cf-4251-8b89-b7b2391e2324.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/f9702d7e-c8e0-49b4-96fa-0c2d047f936d.png",
+      "PackagePath": "staticwebassets/Images/f9702d7e-c8e0-49b4-96fa-0c2d047f936d.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.MigratedApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.MigratedApi.props",
+      "PackagePath": "build\\MigratedApi.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.MigratedApi.props",
+      "PackagePath": "buildMultiTargeting\\MigratedApi.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.MigratedApi.props",
+      "PackagePath": "buildTransitive\\MigratedApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
