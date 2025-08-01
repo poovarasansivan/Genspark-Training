@@ -1,0 +1,199 @@
+<nav
+  class="bg-white border-b border-gray-300 px-6 py-5 flex justify-between items-center shadow-lg sm:px-12"
+>
+  <div class="flex items-center space-x-4">
+    <lucide-angular
+      [name]="UserIcon"
+      [size]="25"
+      color="#FB2E86"
+    ></lucide-angular>
+    <a routerLink="/home" class="text-lg font-semibold hover:text-slate-600"
+      ><span class="text-[#0D0E43]">Ezart</span>
+      <span class="text-[#0D0E43]">Shop</span></a
+    >
+  </div>
+  <div class="hidden md:flex items-center space-x-8">
+    <a
+      routerLink="/home"
+      class="relative group text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      Home
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-red-400 hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    <a
+      routerLink="/products"
+      class="relative group text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      Products
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#FB2E86] hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    <a
+      routerLink="/carts"
+      class="relative group text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      Cart
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#FB2E86] hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    <a
+      routerLink="/orders"
+      class="relative group text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      Orders
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#FB2E86] hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+
+    <a
+      routerLink="/blog"
+      class="relative group text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      Blog
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#FB2E86] hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+
+    <a
+      routerLink="/about"
+      class="relative group text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      About
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#FB2E86] hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    <a
+      routerLink="/contact"
+      class="relative group text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      Contact
+      <span
+        class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#FB2E86] hover:text-slate-800 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </a>
+    @if(loggedInUser=="Poovarasan") {
+    <a
+      routerLink="/manage-shop"
+      class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      Manage Shop
+    </a>
+    <a
+      routerLink="/manage-orders"
+      class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      Manage Orders
+    </a>
+    <a
+      routerLink="/manage-tickets"
+      class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+    >
+      Manage Tickets
+    </a>
+    }
+  </div>
+  <div class="flex items-center space-x-4 md:space-x-6">
+    <div class="relative" (click)="toggleAvatarDropdown()" #avatarMenuRef>
+      <lucide-angular
+        [name]="circleUserIcon"
+        [size]="32"
+        color="#0D0E43"
+      ></lucide-angular>
+      <div
+        *ngIf="avatarDropdownOpen"
+        class="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-md z-100"
+      >
+        <a
+          (click)="logout()"
+          class="block px-4 py-2 text-[#0D0E43] text-medium text-lg hover:bg-gray-100"
+        >
+          <div class="flex flex-row items-center space-x-2 gap-3">
+            <lucide-angular
+              [name]="logoutIcon"
+              [size]="20"
+              color="#FB2E86"
+            ></lucide-angular>
+            Logout
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="md:hidden">
+      <button
+        (click)="toggleMenu()"
+        class="text-3xl mt-2 text-gray-700 focus:outline-none"
+      >
+        <span *ngIf="!menuOpen">
+          <lucide-angular
+            [name]="openIcon"
+            [size]="32"
+            color="oklch(63.7% 0.237 25.331)"
+          ></lucide-angular
+        ></span>
+        <span *ngIf="menuOpen"
+          ><lucide-angular
+            [name]="closeIcon"
+            [size]="32"
+            color="oklch(44.6% 0.043 257.281)"
+          ></lucide-angular
+        ></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div
+  *ngIf="menuOpen"
+  class="md:hidden px-6 py-4 space-y-4 bg-white border-b border-gray-200"
+>
+  <a
+    routerLink="/home"
+    class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+  >
+    Home
+  </a>
+  <a
+    routerLink="/products"
+    class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+  >
+    Products
+  </a>
+  <a
+    routerLink="/carts"
+    class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+  >
+    Cart
+  </a>
+  <a
+    routerLink="/blog"
+    class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+  >
+    Blog
+  </a>
+  <a
+    routerLink="/about"
+    class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+  >
+    About
+  </a>
+  <a
+    routerLink="/contact"
+    class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+  >
+    Contact
+  </a>
+  <a
+    routerLink="/manage-shop"
+    class="block text-slate-600 text-lg font-semibold hover:text-slate-800"
+  >
+    Manage Shop
+  </a>
+</div>

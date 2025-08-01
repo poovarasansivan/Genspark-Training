@@ -1,0 +1,155 @@
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.notifications-header h2 {
+  margin: 0;
+  margin-top: 6px;
+  margin-left: 16px;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.mark-read-btn {
+  background-color: #2c7be5;
+  color: white;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.mark-read-btn:hover {
+  background-color: #1a5fc0;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.notification-item {
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #2c7be5;
+}
+
+.notification-item.read {
+  background-color: #f6f8fa;
+  border-left-color: #c0c0c0;
+}
+
+.notification-item:hover {
+  background-color: #f0f8ff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.notification-header strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.notification-type {
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  text-transform: capitalize;
+}
+
+.notification-message {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.notification-details {
+  font-size: 0.88rem;
+  color: #555;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.notification-details b {
+  font-weight: 500;
+}
+
+.notification-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px dashed #ddd;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.read-status {
+  color: #6c757d;
+}
+
+.unread-status {
+  color: #2c7be5;
+  font-weight: 600;
+}
+
+.no-notifications {
+  text-align: center;
+  color: #888;
+  margin: 2rem 0;
+}
+
+.no-notifications-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .notification-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notification-type {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .notification-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .notification-meta {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="modal-overlay">
+<div class="modal-container">
+  <h3>Files for Task</h3>
+
+  <div *ngIf="loading" class="loading">Loading files...</div>
+
+  <div *ngIf="!loading && files.length === 0" class="no-files">
+    No files uploaded yet.
+  </div>
+
+  <ul *ngIf="files.length > 0" class="file-list">
+    <li *ngFor="let file of files" class="file-item">
+      <span class="file-name">{{ file.fileName }}</span>
+      <span class="uploaded-at">Uploaded: {{ file.uploadedAt | date:'medium' }}</span>
+      <button (click)="download(file)">Download</button>
+    </li>
+  </ul>
+
+  <div class="modal-actions">
+    <button class="cancel-btn" (click)="close.emit()">Close</button>
+  </div>
+</div>
+</div>

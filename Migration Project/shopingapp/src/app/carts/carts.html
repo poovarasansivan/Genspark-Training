@@ -1,0 +1,103 @@
+<div class="bg-[#f3f0ff] flex items-center justify-center h-64 md:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+    >
+      <div>
+        <h3 class="text-2xl font-bold text-[#151875]">Cart</h3>
+        <p class="text-gray-600 text-base mt-1">Home &gt; Cart</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-toast></app-toast>
+<div class="w-full mt-8 mb-4">
+  <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6">
+    <h2 class="text-2xl font-bold text-[#151875] mb-6">Your Cart</h2>
+
+    <ng-container *ngIf="cartItems.length; else emptyCart">
+      <div
+        *ngFor="let cartItem of cartItems"
+        class="flex flex-col md:flex-row items-center gap-6 border-b pb-6 mb-6"
+      >
+        <div class="w-full md:w-1/4">
+          <img
+            [src]="'http://localhost:5045' + cartItem.image"
+            [alt]="cartItem.productName"
+            class="w-full h-auto rounded-lg object-cover"
+          />
+        </div>
+
+        <div class="w-full md:w-3/4 flex flex-col gap-2">
+          <div class="flex justify-between items-start flex-wrap gap-2">
+            <div>
+              <h3 class="text-lg font-semibold text-[#151875]">
+                {{ cartItem.productName }}
+              </h3>
+              <p class="text-gray-600">Model: {{ cartItem.modelName }}</p>
+              <p class="text-gray-600">Color: {{ cartItem.colorName }}</p>
+              <p class="text-pink-600 font-bold text-lg">
+              ${{ cartItem.price }}
+              </p>
+            </div>
+            <button
+              class="text-sm text-white hover:bg-red-600 bg-red-500 px-4 py-2 rounded-lg transition duration-200"
+              (click)="removeItem(cartItem)"
+            >
+              <div class="flex items-center gap-1">
+                <lucide-angular
+                  [name]="trashIcon"
+                  class="w-4 h-4"
+                ></lucide-angular>
+                Remove
+              </div>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-3 mt-4">
+            <button
+              (click)="decreaseQuantity(cartItem)"
+              class="w-8 h-8 flex items-center justify-center rounded-full border border-[#151875] hover:bg-purple-200/50"
+            >
+              <lucide-angular
+                [name]="minusIcon"
+                class="w-4 h-4 text-[#151875]"
+              ></lucide-angular>
+            </button>
+            <span class="text-lg font-medium text-[#151875]">
+              {{ cartItem.quantity }}
+            </span>
+            <button
+              (click)="increaseQuantity(cartItem)"
+              class="w-8 h-8 flex items-center justify-center rounded-full border border-[#151875] hover:bg-purple-200/50"
+            >
+              <lucide-angular
+                [name]="plusIcon"
+                class="w-4 h-4 text-[#151875]"
+              ></lucide-angular>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Summary -->
+
+      <div class="flex justify-between items-center">
+        <p class="text-lg font-semibold text-[#151875]">
+          Total: <span class="text-pink-500">${{ getTotal() }}</span>
+        </p>
+
+        <button
+          class="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-700 transition duration-200"
+          (click)="navigateToCheckout()"
+          >
+          Checkout
+        </button> 
+      </div>
+    </ng-container>
+
+    <ng-template #emptyCart>
+      <p class="text-gray-500 text-center">Your cart is empty.</p>
+    </ng-template>
+  </div>
+</div>

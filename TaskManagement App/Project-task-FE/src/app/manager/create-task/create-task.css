@@ -1,0 +1,262 @@
+.create-task-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.create-task-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  width: 100%;
+  animation: fadeIn 0.4s ease;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #1e3a8a;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f9fafb;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  background: #fff;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.form-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #3b82f6;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2563eb;
+}
+
+.submit-btn:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.draft-btn {
+  background-color: #ef4444;
+  width: 100%;
+  padding: 12px;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.draft-btn:hover {
+  background-color: #dc2626;
+}
+
+.custom-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.custom-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 12px 40px 12px 14px;
+  background-color: #f9fafb;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-select-wrapper select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  background: #fff;
+}
+
+.custom-arrow {
+  position: absolute;
+  right: 14px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.has-error select,
+.has-error input,
+.has-error textarea {
+  animation: shake 0.25s ease-in-out;
+  border-color: #ef4444 !important;
+}
+
+.tips-box {
+  background: #f1f5f9;
+  padding: 16px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .create-task-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .custom-select-wrapper select {
+    padding: 10px 36px 10px 12px;
+  }
+
+  .custom-arrow {
+    right: 12px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 14px;
+  }
+
+  .form-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .custom-select-wrapper select {
+    padding: 9px 34px 9px 10px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+    padding: 10px;
+  }
+}

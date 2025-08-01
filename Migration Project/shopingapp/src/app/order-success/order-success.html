@@ -1,0 +1,54 @@
+<div class="bg-[#f3f0ff] flex items-center justify-center h-64 md:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+    >
+      <div>
+        <h3 class="text-2xl font-bold text-[#151875]">Order Completed</h3>
+        <p class="text-gray-600 text-base mt-1">Home &gt; Order Completed</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="bg-white min-h-1/2 flex items-center justify-center font-sans p-4"
+>
+  <div class="w-full max-w-4xl mx-auto">
+
+    <div class="text-center -mt-10">
+      <div class="inline-block bg-pink-100 rounded-full p-2 mb-5">
+        <div class="bg-white rounded-full p-2">
+          <svg
+            class="w-8 h-8 text-pink-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            ></path>
+          </svg>
+        </div>
+      </div>
+
+      <h1 class="text-4xl font-bold text-[#151875] mb-4">
+        Your Order Is Completed!
+      </h1>
+      <p class="text-gray-600 max-w-lg mx-auto mb-8">
+        Thank you for your order! Your order is being processed and will be
+        completed within 3-6 days. You will receive an confirmation when
+        your order is completed.
+      </p>
+      <button
+        (click)="goToProducts()"
+        class="bg-pink-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 transition-all duration-300 ease-in-out"
+      >
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+</div>

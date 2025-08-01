@@ -1,0 +1,69 @@
+<div class="bg-[#f3f0ff] flex items-center justify-center h-64 md:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+    >
+      <div>
+        <h3 class="text-2xl font-bold text-[#151875]">My Orders</h3>
+        <p class="text-gray-600 text-base mt-1">Home &gt; My Orders</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-toast></app-toast>
+<div
+  class="font-sans p-4 sm:p-8 flex flex-col items-center justify-center space-y-6"
+>
+  <div
+    class="max-w-4xl w-full bg-white rounded-lg shadow-md overflow-hidden md:flex"
+    *ngFor="let product of products"
+  >
+    <div class="md:w-1/3">
+      <img
+        class="w-full h-48 object-cover rounded-t-lg md:rounded-none md:rounded-l-lg"
+        [src]="'http://localhost:5045' + product.productImage"
+        [alt]="product.productName"
+      />
+    </div>
+
+    <div class="md:w-2/3 px-6 py-3 flex flex-col justify-between">
+      <div>
+        <div class="flex items-start justify-between">
+          <h2 class="text-xl font-bold text-[#151875]">
+            {{ product.productName }}
+          </h2>
+        </div>
+
+        <div class="flex items-center space-x-4 my-3">
+          <div class="flex items-baseline space-x-2">
+            <p class="text-lg font-bold text-pink-500">
+            ${{ product.totalAmount }}
+            </p>
+          </div>
+          <p class="text-gray-500 text-sm">Quantity: {{ product.quantity }}</p>
+          <p class="text-gray-500 text-sm">Payment Status: <span class="text-green-600">Paid</span></p>
+            <p class="text-gray-500 text-sm">
+              Order Status:
+              <span
+                *ngIf="product.status === 'Pending'; else otherStatus"
+                class="text-yellow-600"
+              >
+                {{ product.status }}
+              </span>
+              <ng-template #otherStatus>
+                <span class="text-green-600">{{ product.status }}</span>
+              </ng-template>
+            </p>
+        </div>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          {{ product.address }}
+        </p>
+      </div>
+
+      <div class="flex items-center space-x-6 mt-1">
+        <p class="text-green-600 text-md font-medium">Arriving in 7 days</p>
+      </div>
+    </div>
+  </div>
+</div>

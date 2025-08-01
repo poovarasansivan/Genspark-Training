@@ -1,0 +1,37 @@
+
+.manager-content {
+  margin-left: 280px;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+.heading {
+  display: flex;
+   margin-left: 280px;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin: 20px 0;
+  padding-right: 24px; 
+}
+
+@media (max-width: 1024px) {
+  .manager-content {
+    margin-left: 260px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .manager-content {
+    margin-left: 0 !important;
+    padding: 16px;
+  }
+  .heading {
+    justify-content: center;
+    padding-right: 0;
+  }
+}
+
+

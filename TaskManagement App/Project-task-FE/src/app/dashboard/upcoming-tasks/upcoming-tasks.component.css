@@ -1,0 +1,135 @@
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.dashboard-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dashboard-card li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  color: #34495e;
+  gap: 0.3rem;
+  word-break: break-word;
+}
+
+.dashboard-card li:last-child {
+  border-bottom: none;
+}
+
+.dashboard-card strong {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.due-date {
+  font-size: 0.9rem;
+  color: #2c7be5;
+  background: #eef3ff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pagination-controls button {
+  padding: 0.4rem 1rem;
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.pagination-controls button:hover:not([disabled]) {
+  background-color: #1b5fc1;
+}
+
+.pagination-controls button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.no-tasks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  color: #888;
+}
+
+.no-tasks-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.msg{
+    font-size: 2.5rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.create-task-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background-color: #2c7be5;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s;
+}
+
+.create-task-btn:hover {
+  background-color: #1b5fc1;
+}
+
+
+@media (min-width: 600px) {
+  .dashboard-card li {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .due-date {
+    margin-left: auto;
+  }
+}

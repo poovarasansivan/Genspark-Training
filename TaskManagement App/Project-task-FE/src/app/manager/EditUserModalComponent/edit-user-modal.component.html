@@ -1,0 +1,43 @@
+<div class="modal-overlay">
+<div class="modal-container">
+  <h3>Edit User</h3>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <!-- Full Name -->
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input id="fullName" type="text" formControlName="fullName" placeholder="Enter full name" />
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="Enter email" />
+    </div>
+
+    <!-- Role -->
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select id="role" formControlName="role">
+        <option value="" disabled>Select role</option>
+        <option value="Manager">Manager</option>
+        <option value="TeamMember">Team Member</option>
+      </select>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">New Password (optional)</label>
+      <input id="password" type="password" formControlName="password" placeholder="Leave blank to keep existing" />
+    </div>
+
+    <!-- Actions -->
+    <div class="modal-actions">
+      <button type="submit" [disabled]="loading || form.invalid">
+        {{ loading ? 'Updating...' : 'Update' }}
+      </button>
+      <button type="button" class="cancel-btn" (click)="close.emit()">Cancel</button>
+    </div>
+  </form>
+</div>
+</div>

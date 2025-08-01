@@ -1,0 +1,30 @@
+<div class="dashboard-card">
+
+  <ul *ngIf="!loading && paginatedTasks.length > 0">
+    <li *ngFor="let task of paginatedTasks">
+      <strong>{{ task.title }}</strong>
+      <span class="due-date">Due: {{ task.dueDate | date:'shortDate' }}</span>
+    </li>
+  </ul>
+
+  <div *ngIf="!loading && upcomingTasks.length === 0" class="no-tasks-container">
+  <p class="msg">No upcoming tasks.</p>
+
+  <a
+    class="create-task-btn"
+    routerLink="/task/create"
+    *ngIf="isManager()"
+  >
+    Create Task
+  </a>
+</div>
+
+  <p *ngIf="loading">Loading...</p>
+
+ 
+  <div class="pagination-controls" *ngIf="upcomingTasks.length > pageSize && !loading">
+    <button (click)="prevPage()" [disabled]="page === 0">Prev</button>
+    <span>Page {{ page + 1 }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="(page + 1) * pageSize >= upcomingTasks.length">Next</button>
+  </div>
+</div>

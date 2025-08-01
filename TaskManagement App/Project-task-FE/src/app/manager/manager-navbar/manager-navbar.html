@@ -1,0 +1,30 @@
+<aside class="sidebar" [class.open]="isSidebarOpen">
+  <div class="profile">
+    <img class="avatar" src="https://i.pravatar.cc/100" alt="Profile" />
+    <div class="info">
+      <h4>{{ user?.fullName }}</h4>
+      <p>{{ user?.email }}</p>
+      <span class="role">{{ user?.role }}</span>
+    </div>
+  </div>
+
+  <nav class="nav-links">
+    <a routerLink="/dashboard" routerLinkActive="active"><i class="fas fa-home"></i> Dashboard</a>
+
+    <ng-container *ngIf="isManager()">
+      <a routerLink="/users/create" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fas fa-user-plus"></i>  Create User</a>
+      <a routerLink="/users" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fas fa-users"></i>  User List</a>
+      <a routerLink="/task/create" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <i class="fas fa-plus-circle"></i>Create Task</a>
+    </ng-container>
+
+      <a routerLink="/tasks" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fas fa-tasks"></i>  Manage Tasks</a>
+      <a routerLink="/notifications" class="nav-link">
+        <span><i class="fas fa-bell"></i> Notifications</span>
+        <span class="badge" *ngIf="unreadCount > 0">{{ unreadCount }}</span>
+      </a>
+
+      <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+</aside>
+
+<div class="hamburger" (click)="toggleSidebar()">&#9776;</div>

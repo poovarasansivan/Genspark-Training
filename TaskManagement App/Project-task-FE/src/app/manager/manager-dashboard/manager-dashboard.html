@@ -1,0 +1,70 @@
+<div class="welcome-container">
+  <p class="personal-quote">
+    {{ personalizedQuote.pre }}
+    <span class="highlight-name">{{ personalizedQuote.name }}</span>
+    {{ personalizedQuote.post }}
+  </p>
+</div>
+
+<div *ngIf="isManager()">
+  <div class="dashboard-grid">
+    <!-- Row 1: Donut + Bar Chart -->
+    <div class="row">
+      <div class="chart-card">
+        <h3>📊 Task Distribution</h3>
+        <app-task-distribution-donut-chart></app-task-distribution-donut-chart>
+      </div>
+
+      <div class="chart-card">
+        <h3>👥 Tasks Per Member</h3>
+        <app-tasks-per-member-bar-chart></app-tasks-per-member-bar-chart>
+      </div>
+    </div>
+
+    <!-- Row 2: Recent Tasks Table -->
+    <section class="dashboard-section">
+      <app-recent-tasks-table></app-recent-tasks-table>
+    </section>
+
+    <div>
+      <h3>🗓️ Upcoming Tasks</h3>
+      <app-upcoming-tasks></app-upcoming-tasks>
+    </div>
+
+    <app-overdue-tasks></app-overdue-tasks>
+  </div>
+</div>
+
+<div *ngIf="isTeamMember()">
+  <div class="dashboard-grid">
+    <!-- Row 1: Donut + Bar Chart -->
+    <div class="row">
+      <div class="chart-card">
+        <h3>📊 Task Assigned</h3>
+        <app-task-distribution-donut-chart></app-task-distribution-donut-chart>
+      </div>
+
+      <div class="chart-card">
+        <h3>👥 Tasks Due</h3>
+        <app-my-task-deadline-bar-chart></app-my-task-deadline-bar-chart>
+      </div>
+    </div>
+
+    <!-- Row 2: Recent Tasks Table -->
+
+    <!-- <section class="dashboard-section">
+      <app-draft-tasks></app-draft-tasks>
+    </section> -->
+
+    <section class="dashboard-section">
+      <app-recent-tasks-table></app-recent-tasks-table>
+    </section>
+
+    <div>
+      <h3>🗓️ Upcoming Tasks</h3>
+      <app-upcoming-tasks></app-upcoming-tasks>
+    </div>
+
+    <app-overdue-tasks></app-overdue-tasks>
+  </div>
+</div>

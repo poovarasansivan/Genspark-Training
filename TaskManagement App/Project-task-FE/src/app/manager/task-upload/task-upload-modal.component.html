@@ -1,0 +1,27 @@
+<div class="modal-container">
+  <h3>Upload File</h3>
+
+  <div class="task-info" *ngIf="task">
+    <h4>{{ task.title }}</h4>
+    <p class="description">{{ task.description || 'No description available.' }}</p>
+  </div>
+
+  <div class="form-group">
+    <label for="fileInput">Choose File</label>
+    <input id="fileInput" type="file" (change)="onFileSelected($event)" />
+    <div class="error" *ngIf="fileError">{{ fileError }}</div>
+  </div>
+
+  <div class="uploaded-file" *ngIf="selectedFile">
+    Selected: <strong>{{ selectedFile.name }}</strong>
+  </div>
+
+  <div class="modal-actions">
+    <button 
+      (click)="upload()" 
+      [disabled]="!selectedFile || uploading">
+      {{ uploading ? 'Uploading...' : 'Upload' }}
+    </button>
+    <button class="cancel-btn" (click)="close.emit()">Cancel</button>
+  </div>
+</div>

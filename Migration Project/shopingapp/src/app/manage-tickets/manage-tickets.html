@@ -1,0 +1,55 @@
+<div class="bg-[#f3f0ff] flex items-center justify-center h-64 md:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="text-2xl font-bold text-[#151875]">Manage Tickets</h3>
+        <p class="text-gray-600 text-base mt-1">Home &gt; Tickets</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-toast></app-toast>
+
+<div class="bg-white rounded-md shadow-md p-6 m-6">
+  <h2 class="text-2xl font-semibold text-[#151875] mb-4">Contact Queries</h2>
+  <div class="flex items-center justify-between mb-4">
+    <input
+      type="text"
+      placeholder="Search by Name or Email"
+      class="w-1/2 border border-pink-400 rounded px-4 py-2"
+      [(ngModel)]="searchTerm"
+      (input)="onSearchChange(searchTerm)"
+    />
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full table-auto border-collapse">
+      <thead>
+        <tr class="text-[#151875] bg-purple-200/50 text-left text-md font-bold">
+          <th class="p-3 border border-pink-500">S.No</th>
+          <th class="p-3 border border-pink-500">Name</th>
+          <th class="p-3 border border-pink-500">Email</th>
+          <th class="p-3 border border-pink-500">Subject</th>
+          <th class="p-3 border border-pink-500">Message</th>
+          <th class="p-3 border border-pink-500">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of filteredContacts; let i = index" class="text-sm text-gray-800 border-b hover:bg-gray-50">
+          <td class="p-3 border border-pink-500">{{ i + 1 }}</td>
+          <td class="p-3 border border-pink-500">{{ contact.name }}</td>
+          <td class="p-3 border border-pink-500">{{ contact.email }}</td>
+          <td class="p-3 border border-pink-500">{{ contact.subject }}</td>
+          <td class="p-3 border border-pink-500">{{ contact.message }}</td>
+          <td class="p-3 border border-pink-500">{{ contact.createdAt | date: 'medium' }}</td>
+        </tr>
+        <tr *ngIf="filteredContacts.length === 0">
+          <td colspan="6" class="text-center text-gray-500 p-4">
+            No contact messages found.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

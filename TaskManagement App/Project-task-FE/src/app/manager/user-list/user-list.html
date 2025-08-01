@@ -1,0 +1,75 @@
+<div class="modal-backdrop" *ngIf="showEditModal" (click)="onModalClose()"></div>
+
+<div class="user-list-container">
+  <h2>All Users</h2>
+
+  <!-- Filters -->
+  <div class="filter-bar">
+    <input
+      class="search-input"
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search by name or email..."
+      (ngModelChange)="onSearchInput($event)" />
+
+    <div class="role-filters">
+      <button [class.active]="roleFilter === ''" (click)="setRoleFilter('')">All</button>
+      <button [class.active]="roleFilter === 'Manager'" (click)="setRoleFilter('Manager')">Manager</button>
+      <button [class.active]="roleFilter === 'TeamMember'" (click)="setRoleFilter('TeamMember')">Team Member</button>
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div class="loader" *ngIf="loading"></div>
+
+  <!-- No Results -->
+  <div *ngIf="!loading && users.length === 0" class="no-results">No results found.</div>
+
+  <!-- User Cards -->
+  <div class="user-list">
+    <div class="user-card animate-fade" *ngFor="let user of users">
+      <div class="avatar">{{ getInitials(user.fullName) }}</div>
+      <div class="info">
+        <h4>{{ user.fullName }}</h4>
+        <p>{{ user.email }}</p>
+        <span
+          class="role-pill"
+          [ngClass]="{
+            'role-manager': user.role === 'Manager',
+            'role-teammember': user.role === 'TeamMember'
+          }">
+          {{ user.role }}
+        </span>
+      </div>
+      <div class="actions">
+        <button class="edit-btn" (click)="openEditModal(user)">Edit</button>
+        <button class="delete-btn" (click)="deleteUser(user.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination-container" *ngIf="totalPages > 1">
+    <button class="page-btn" [disabled]="page === 1" (click)="goToPage(page - 1)">
+      ‹ Prev
+    </button>
+
+    <ng-container *ngFor="let p of getPageRange()">
+      <button class="page-btn" [class.active]="p === page" (click)="goToPage(p)">
+        {{ p }}
+      </button>
+    </ng-container>
+
+    <button class="page-btn" [disabled]="page === totalPages" (click)="goToPage(page + 1)">
+      Next ›
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <app-edit-user-modal
+    *ngIf="showEditModal"
+    [user]="selectedUser"
+    (close)="onModalClose()"
+    (userUpdated)="onUserUpdated()">
+  </app-edit-user-modal>
+</div>

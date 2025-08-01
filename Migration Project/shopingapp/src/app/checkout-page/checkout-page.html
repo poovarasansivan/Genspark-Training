@@ -1,0 +1,286 @@
+<div class="bg-[#f3f0ff] flex items-center justify-center h-64 md:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+    >
+      <div>
+        <h3 class="text-2xl font-bold text-[#151875]">Checkout</h3>
+        <p class="text-gray-600 text-base mt-1">Home &gt; Checkout</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-toast></app-toast>
+<div class="min-h-fit font-sans">
+  <main class="container mx-auto px-4 py-12">
+    <form [formGroup]="checkoutForm" (ngSubmit)="placeOrder()">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div>
+            <div class="flex justify-between items-baseline mb-6">
+              <h2 class="text-2xl font-semibold text-[#151875]">
+                Contact Information
+              </h2>
+              @if(loggedInUserId) {
+              <p class="text-sm text-gray-600"></p>
+              } @else {
+              <p class="text-sm text-gray-500">
+                Already have an account?
+                <a
+                  href="#"
+                  class="text-pink-500 hover:text-pink-600 font-medium"
+                  >Log in</a
+                >
+              </p>
+              }
+            </div>
+            <div class="mb-6">
+              <input
+                type="tel"
+                formControlName="mobile"
+                name="mobile"
+                placeholder="Mobile phone number"
+                class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-pink-500 transition-colors"
+              />
+              <small
+                class="text-red-500"
+                *ngIf="mobile?.invalid && mobile?.touched"
+              >
+                Please enter a valid mobile number.
+              </small>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-semibold text-[#151875] mb-6">
+              Shipping address
+            </h2>
+            <div class="mb-6">
+              <input
+                type="text"
+                name="address"
+                formControlName="address"
+                placeholder="Address"
+                class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-pink-500 transition-colors"
+              />
+              <small
+                class="text-red-500"
+                *ngIf="address?.invalid && address?.touched"
+              >
+                Please enter a valid address.
+              </small>
+            </div>
+            <div class="mb-6">
+              <input
+                type="text"
+                name="landmark"
+                formControlName="landmark"
+                placeholder="landmark, suite, e.t.c"
+                class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-pink-500 transition-colors"
+              />
+              <small
+                class="text-red-500"
+                *ngIf="landmark?.invalid && landmark?.touched"
+              >
+                Please enter a valid landmark.
+              </small>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="mb-6">
+                <input
+                  type="text"
+                  name="city"
+                  formControlName="city"
+                  placeholder="City"
+                  class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-pink-500 transition-colors"
+                />
+                <small
+                  class="text-red-500"
+                  *ngIf="city?.invalid && city?.touched"
+                >
+                  Please Enter a City
+                </small>
+              </div>
+              <div class="mb-6">
+                <input
+                  type="text"
+                  name="state"
+                  formControlName="state"
+                  placeholder="Tamil Nadu"
+                  class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-pink-500 transition-colors"
+                />
+                <small
+                  class="text-red-500"
+                  *ngIf="state?.invalid && state?.touched"
+                >
+                  Please Enter a State
+                </small>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <input
+                  type="text"
+                  name="country"
+                  formControlName="country"
+                  placeholder="India"
+                  class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-pink-500 transition-colors"
+                />
+                <small
+                  class="text-red-500"
+                  *ngIf="country?.invalid && country?.touched"
+                >
+                  Please Enter a Country
+                </small>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="postalcode"
+                  formControlName="postalcode"
+                  placeholder="634513"
+                  class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-pink-500 transition-colors"
+                />
+                <small
+                  class="text-red-500"
+                  *ngIf="postalcode?.invalid && postalcode?.touched"
+                >
+                  Please Enter a Postal Code
+                </small>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-pink-500 text-white font-bold py-4 px-4 rounded-lg hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 transition-all duration-300 ease-in-out"
+            >
+              Place Order
+            </button>
+          </div>
+          <div
+            id="paypal-button-container"
+            class="mt-5"
+            *ngIf="showPayPalButton"
+          ></div>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg h-fit shadow-sm lg:p-12">
+          <!-- Cart Items -->
+          <div class="space-y-6">
+            <div
+              *ngFor="let item of cartItems"
+              class="flex items-center justify-between"
+            >
+              <div class="flex items-center">
+                <div class="relative">
+                  <img
+                    [src]="'http://localhost:5045' + item.image"
+                    alt="{{ item.productName }}"
+                    class="w-32 h-24 rounded-lg object-cover border border-gray-200"
+                  />
+                </div>
+                <div class="ml-4">
+                  <p class="font-semibold text-[#151875]">
+                    {{ item.productName }}
+                  </p>
+                  <p class="text-sm text-gray-500">
+                    Color: {{ item.colorName }}
+                  </p>
+                  <p class="text-sm text-gray-500">
+                    Model: {{ item.modelName }}
+                  </p>
+                </div>
+              </div>
+              <p>
+                <span class="text-lg font-medium text-[#151875]">
+                  x {{ item.quantity }}
+                </span>
+              </p>
+              <p class="font-semibold text-pink-500">
+                ${{ item.price.toFixed(2) }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Totals Section -->
+          <div class="mt-10 pt-8 border-t border-gray-200">
+            <div class="space-y-4">
+              <div class="flex justify-between text-gray-600">
+                <span>Subtotals:</span>
+                <span class="font-medium"> $ {{ subtotal }}</span>
+              </div>
+              <div class="flex justify-between text-gray-600">
+                <span>Shipping:</span>
+                <span class="font-medium"> ${{ shipping }}</span>
+              </div>
+              <div class="flex justify-between text-gray-600">
+                <span>Tax (5%):</span>
+                <span class="font-medium"> ${{ tax.toFixed(2) }}</span>
+              </div>
+              <div
+                class="flex justify-between text-gray-800 font-semibold text-xl"
+              >
+                <span class="text-[#151875]">Totals:</span>
+                <span class="text-pink-500"> ${{ total }}</span>
+              </div>
+            </div>
+            <div class="mt-6 text-sm text-gray-500 flex items-center">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 mr-2 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Shipping & taxes are included</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 mr-2 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>No Cash on Delivery</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 mr-2 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>7 Days return policy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </main>
+</div>

@@ -1,0 +1,126 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+    <div class="flex items-center justify-center mb-6 gap-3">
+      <lucide-angular
+        [name]="ShoppingCartIcon"
+        [size]="30"
+        color="#151875"
+      ></lucide-angular>
+      <h2 class="text-2xl font-bold text-center text-pink-500">Register</h2>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700"
+          >Name</label
+        >
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="Jhon Doe"
+          class="mt-1 block w-full text-md p-2 border border-gray-300 rounded-md focus:ring-pink-500 focus:border-pink-500"
+          required
+        />
+        <div
+          *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+          class="text-red-500 text-sm mt-1"
+        >
+          <div *ngIf="registerForm.get('name')?.errors?.['required']">
+            Name is required.
+          </div>
+          <div *ngIf="registerForm.get('name')?.errors?.['minlength']">
+            Name must be at least 3 characters long.
+          </div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label for="username" class="block text-sm font-medium text-gray-700"
+          >UserName</label
+        >
+        <input
+          id="username"
+          type="text"
+          formControlName="username"
+          placeholder="Jhondoe12"
+          class="mt-1 block w-full text-md p-2 border border-gray-300 rounded-md focus:ring-pink-500 focus:border-pink-500"
+          required
+        />
+        <div
+          *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
+          class="text-red-500 text-sm mt-1"
+        >
+          <div *ngIf="registerForm.get('username')?.errors?.['required']">
+            Username is required.
+          </div>
+          <div *ngIf="registerForm.get('username')?.errors?.['minlength']">
+            Username must be at least 3 characters long.
+          </div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700"
+          >Email</label
+        >
+        <input
+          id="email"
+          type="text"
+          formControlName="email"
+          placeholder="jhondoe@gmail.com"
+          class="mt-1 block w-full text-md p-2 border border-gray-300 rounded-md focus:ring-pink-500 focus:border-pink-500"
+          required
+        />
+        <div
+          *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+          class="text-red-500 text-sm mt-1"
+        >
+          <div *ngIf="registerForm.get('email')?.errors?.['required']">
+            email is required.
+          </div>
+          <div *ngIf="registerForm.get('email')?.errors?.['minlength']">
+            email must be at least 3 characters long.
+          </div>
+          <div *ngIf="registerForm.get('email')?.errors?.['email']">
+            Invalid email format.
+          </div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700"
+          >Password</label
+        >
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="••••••••"
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-pink-500 focus:border-pink-500"
+          required
+        />
+        <div
+          *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+          class="text-red-500 text-sm mt-1"
+        >
+          <div *ngIf="registerForm.get('password')?.errors?.['required']">
+            Password is required.
+          </div>
+          <div *ngIf="registerForm.get('password')?.errors?.['minlength']">
+            Password must be at least 6 characters long.
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        [disabled]="registerForm.invalid"
+        class="w-full bg-pink-500 text-white font-semibold py-2 px-4 rounded hover:bg-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
+      >
+        Register
+      </button>
+    </form>
+    <div class="mt-4 text-center">
+      <p class="text-sm text-gray-600">
+        Already have an account?
+        <a href="/login" class="text-[#151875] hover:underline">Login here</a>
+      </p>
+    </div>
+  </div>
+</div>

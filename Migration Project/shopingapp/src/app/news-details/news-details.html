@@ -1,0 +1,37 @@
+<div class="bg-[#f3f0ff] flex items-center justify-center h-64 md:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+    >
+      <div>
+        <h3 class="text-2xl font-bold text-[#151875]">Blog Post</h3>
+        <p class="text-gray-600 text-base mt-1">Home &gt; Post Details</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flex items-center justify-center mt-10 px-4">
+  <div class="max-w-4xl w-full bg-white rounded-sm overflow-hidden">
+    <div class="h-96 w-full">
+      <img
+        [src]="'http://localhost:5045' + BlogPost.image"
+        [alt]="BlogPost.title"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div class="pt-8 px-2">
+      <h2 class="text-3xl font-bold text-[#151875] mb-2">{{ BlogPost.title }}</h2>
+      <p class="text-gray-500 text-sm mb-4">
+        {{ BlogPost.createdDate | date: 'mediumDate' }}
+      </p>
+      <p class="text-gray-700 text-base mb-6">
+        {{ BlogPost.shortDescription }}
+      </p>
+
+      <div class="blog-content max-w-none text-gray-700 " [innerHTML]="BlogPost.content"></div>
+    </div>
+  </div>
+</div>
+

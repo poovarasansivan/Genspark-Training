@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Member Dashboard</title>
+</head>
+<body>
+  <h2>📥 Team Member Notifications</h2>
+  <div id="notifications"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+  <script>
+    const connection = new signalR.HubConnectionBuilder()
+      .withUrl("http://localhost:5093/taskHub", {
+        accessTokenFactory: () => "YOUR_TEAMMEMBER_JWT"
+      })
+      .withAutomaticReconnect()
+      .build();
+
+    connection.on("TaskAssigned", task => {
+      const msg = `
+        <strong>🆕 Task Assigned</strong>
+        <p><strong>Title:</strong> ${task.title}</p>
+        <p><strong>Description:</strong> ${task.description}</p>
+        <p><strong>Status:</strong> ${task.status}</p>
+        <p><strong>Assigned To:</strong> ${task.assignedToName}</p>
+      `;
+      showNotification(msg);
+    });
+
+    connection.start().catch(err => console.error(err.toString()));
+
+    function showNotification(message) {
+      const div = document.createElement("div");
+      div.innerHTML = message;
+      document.getElementById("notifications").prepend(div);
+    }
+  </script>
+</body>
+</html>

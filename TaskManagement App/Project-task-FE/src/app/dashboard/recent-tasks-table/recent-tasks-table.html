@@ -1,0 +1,44 @@
+<div class="table-container">
+  <h4 *ngIf="isManager()">📝 Recent Tasks Created</h4>
+  <h4 *ngIf="isTeamMember()">📝 Recent Tasks Assigned</h4>
+
+  <div class="table-wrapper" *ngIf="!loading && recentTasks.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Due Date</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of recentTasks">
+          <td>{{ task.title }}</td>
+          <td>
+            <span class="status-tag" [class]="task.status.toLowerCase()">{{ task.status }}</span>
+          </td>
+          <td>{{ task.dueDate | date: 'mediumDate' }}</td>
+          <td>{{ getTimeAgo(task.createdAt) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="empty-state" *ngIf="!loading && recentTasks.length === 0">
+  <p *ngIf="isManager()">You can create a new task to get started.</p>
+  <p *ngIf="isTeamMember()">Please check back later for updates.</p>
+
+  <a
+    routerLink="/task/create"
+    *ngIf="isManager()"
+    class="create-task-btn"
+  >
+    Create New Task
+  </a>
+</div>
+
+  <ng-template #loadingTpl>
+    <p>Loading recent tasks...</p>
+  </ng-template>
+</div>

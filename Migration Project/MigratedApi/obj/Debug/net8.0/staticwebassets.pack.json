@@ -1,0 +1,125 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/BlogImages/a8043f8e-76cd-4864-9163-46d6d5c4c961.jpg",
+      "PackagePath": "staticwebassets/BlogImages/a8043f8e-76cd-4864-9163-46d6d5c4c961.jpg"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/BlogImages/c5ce6d7a-f12e-47d5-a547-3c5a82395c49.png",
+      "PackagePath": "staticwebassets/BlogImages/c5ce6d7a-f12e-47d5-a547-3c5a82395c49.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/ExportNews/NewsExport_20250731102227.xlsx",
+      "PackagePath": "staticwebassets/ExportNews/NewsExport_20250731102227.xlsx"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/11adcd1a-907f-4827-9b1d-262ba3d80157.png",
+      "PackagePath": "staticwebassets/Images/11adcd1a-907f-4827-9b1d-262ba3d80157.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/1cf93da3-e017-4f69-a1d5-4dd56137fd52.png",
+      "PackagePath": "staticwebassets/Images/1cf93da3-e017-4f69-a1d5-4dd56137fd52.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/2107fd4d-c810-43d3-918c-702cf966e691.png",
+      "PackagePath": "staticwebassets/Images/2107fd4d-c810-43d3-918c-702cf966e691.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/28eb60c5-211c-4be9-9fe5-ece4ac3d83b7.webp",
+      "PackagePath": "staticwebassets/Images/28eb60c5-211c-4be9-9fe5-ece4ac3d83b7.webp"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/40988f55-8bff-4aae-97c8-a164b9a88082.webp",
+      "PackagePath": "staticwebassets/Images/40988f55-8bff-4aae-97c8-a164b9a88082.webp"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/55da346b-7e95-416a-bc43-f7370f8d6ffa.webp",
+      "PackagePath": "staticwebassets/Images/55da346b-7e95-416a-bc43-f7370f8d6ffa.webp"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/88d154f9-9665-4a72-9b8c-f5c57e913ee8.webp",
+      "PackagePath": "staticwebassets/Images/88d154f9-9665-4a72-9b8c-f5c57e913ee8.webp"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/9523ad63-9bc5-49bb-a96f-e7c5892df7c6.png",
+      "PackagePath": "staticwebassets/Images/9523ad63-9bc5-49bb-a96f-e7c5892df7c6.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/a3e7a35e-2603-4169-b5e5-6363b43f0cf8.webp",
+      "PackagePath": "staticwebassets/Images/a3e7a35e-2603-4169-b5e5-6363b43f0cf8.webp"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/a7c53e7f-45a9-4831-a7af-f159ced34c6c.webp",
+      "PackagePath": "staticwebassets/Images/a7c53e7f-45a9-4831-a7af-f159ced34c6c.webp"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/b8fe1f0f-4365-472c-b451-634965b3d42b.png",
+      "PackagePath": "staticwebassets/Images/b8fe1f0f-4365-472c-b451-634965b3d42b.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/bca110f6-8210-47f0-962c-a865e9312926.png",
+      "PackagePath": "staticwebassets/Images/bca110f6-8210-47f0-962c-a865e9312926.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/c4166f03-b98d-4a8b-9c31-767ce317f261.webp",
+      "PackagePath": "staticwebassets/Images/c4166f03-b98d-4a8b-9c31-767ce317f261.webp"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/c43e6bc4-bfbf-4f6b-889c-a87ab11ee48b.png",
+      "PackagePath": "staticwebassets/Images/c43e6bc4-bfbf-4f6b-889c-a87ab11ee48b.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/c89169ed-2fd9-4680-ab65-b5fd7a2ef03c.webp",
+      "PackagePath": "staticwebassets/Images/c89169ed-2fd9-4680-ab65-b5fd7a2ef03c.webp"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/ca8cf1a6-794b-4a7b-8ff8-d3d79b3de312.webp",
+      "PackagePath": "staticwebassets/Images/ca8cf1a6-794b-4a7b-8ff8-d3d79b3de312.webp"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/d4c6cf22-e346-46a8-aa5d-8f5daa4ac650.jpg",
+      "PackagePath": "staticwebassets/Images/d4c6cf22-e346-46a8-aa5d-8f5daa4ac650.jpg"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/e264e43c-76cf-4251-8b89-b7b2391e2324.png",
+      "PackagePath": "staticwebassets/Images/e264e43c-76cf-4251-8b89-b7b2391e2324.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/e9e6d095-365d-49df-b89b-b4e1a12ad660.png",
+      "PackagePath": "staticwebassets/Images/e9e6d095-365d-49df-b89b-b4e1a12ad660.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/f6e9ec5f-d241-42d3-94b9-56179b4795de.jpg",
+      "PackagePath": "staticwebassets/Images/f6e9ec5f-d241-42d3-94b9-56179b4795de.jpg"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/f9702d7e-c8e0-49b4-96fa-0c2d047f936d.png",
+      "PackagePath": "staticwebassets/Images/f9702d7e-c8e0-49b4-96fa-0c2d047f936d.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/fa71b919-c5ae-406f-89f9-5d674325f001.png",
+      "PackagePath": "staticwebassets/Images/fa71b919-c5ae-406f-89f9-5d674325f001.png"
+    },
+    {
+      "Id": "/Users/poovarasans/Desktop/Genspark/Task/MigratedApi/wwwroot/Images/logo.jpg",
+      "PackagePath": "staticwebassets/Images/logo.jpg"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.MigratedApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.MigratedApi.props",
+      "PackagePath": "build\\MigratedApi.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.MigratedApi.props",
+      "PackagePath": "buildMultiTargeting\\MigratedApi.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.MigratedApi.props",
+      "PackagePath": "buildTransitive\\MigratedApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

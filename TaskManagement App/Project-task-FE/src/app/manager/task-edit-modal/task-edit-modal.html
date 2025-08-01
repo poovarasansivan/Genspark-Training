@@ -1,0 +1,70 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <h3>Edit Task</h3>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <ng-container *ngIf="isManager()">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input id="title" type="text" formControlName="title" placeholder="Enter task title" />
+          <div class="error" *ngIf="form.get('title')?.touched && form.get('title')?.hasError('required')">
+            Title is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" formControlName="description" rows="3" placeholder="Task description"></textarea>
+          <div class="error" *ngIf="form.get('description')?.touched && form.get('description')?.hasError('required')">
+            Description is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dueDate">Due Date</label>
+          <input id="dueDate" type="date" formControlName="dueDate" />
+          <div class="error" *ngIf="form.get('dueDate')?.touched && form.get('dueDate')?.hasError('required')">
+            Due date is required
+          </div>
+          <div class="error" *ngIf="form.get('dueDate')?.touched && form.get('dueDate')?.hasError('pastDate')">
+            Due date must be in the future
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="assignedToId">Assigned To</label>
+          <select id="assignedToId" formControlName="assignedToId">
+            <option value="">Select a user</option>
+            <option *ngFor="let user of users" [value]="user.id">
+              {{ user.fullName }}
+            </option>
+          </select>
+          <div class="error" *ngIf="form.get('assignedToId')?.touched && form.get('assignedToId')?.hasError('required')">
+            Assigned user is required
+          </div>
+        </div>
+      </ng-container>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status" formControlName="status">
+          <option value="" disabled>Select status</option>
+          <option value="ToDo">To Do</option>
+          <option value="InProgress">In Progress</option>
+          <option value="Done">Done</option>
+        </select>
+        <div class="error" *ngIf="form.get('status')?.touched && form.get('status')?.hasError('required')">
+          Status is required
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" [disabled]="loading || form.invalid || !form.dirty">
+          {{ loading ? 'Updating...' : 'Update Task' }}
+        </button>
+        <button type="button" class="cancel-btn" (click)="close.emit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

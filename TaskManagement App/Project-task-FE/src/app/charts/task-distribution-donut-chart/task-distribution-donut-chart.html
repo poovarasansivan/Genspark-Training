@@ -1,0 +1,18 @@
+<div class="chart-wrapper">
+  <ng-container *ngIf="hasChartData(); else noChartTpl">
+    <canvas baseChart
+      [data]="doughnutChartData"
+      [labels]="doughnutChartLabels"
+      [type]="doughnutChartType"
+      [legend]="true"
+      [options]="{ responsive: true, maintainAspectRatio: false }">
+    </canvas>
+  </ng-container>
+
+  <ng-template #noChartTpl>
+    <div class="no-data-chart">
+      <img src="no-data_17134613.png" alt="No Data" />
+      <p>No data available to display the chart.</p>
+    </div>
+  </ng-template>
+</div>

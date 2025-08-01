@@ -1,0 +1,61 @@
+<div class="notifications-header">
+  <h2>Notifications</h2>
+  <button class="mark-read-btn" (click)="markAllAsRead()" *ngIf="notifications.length > 0">
+    Mark All as Read
+  </button>
+</div>
+
+<ul class="notification-list" *ngIf="notifications.length > 0; else noNotifications">
+  <li *ngFor="let n of notifications">
+    <div class="notification-item" [class.read]="n.isRead">
+      <div class="notification-header">
+        <strong [style.color]="n.isRead ? 'gray' : '#2c7be5'">
+          {{ n.title || n.title || 'Task' }}
+        </strong>
+        <span class="notification-type">{{ n.type }}</span>
+      </div>
+      <div class="notification-message">
+        <ng-container [ngSwitch]="n.type">
+            <span *ngSwitchCase="'TaskCreated'">
+            Task was created by <b>{{ n.CreatedByName }}</b> and assigned to <b>{{ n.AssignedToName }}</b>.
+            </span>
+            <span *ngSwitchCase="'TaskUpdated'">
+            Status changed from <b>{{ n.PreviousStatus }}</b> to <b>{{ n.Status }}</b> by <b>{{ n.UpdatedByName }}</b>.
+            </span>
+            <span *ngSwitchCase="'TaskDeleted'">
+            Task was deleted by the manager.
+            </span>
+            <span *ngSwitchCase="'TaskUnassigned'">
+            Task was unassigned by <b>{{ n.UnassignedByName }}</b>.
+            </span>
+            <span *ngSwitchCase="'TaskReopened'">
+            Task was reopened by <b>{{ n.UpdatedByName }}</b>.
+            </span>
+            <span *ngSwitchDefault>
+            {{ n.message }}
+            </span>
+            
+        </ng-container>
+      </div>
+      <div class="notification-details">
+        <div *ngIf="n.Status">Status: <b>{{ n.Status }}</b></div>
+        <div *ngIf="n.PreviousStatus">Previous: <b>{{ n.PreviousStatus }}</b></div>
+        <div *ngIf="n.AssignedToName">Assigned To: <b>{{ n.AssignedToName }}</b></div>
+        <div *ngIf="n.CreatedByName">Created By: <b>{{ n.CreatedByName }}</b></div>
+        <div *ngIf="n.UpdatedByName">Updated By: <b>{{ n.UpdatedByName }}</b></div>
+      </div>
+      <div class="notification-meta">
+        <small>{{ n.createdAt | date:'short' }}</small>
+        <span *ngIf="n.isRead" class="read-status">Read</span>
+        <span *ngIf="!n.isRead" class="unread-status">Unread</span>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<ng-template #noNotifications>
+  <div class="no-notifications">
+    <span class="no-notifications-icon">🔔</span>
+    <p>No notifications yet.<br>You'll see updates here when tasks are assigned, created, or updated.</p>
+  </div>
+</ng-template>

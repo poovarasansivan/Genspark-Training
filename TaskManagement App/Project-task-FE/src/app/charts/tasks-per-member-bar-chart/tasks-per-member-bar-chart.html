@@ -1,0 +1,17 @@
+<div class="chart-wrapper">
+  <ng-container *ngIf="hasBarChartData(); else noDataTpl">
+    <canvas baseChart
+      [data]="barChartData"
+      [labels]="barChartLabels"
+      [type]="barChartType"
+      [options]="barChartOptions">
+    </canvas>
+  </ng-container>
+
+  <ng-template #noDataTpl>
+    <div class="no-data-chart">
+      <img src="no-data_17134613.png" alt="No Data" />
+      <p>No task data available to show per member.</p>
+    </div>
+  </ng-template>
+</div>

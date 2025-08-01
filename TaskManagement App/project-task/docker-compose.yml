@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: TaskManagementDb
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ./TaskManagementAPI   
+      dockerfile: Dockerfile
+    ports:
+      - "5093:8080"     
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=TaskManagementDb;Username=postgres;Password=12345"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:

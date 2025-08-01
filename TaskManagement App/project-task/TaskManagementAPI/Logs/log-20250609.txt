@@ -1,0 +1,340 @@
+2025-06-09 00:58:22.549 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 00:58:22.616 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 00:58:22.618 +05:30 [INF] Hosting environment: Development
+2025-06-09 00:58:22.618 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 00:58:22.618 +05:30 [INF] Content root path: /Use2025-06-09 00:58:25.812 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 00:58:25.812 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 01:00:19.006 +05:30 [INF] Application is shutting down...
+n 35 ms
+2025-06-09 01:00:19.006 +05:30 [INF] Application is shutting down...
+2025-06-09 09:26:18.065 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 09:26:18.132 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 09:26:18.133 +05:30 [INF] Hosting environment: Development
+2025-06-09 09:26:18.133 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 09:26:18.133 +05:30 [INF] Content root path: /Use2025-06-09 09:26:36.511 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 09:26:36.511 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 09:27:26.892 +05:30 [INF] Application is shutting down...
+n 29 ms
+2025-06-09 09:27:26.892 +05:30 [INF] Application is shutting down...
+2025-06-09 09:30:06.672 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 09:30:06.734 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 09:30:06.734 +05:30 [INF] Hosting environment: Development
+2025-06-09 09:30:06.735 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 09:30:06.735 +05:30 [INF] Content root path: /Use2025-06-09 09:30:10.224 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 09:30:10.224 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 09:30:14.371 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 09:30:14.371 +05:30 [INF] Request GET / by UserId: Anony2025-06-09 09:31:00.947 +05:30 [INF] Application is shutting down...
+in 1 ms
+2025-06-09 09:31:00.947 +05:30 [INF] Application is shutting down...
+2025-06-09 09:37:13.966 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 09:37:14.030 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 09:37:14.030 +05:30 [INF] Hosting environment: Development
+2025-06-09 09:37:14.031 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 09:37:14.031 +05:30 [INF] Content root path: /Use2025-06-09 09:37:58.089 +05:30 [INF] Application is shutting down...
+mentAPI
+2025-06-09 09:37:58.089 +05:30 [INF] Application is shutting down...
+2025-06-09 09:38:06.255 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 09:38:06.320 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 09:38:06.321 +05:30 [INF] Hosting environment: Development
+2025-06-09 09:38:06.321 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 09:38:06.321 +05:30 [INF] Content root path: /Use2025-06-09 09:38:08.945 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 09:38:08.945 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 09:38:46.766 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 09:38:46.766 +05:30 [INF] Request GET / by UserId: Anony2025-06-09 09:39:23.904 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 09:39:23.904 +05:30 [INF] Request POST TaskManagementAPI.Controllers.UserController.CreateUser (TaskManagementAPI) by UserId: Anonymou2025-06-09 09:40:06.713 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 09:40:06.713 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetAllUsers (TaskManagementAPI) by UserId: Anony2025-06-09 09:40:53.351 +05:30 [ERR] Failed executing DbCommand (7ms) [Parame2025-06-09 09:40:53.351 +05:30 [ERR] Failed executing DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?', @p8='?', @p9='?', @p10='?' (DbType = DateTime), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("Id", "CreatedAt", "CreatedById", "CreatedByIp", "ExpiresAt", "IsDeleted", "IsRevoked", "ReplacedByToken", "RevokedByIp", "Token", "UpdatedAt", "UpdatedById", "UserId")
+2025-06-09 09:40:53.374 +05:30 [ERR] An exception occurred in the database wh2025-06-09 09:40:53.374 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'TaskManagementAPI.Data.TaskManagementDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42P01: relation "RefreshTokens" does not exist
+
+POSITION: 13
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "RefreshTokens" does not exist
+    Position: 13
+    File: parse_relation.c
+    Line: 1452
+    Routine: parserOpenTable
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42P01: relation "RefreshTokens" does not exist
+
+POSITION: 13
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "RefreshTokens" does not exist
+    Position: 13
+    File: parse_relation.c
+    Line: 1452
+    Routine: parserOpenTable
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesA2025-06-09 09:40:53.384 +05:30 [ERR] Unhandled error on POST TaskManagementAP2025-06-09 09:40:53.384 +05:30 [ERR] Unhandled error on POST TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) by UserId: Anonymous at "2025-06-09T04:10:52.9467650Z" after 437 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42P01: relation "RefreshTokens" does not exist
+
+POSITION: 13
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "RefreshTokens" does not exist
+    Position: 13
+    File: parse_relation.c
+    Line: 1452
+    Routine: parserOpenTable
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at TaskManagementAPI.Repositories.Repository`2.Add(T item) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Repositories/Repository.cs:line 21
+   at TaskManagementAPI.Services.AuthenticationService.LoginAsync(LoginRequestDto loginDto) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Services/AuthenticationService.cs:line 60
+   at TaskManagementAPI.Controllers.AuthController.Login(LoginRequestDto loginDto) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Controllers/AuthController.cs:line 26
+   at lambda_method169(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagementAPI.CustomExceptions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/presidio/Desktop/Genspark/PresidioTraining/pr2025-06-09 09:42:08.492 +05:30 [INF] Application is shutting down...
+line 31
+2025-06-09 09:42:08.492 +05:30 [INF] Application is shutting down...
+2025-06-09 09:43:55.312 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 09:43:55.385 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 09:43:55.385 +05:30 [INF] Hosting environment: Development
+2025-06-09 09:43:55.386 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 09:43:55.386 +05:30 [INF] Content root path: /Use2025-06-09 09:44:08.915 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 09:44:08.915 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 09:44:33.324 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 09:44:33.324 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) by UserId: Anonymou2025-06-09 09:53:17.197 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 09:53:17.197 +05:30 [INF] Request GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anonym2025-06-09 09:53:39.543 +05:30 [ERR] API Exception on GET TaskManagementAPI.C2025-06-09 09:53:39.543 +05:30 [ERR] API Exception on GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anonymous at "2025-06-09T04:23:39.4771780Z" after 65 ms
+TaskManagementAPI.CustomExceptions.UnauthorizedException: Invalid user token
+   at TaskManagementAPI.Controllers.AuthController.GetCurrentUser() in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Controllers/AuthController.cs:line 56
+   at lambda_method289(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagementAPI.CustomExceptions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/presidio/Desktop/Genspark/PresidioTraining/pr2025-06-09 09:54:06.543 +05:30 [INF] Application is shutting down...
+line 31
+2025-06-09 09:54:06.543 +05:30 [INF] Application is shutting down...
+2025-06-09 09:54:16.114 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 09:54:16.198 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 09:54:16.199 +05:30 [INF] Hosting environment: Development
+2025-06-09 09:54:16.199 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 09:54:16.199 +05:30 [INF] Content root path: /Use2025-06-09 09:54:54.390 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 09:54:54.390 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) by UserId: Anonymou2025-06-09 09:55:14.279 +05:30 [ERR] API Exception on GET TaskManagementAPI.C2025-06-09 09:55:14.279 +05:30 [ERR] API Exception on GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anonymous at "2025-06-09T04:25:14.2297620Z" after 49 ms
+TaskManagementAPI.CustomExceptions.UnauthorizedException: Invalid user token
+   at TaskManagementAPI.Controllers.AuthController.GetCurrentUser() in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Controllers/AuthController.cs:line 56
+   at lambda_method289(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagementAPI.CustomExceptions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/presidio/Desktop/Genspark/PresidioTraining/pr2025-06-09 10:07:03.104 +05:30 [ERR] API Exception on GET TaskManagementAPI.C2025-06-09 10:07:03.104 +05:30 [ERR] API Exception on GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anonymous at "2025-06-09T04:37:03.0690850Z" after 34 ms
+TaskManagementAPI.CustomExceptions.UnauthorizedException: Invalid user token
+   at TaskManagementAPI.Controllers.AuthController.GetCurrentUser() in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Controllers/AuthController.cs:line 56
+   at lambda_method289(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagementAPI.CustomExceptions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/presidio/Desktop/Genspark/PresidioTraining/pr2025-06-09 10:14:39.976 +05:30 [INF] Application is shutting down...
+line 31
+2025-06-09 10:14:39.976 +05:30 [INF] Application is shutting down...
+2025-06-09 10:14:49.829 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 10:14:49.899 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 10:14:49.900 +05:30 [INF] Hosting environment: Development
+2025-06-09 10:14:49.901 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 10:14:49.901 +05:30 [INF] Content root path: /Use2025-06-09 10:15:19.384 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 10:15:19.384 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) by UserId: Anonymou2025-06-09 10:15:36.850 +05:30 [ERR] API Exception on GET TaskManagementAPI.C2025-06-09 10:15:36.850 +05:30 [ERR] API Exception on GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anonymous at "2025-06-09T04:45:36.7947700Z" after 55 ms
+TaskManagementAPI.CustomExceptions.UnauthorizedException: Invalid user token
+   at TaskManagementAPI.Controllers.AuthController.GetCurrentUser() in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Controllers/AuthController.cs:line 58
+   at lambda_method289(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagementAPI.CustomExceptions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/presidio/Desktop/Genspark/PresidioTraining/pr2025-06-09 10:20:34.110 +05:30 [INF] Application is shutting down...
+line 31
+2025-06-09 10:20:34.110 +05:30 [INF] Application is shutting down...
+2025-06-09 10:20:42.932 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 10:20:43.008 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 10:20:43.009 +05:30 [INF] Hosting environment: Development
+2025-06-09 10:20:43.010 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 10:20:43.010 +05:30 [INF] Content root path: /Use2025-06-09 10:20:49.664 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 10:20:49.664 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 10:21:15.475 +05:30 [ERR] API Exception on POST TaskManagementAPI.2025-06-09 10:21:15.475 +05:30 [ERR] API Exception on POST TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) by UserId: Anonymous at "2025-06-09T04:51:13.9421980Z" after 1532 ms
+TaskManagementAPI.CustomExceptions.UnauthorizedException: Invalid email or password.
+   at TaskManagementAPI.Services.AuthenticationService.LoginAsync(LoginRequestDto loginDto) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Services/AuthenticationService.cs:line 30
+   at TaskManagementAPI.Controllers.AuthController.Login(LoginRequestDto loginDto) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Controllers/AuthController.cs:line 28
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagementAPI.CustomExceptions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/presidio/Desktop/Genspark/PresidioTraining/pr2025-06-09 10:21:24.257 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 10:21:24.257 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) by UserId: Anonymo2025-06-09 10:21:45.228 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 10:21:45.228 +05:30 [INF] Request GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anonymo2025-06-09 10:26:35.801 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 10:26:35.801 +05:30 [INF] Request GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anonym2025-06-09 10:30:31.709 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 10:30:31.709 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.Logout (TaskManagementAPI) by UserId: Anony2025-06-09 10:31:36.863 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 10:31:36.863 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.Logout (TaskManagementAPI) by UserId: Anonym2025-06-09 10:32:57.211 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 10:32:57.211 +05:30 [INF] Request GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anony2025-06-09 10:33:48.304 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 10:33:48.304 +05:30 [INF] Request GET / by UserId: Anony2025-06-09 10:33:59.153 +05:30 [INF] Application is shutting down...
+in 0 ms
+2025-06-09 10:33:59.153 +05:30 [INF] Application is shutting down...
+2025-06-09 10:35:01.617 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 10:35:01.702 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 10:35:01.703 +05:30 [INF] Hosting environment: Development
+2025-06-09 10:35:01.703 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 10:35:01.703 +05:30 [INF] Content root path: /Use2025-06-09 10:35:03.970 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 10:35:03.970 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 10:35:21.130 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 10:35:21.130 +05:30 [INF] Request GET / by UserId: Anony2025-06-09 10:36:20.261 +05:30 [INF] Application is shutting down...
+in 1 ms
+2025-06-09 10:36:20.261 +05:30 [INF] Application is shutting down...
+2025-06-09 10:56:54.228 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 10:56:54.303 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 10:56:54.303 +05:30 [INF] Hosting environment: Development
+2025-06-09 10:56:54.304 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 10:56:54.304 +05:30 [INF] Content root path: /Use2025-06-09 11:01:00.799 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 11:01:00.799 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetUserById (TaskManagementAPI) by UserId: Anonym2025-06-09 11:01:37.268 +05:30 [INF] Application is shutting down...
+n 43 ms
+2025-06-09 11:01:37.268 +05:30 [INF] Application is shutting down...
+2025-06-09 11:01:52.061 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 11:01:52.129 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 11:01:52.130 +05:30 [INF] Hosting environment: Development
+2025-06-09 11:01:52.130 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 11:01:52.130 +05:30 [INF] Content root path: /Use2025-06-09 11:01:57.417 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 11:01:57.417 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 11:02:26.251 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 11:02:26.251 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetUserById (TaskManagementAPI) by UserId: Anonym2025-06-09 11:02:40.436 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 11:02:40.436 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetUserById (TaskManagementAPI) by UserId: Anony2025-06-09 11:03:31.482 +05:30 [INF] Application is shutting down...
+in 2 ms
+2025-06-09 11:03:31.482 +05:30 [INF] Application is shutting down...
+2025-06-09 11:07:46.707 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 11:07:46.766 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 11:07:46.767 +05:30 [INF] Hosting environment: Development
+2025-06-09 11:07:46.767 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 11:07:46.767 +05:30 [INF] Content root path: /Use2025-06-09 11:18:56.341 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 11:18:56.341 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) by UserId: Anonymou2025-06-09 11:19:35.988 +05:30 [ERR] API Exception on POST TaskManagementAPI.2025-06-09 11:19:35.988 +05:30 [ERR] API Exception on POST TaskManagementAPI.Controllers.AuthController.RefreshToken (TaskManagementAPI) by UserId: Anonymous at "2025-06-09T05:49:35.9317620Z" after 56 ms
+TaskManagementAPI.CustomExceptions.UnauthorizedException: Invalid token.
+   at TaskManagementAPI.Services.AuthenticationService.RefreshTokenAsync(RefreshTokenRequestDto refreshDto) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Services/AuthenticationService.cs:line 72
+   at TaskManagementAPI.Controllers.AuthController.RefreshToken(RefreshTokenRequestDto refreshDto) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Controllers/AuthController.cs:line 37
+   at lambda_method289(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagementAPI.CustomExceptions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/presidio/Desktop/Genspark/PresidioTraining/pr2025-06-09 11:20:37.041 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 11:20:37.041 +05:30 [INF] Request GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anonymo2025-06-09 11:21:04.561 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 11:21:04.561 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetUserById (TaskManagementAPI) by UserId: Anonym2025-06-09 11:21:19.637 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 11:21:19.637 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetAllUsers (TaskManagementAPI) by UserId: Anonym2025-06-09 11:22:58.494 +05:30 [INF] Request DELETE TaskManagementAPI.Control2025-06-09 11:22:58.494 +05:30 [INF] Request DELETE TaskManagementAPI.Controllers.UserController.DeleteUser (TaskManagementAPI) by UserId: Anonym2025-06-09 11:23:04.763 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 11:23:04.763 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetAllUsers (TaskManagementAPI) by UserId: Anony2025-06-09 11:23:26.399 +05:30 [ERR] API Exception on GET TaskManagementAPI.C2025-06-09 11:23:26.399 +05:30 [ERR] API Exception on GET TaskManagementAPI.Controllers.UserController.GetUserById (TaskManagementAPI) by UserId: Anonymous at "2025-06-09T05:53:26.3935390Z" after 6 ms
+TaskManagementAPI.CustomExceptions.NotFoundException: User with ID 0c6f1914-f705-411b-9689-2b27d8477d79 not found
+   at TaskManagementAPI.Services.UserService.GetByIdAsync(Guid id) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Services/UserService.cs:line 43
+   at TaskManagementAPI.Controllers.UserController.GetUserById(Guid id) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Controllers/UserController.cs:line 35
+   at lambda_method316(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagementAPI.CustomExceptions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/presidio/Desktop/Genspark/PresidioTraining/pr2025-06-09 14:13:52.069 +05:30 [INF] Application is shutting down...
+line 31
+2025-06-09 14:13:52.069 +05:30 [INF] Application is shutting down...
+2025-06-09 15:46:05.033 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 15:46:05.096 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 15:46:05.097 +05:30 [INF] Hosting environment: Development
+2025-06-09 15:46:05.097 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 15:46:05.097 +05:30 [INF] Content root path: /Use2025-06-09 15:46:07.239 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 15:46:07.239 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 15:47:05.774 +05:30 [ERR] API Exception on POST TaskManagementAPI.2025-06-09 15:47:05.774 +05:30 [ERR] API Exception on POST TaskManagementAPI.Controllers.AuthController.RefreshToken (TaskManagementAPI) by UserId: Anonymous at "2025-06-09T10:17:04.0117190Z" after 1762 ms
+TaskManagementAPI.CustomExceptions.UnauthorizedException: User not found.
+   at TaskManagementAPI.Services.AuthenticationService.RefreshTokenAsync(RefreshTokenRequestDto request) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Services/AuthenticationService.cs:line 75
+   at TaskManagementAPI.Controllers.AuthController.RefreshToken(RefreshTokenRequestDto refreshDto) in /Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/Controllers/AuthController.cs:line 36
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagementAPI.CustomExceptions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/presidio/Desktop/Genspark/PresidioTraining/pr2025-06-09 16:14:59.163 +05:30 [INF] Application is shutting down...
+line 31
+2025-06-09 16:14:59.163 +05:30 [INF] Application is shutting down...
+2025-06-09 16:35:20.671 +05:30 [ERR] An error occurred using the connection to database 'TaskManagementDb' on server 'tcp://localhost:5432'.
+2025-06-09 16:35:20.671 +05:30 [ERR] An error occurred using the connection to database 'TaskManagementDb' on server 'tcp://localhost:5432'.
+2025-06-09 16:40:19.367 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 16:40:19.435 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 16:40:19.436 +05:30 [INF] Hosting environment: Development
+2025-06-09 16:40:19.436 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 16:40:19.436 +05:30 [INF] Content root path: /Use2025-06-09 16:41:00.037 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 16:41:00.037 +05:30 [INF] Request POST TaskManagementAPI.Controllers.UserController.CreateUser (TaskManagementAPI) by UserId: Anonymou2025-06-09 16:41:40.720 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 16:41:40.720 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) by UserId: Anonymo2025-06-09 16:42:19.513 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 16:42:19.513 +05:30 [INF] Request GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anonymo2025-06-09 16:42:58.033 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 16:42:58.033 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.RefreshToken (TaskManagementAPI) by UserId: Anonymo2025-06-09 16:43:20.959 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 16:43:20.959 +05:30 [INF] Request GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anony2025-06-09 16:43:23.786 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 16:43:23.786 +05:30 [INF] Request GET TaskManagementAPI.Controllers.AuthController.GetCurrentUser (TaskManagementAPI) by UserId: Anony2025-06-09 16:44:07.277 +05:30 [INF] Application is shutting down...
+in 4 ms
+2025-06-09 16:44:07.277 +05:30 [INF] Application is shutting down...
+2025-06-09 16:49:40.413 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 16:49:40.483 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 16:49:40.483 +05:30 [INF] Hosting environment: Development
+2025-06-09 16:49:40.484 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 16:49:40.484 +05:30 [INF] Content root path: /Use2025-06-09 16:49:43.489 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 16:49:43.489 +05:30 [INF] Request GET / by UserId: Anonym2025-06-09 16:49:46.438 +05:30 [INF] Request GET / by UserId: Anonymous at "22025-06-09 16:49:46.438 +05:30 [INF] Request GET / by UserId: Anony2025-06-09 16:50:23.093 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 16:50:23.093 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.RefreshToken (TaskManagementAPI) by UserId: Anonymou2025-06-09 16:51:09.211 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 16:51:09.211 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetAllUsers (TaskManagementAPI) by UserId: Anonymo2025-06-09 16:51:24.536 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 16:51:24.536 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetUserById (TaskManagementAPI) by UserId: Anonym2025-06-09 16:52:06.479 +05:30 [INF] Request PUT TaskManagementAPI.Controller2025-06-09 16:52:06.479 +05:30 [INF] Request PUT TaskManagementAPI.Controllers.UserController.UpdateUser (TaskManagementAPI) by UserId: Anonymo2025-06-09 16:52:25.267 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 16:52:25.267 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetAllUsers (TaskManagementAPI) by UserId: Anony2025-06-09 16:52:37.867 +05:30 [INF] Request GET TaskManagementAPI.Controller2025-06-09 16:52:37.867 +05:30 [INF] Request GET TaskManagementAPI.Controllers.UserController.GetUserById (TaskManagementAPI) by UserId: Anony2025-06-09 16:56:11.471 +05:30 [INF] Application is shutting down...
+in 4 ms
+2025-06-09 16:56:11.471 +05:30 [INF] Application is shutting down...
+2025-06-09 16:56:22.299 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 16:56:22.370 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 16:56:22.371 +05:30 [INF] Hosting environment: Development
+2025-06-09 16:56:22.371 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 16:56:22.371 +05:30 [INF] Content root path: /Use2025-06-09 16:56:48.302 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 16:56:48.302 +05:30 [INF] Request POST TaskManagementAPI.Controllers.AuthController.RefreshToken (TaskManagementAPI) by UserId: Anonymou2025-06-09 16:57:49.056 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 16:57:49.056 +05:30 [INF] Request POST TaskManagementAPI.Controllers.UserController.CreateUser (TaskManagementAPI) by UserId: Anonym2025-06-09 17:10:16.753 +05:30 [INF] Application is shutting down...
+n 49 ms
+2025-06-09 17:10:16.753 +05:30 [INF] Application is shutting down...
+2025-06-09 17:10:27.364 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 17:10:27.430 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 17:10:27.431 +05:30 [INF] Hosting environment: Development
+2025-06-09 17:10:27.431 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 17:10:27.431 +05:30 [INF] Content root path: /Use2025-06-09 17:10:59.688 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 17:10:59.688 +05:30 [INF] Request POST TaskManagementAPI.Controllers.UserController.CreateUser (TaskManagementAPI) by UserId: Anonymo2025-06-09 17:15:59.275 +05:30 [INF] Application is shutting down...
+ 238 ms
+2025-06-09 17:15:59.275 +05:30 [INF] Application is shutting down...
+2025-06-09 17:16:07.180 +05:30 [INF] Now listening on: http://localhost:5093
+2025-06-09 17:16:07.256 +05:30 [INF] Application started. Press Ctrl+C to shu2025-06-2025-06-09 17:16:07.257 +05:30 [INF] Hosting environment: Development
+2025-06-09 17:16:07.257 +05:30 [INF] Content root path: /Users/presidio/Deskt2025-06-09 17:16:07.257 +05:30 [INF] Content root path: /Use2025-06-09 17:16:28.296 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 17:16:28.296 +05:30 [INF] Request POST TaskManagementAPI.Controllers.UserController.CreateUser (TaskManagementAPI) by UserId: Anonymo2025-06-09 17:32:51.558 +05:30 [INF] Request POST TaskManagementAPI.Controlle2025-06-09 17:32:51.558 +05:30 [INF] Request POST TaskManagementAPI.Controllers.UserController.CreateUser (TaskManagementAPI) by UserId: Anonymou2025-06-09 23:32:21.838 +05:30 [INF] Application is shutting down...
+2095 ms
+2025-06-09 23:32:21.838 +05:30 [INF] Application is shutting down...

@@ -1,0 +1,127 @@
+.create-user-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); 
+  background-color: #f4f6f9;
+  padding: 20px;
+}
+
+.create-user-container {
+  max-width: 500px;
+  width: 100%;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  margin-bottom: 24px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #1e3a8a;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #374151;
+}
+
+
+input, select {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  background-color: #f9fafb;
+}
+
+input:focus, select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+select {
+  background-color: #f9fafb;
+  appearance: none;
+}
+
+.error {
+  font-size: 12px;
+  color: #dc2626;
+  margin-top: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.custom-select-wrapper {
+  position: relative;
+}
+
+.custom-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 12px;
+  padding-right: 40px;
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.custom-select-wrapper::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b7280;
+  font-size: 12px;
+}

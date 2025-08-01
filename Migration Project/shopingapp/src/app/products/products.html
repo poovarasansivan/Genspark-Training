@@ -1,0 +1,181 @@
+
+<div class="bg-[#f3f0ff] flex items-center justify-center h-64 md:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+    >
+      <div>
+        <h3 class="text-2xl font-bold text-[#151875]">Products Grid</h3>
+        <p class="text-gray-600 text-base mt-1">Home &gt; Products</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <app-toast></app-toast>
+
+<div
+  class="flex flex-col md:flex-row p-5 md:p-0 items-end justify-between max-w-7xl mx-auto mt-8 mb-4"
+>
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4 items-end">
+    <div>
+      <label class="text-sm text-gray-700">Page Size</label>
+      <select
+        class="w-full mt-1 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#151875]"
+        [(ngModel)]="filters.pageSize"
+        (change)="onFilterChange()"
+      >
+        <option>10</option>
+        <option>20</option>
+        <option>50</option>
+      </select>
+    </div>
+
+    <div class="flex gap-2">
+      <div class="flex-1">
+        <label class="text-sm text-gray-700">Min Price</label>
+        <input
+          type="number"
+          class="w-full mt-1 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#151875]"
+          placeholder="₹0"
+          [(ngModel)]="filters.minPrice"
+          (ngModelChange)="onFilterChange()"
+        />
+      </div>
+      <div class="flex-1">
+        <label class="text-sm text-gray-700">Max Price</label>
+        <input
+          type="number"
+          class="w-full mt-1 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#151875]"
+          placeholder="₹5000"
+          [(ngModel)]="filters.maxPrice"
+          (ngModelChange)="onFilterChange()"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label class="text-sm text-gray-700">Category</label>
+      <select
+        class="w-full mt-1 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#151875]"
+        [(ngModel)]="filters.category"
+        (ngModelChange)="onFilterChange()"
+      >
+        <option value="">All</option>
+        <option value="Mobiles">Mobiles</option>
+        <option value="Laptops">Laptops</option>
+        <option value="Furnitures">Furnitures</option>
+        <option value="Monitors">Monitors</option>
+        <option value="Shoes">Shoes</option>
+        <option value="Toys">Toys</option>
+      </select>
+    </div>
+
+    <div class="relative">
+      <lucide-angular
+        [name]="SearchIcon"
+        class="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500"
+        size="20"
+      ></lucide-angular>
+      <input
+        type="text"
+        placeholder="Search products..."
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="onSearchProducts()"
+        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#151875]"
+      />
+    </div>
+    <!-- <div class="relative">
+      <div
+        class="flex items-center justify-center p-2 w-32 rounded-lg gap-2 text-[#151875] bg-pink-500 hover:text-[#fb2e86] transition"
+        (click)="createProduct()"
+      >
+        <lucide-angular
+          [name]="PlusIcon"
+          class="text-white hover:text-[#151875] transition"
+          size="18"
+        ></lucide-angular>
+        <p class="text-white text-lg">Products</p>
+      </div>
+    </div> -->
+  </div>
+</div>
+
+<div class="p-6 md:px-16 bg-white">
+  <div
+    *ngIf="filteredProducts.length > 0; else noProducts"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+  >
+    <div
+      *ngFor="let product of filteredProducts"
+      class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all flex flex-col justify-between h-auto"
+    >
+      <div class="flex flex-col items-start">
+        <img
+          [src]="'http://localhost:5045/' + product.image"
+          [alt]="product.productName"
+          class="w-full h-56 object-cover rounded-lg mb-4"
+        />
+        <h3
+          class="text-[#151875] font-semibold text-lg mb-1 text-left"
+        >
+          {{ product.productName }}
+        </h3>
+        <p class="text-gray-600 text-sm mb-1">{{ product.name }}</p>
+        <p class="text-[#fb2e86] font-bold text-lg">${{ product.price }}</p>
+      </div>
+
+      <div class="flex justify-between gap-2 mt-5">
+        <button
+          class="bg-[#fb2e86] hover:bg-[#e02470] text-white px-4 py-2 rounded-md text-sm font-medium transition w-1/2"
+          (click)="addToCart(product)"
+        >
+          Add to Cart
+        </button>
+        <button
+          class="border border-[#fb2e86] text-[#fb2e86] hover:bg-[#fb2e86] hover:text-white px-4 py-2 rounded-md text-sm font-medium transition w-1/2"
+          (click)="viewProductDetails(product)"
+        >
+          View Product
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noProducts>
+    <div class="text-center text-gray-500 py-20">
+      <p class="text-lg font-medium">
+        No products found matching your filters.
+      </p>
+    </div>
+  </ng-template>
+</div>
+<div *ngIf="totalPages > 1" class="flex justify-center mt-8">
+  <nav class="inline-flex shadow-sm rounded-md gap-4" aria-label="Pagination">
+    <button
+      (click)="goToPage(filters.pageNumber - 1)"
+      [disabled]="filters.pageNumber === 1"
+      class="px-3 py-1 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+    >
+      Previous
+    </button>
+
+    <ng-container *ngFor="let page of pages">
+      <button
+        (click)="goToPage(page)"
+        [class.bg-[#fb2e86]]="page === filters.pageNumber"
+        [class.text-white]="page === filters.pageNumber"
+        class="px-3 py-1 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-100"
+      >
+        {{ page }}
+      </button>
+    </ng-container>
+
+    <button
+      (click)="goToPage(filters.pageNumber + 1)"
+      [disabled]="filters.pageNumber === totalPages"
+      class="px-3 py-1 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+    >
+      Next
+    </button>
+  </nav>
+</div>

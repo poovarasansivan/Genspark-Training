@@ -1,0 +1,347 @@
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.csproj.AssemblyReference.cache
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.GeneratedMSBuildEditorConfig.editorconfig
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.AssemblyInfoInputs.cache
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.AssemblyInfo.cs
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.csproj.CoreCompileInputs.cache
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.MvcApplicationPartsAssemblyInfo.cs
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.MvcApplicationPartsAssemblyInfo.cache
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.sourcelink.json
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/appsettings.Development.json
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/appsettings.json
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI.deps.json
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI.runtimeconfig.json
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI.pdb
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Humanizer.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Build.Locator.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.Workspaces.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.ObjectPool.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Mono.TextTemplating.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Npgsql.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.CodeDom.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.AttributedModel.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.Convention.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.Hosting.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.Runtime.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.TypedParts.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.IO.Pipelines.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Net.WebSockets.WebSocketProtocol.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Text.Encodings.Web.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Text.Json.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets.build.json
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets.development.json
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets/msbuild.TaskManagementAPI.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets/msbuild.build.TaskManagementAPI.props
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.TaskManagementAPI.props
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.TaskManagementAPI.props
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/scopedcss/bundle/TaskManagementAPI.styles.css
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskMana.0D8D9FF3.Up2Date
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/refint/TaskManagementAPI.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.pdb
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.genruntimeconfig.cache
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/obj/Debug/net8.0/ref/TaskManagementAPI.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Core.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Storage.Blobs.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Storage.Common.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.ClientModel.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.IO.Hashing.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Memory.Data.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Identity.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Security.KeyVault.Secrets.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Identity.Client.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Identity.Client.Extensions.Msal.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll
+/Users/presidio/Desktop/Genspark/PresidioTraining/project-task/TaskManagementAPI/bin/Debug/net8.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/appsettings.Development.json
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/appsettings.json
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI.deps.json
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI.runtimeconfig.json
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/TaskManagementAPI.pdb
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Core.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Identity.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Security.KeyVault.Secrets.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Storage.Blobs.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Azure.Storage.Common.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Humanizer.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Build.Locator.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.Workspaces.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.ObjectPool.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Identity.Client.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.Identity.Client.Extensions.Msal.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Mono.TextTemplating.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Npgsql.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.ClientModel.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.CodeDom.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.AttributedModel.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.Convention.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.Hosting.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.Runtime.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Composition.TypedParts.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.IO.Hashing.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.IO.Pipelines.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Memory.Data.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Net.WebSockets.WebSocketProtocol.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Text.Encodings.Web.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/System.Text.Json.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.csproj.AssemblyReference.cache
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.GeneratedMSBuildEditorConfig.editorconfig
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.AssemblyInfoInputs.cache
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.AssemblyInfo.cs
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.csproj.CoreCompileInputs.cache
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.MvcApplicationPartsAssemblyInfo.cs
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.MvcApplicationPartsAssemblyInfo.cache
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets.build.json
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets.development.json
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets/msbuild.TaskManagementAPI.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets/msbuild.build.TaskManagementAPI.props
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.TaskManagementAPI.props
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.TaskManagementAPI.props
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/scopedcss/bundle/TaskManagementAPI.styles.css
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskMana.0D8D9FF3.Up2Date
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/refint/TaskManagementAPI.dll
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.pdb
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/TaskManagementAPI.genruntimeconfig.cache
+/Users/poovarasans/Desktop/Genspark/Task/TaskManagement App/project-task/TaskManagementAPI/obj/Debug/net8.0/ref/TaskManagementAPI.dll

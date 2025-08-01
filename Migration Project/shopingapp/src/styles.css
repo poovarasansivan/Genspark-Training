@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+.blog-content strong {
+  @apply font-medium text-xl text-[#151875];
+}
+.blog-content b {
+  @apply font-medium text-xl text-[#151875];
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-pink-400 bg-purple-200/50 italic p-4 my-4 text-[#151875] rounded-md;
+}
+
+.blog-content h1 {
+  @apply text-3xl font-bold mt-6 mb-4 text-gray-900;
+}
+
+.blog-content h2 {
+  @apply text-2xl font-semibold mt-5 mb-3 text-gray-800;
+}
+
+.blog-content p {
+  @apply mb-4 leading-relaxed;
+}
+
+.blog-content ul,
+.blog-content ol {
+  @apply pl-6 mb-4 list-disc;
+}
+
+.blog-content a {
+  @apply text-blue-600 hover:underline;
+}
